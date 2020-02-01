@@ -1,0 +1,8 @@
+Image,Rotate,SRed,SGreen,SBlue,Suppress,Mask Files,Mask Average,Masked
+hu-logo,hu-logo-rotated,1,,,hu-logo-sr
+hu-logo,,,,,hu-logo-sr
+hu-logo,,1,,1,hu-logo-srb
+hu-logo,,,,,,blur-more:sobel-x:sobel-y,1:0:0,hu-logo-edge
+hu-logo,,,,,,blur,1,hu-logo-blur
+
+
