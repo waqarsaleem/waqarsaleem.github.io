@@ -1,8 +1,8 @@
 Image,Rotate,SRed,SGreen,SBlue,Suppress,Mask Files,Mask Average,Masked
-hu-logo,hu-logo-rotated,1,,,hu-logo-sr
-hu-logo,,,,,hu-logo-sr
-hu-logo,,1,,1,hu-logo-srb
-hu-logo,,,,,,blur-more:sobel-x:sobel-y,1:0:0,hu-logo-edge
-hu-logo,,,,,,blur,1,hu-logo-blur
+https://waqarsaleem.github.io/cs201/hw1/images/hu-logo,https://waqarsaleem.github.io/cs201/hw1/images/hu-logo-rotated,1,,,https://waqarsaleem.github.io/cs201/hw1/images/hu-logo-sr
+https://waqarsaleem.github.io/cs201/hw1/images/hu-logo,,,,,https://waqarsaleem.github.io/cs201/hw1/images/hu-logo-sr
+https://waqarsaleem.github.io/cs201/hw1/images/hu-logo,,1,,1,https://waqarsaleem.github.io/cs201/hw1/images/hu-logo-srb
+https://waqarsaleem.github.io/cs201/hw1/images/hu-logo,,,,,,blur-more:sobel-x:sobel-y,1:0:0,https://waqarsaleem.github.io/cs201/hw1/images/hu-logo-edge
+https://waqarsaleem.github.io/cs201/hw1/images/hu-logo,,,,,,blur,1,https://waqarsaleem.github.io/cs201/hw1/images/hu-logo-blur
 
 
