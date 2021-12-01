@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <title>WebGL mandelbrot-gpu</title>
+
+
+    <script id="vertex-shader" type="x-shader/x-vertex">
+#version 300 es
+    
+    in vec4 vPosition;
+    out vec4 color;
+    uniform float scale;
+    
+    float Compute_ZN(vec2 c, float n_t) //Same function in helpers.js converted into C 
+    {
+        vec2 z = vec2(0.0, 0.0) ;
+        float iterations = 0.0;
+
+        float product_z = z[0] * z[0]   + z[1]*z[1];
+        float magnitude_z = sqrt(product_z);
+    
+        while ( magnitude_z <= 2.0 && iterations < n_t)
+        {
+            if ( iterations == n_t)
+            {
+                    return n_t;  //return max iterations if complex number does not escape
+            }
+    
+            vec2 inter =  vec2( z[0]*z[0] - z[1] * z[1] , 2.0*z[0]*z[1]);
+            z = vec2 (inter[0] + c[0] , inter[1]+ c[1]); 
+            iterations++;
+
+            product_z = z[0] * z[0]   + z[1]*z[1];
+            magnitude_z = sqrt(product_z);
+        }
+
+    return iterations;
+    
+    }
+
+
+
+    void main(){
+
+    gl_Position = vec4(vPosition.x / 2.0 , vPosition.y/-2.0 , 1, 1); //Convert from complex to pixel cordinate
+    
+    gl_PointSize = 1.0;
+
+    float n_t = 100.0; // Definining n_t here as i could not figure out how to keep it as a uniform
+
+    float iterations = 0.0;
+    
+    float escape_time = 0.0;
+    
+    vec2 complex = vec2( vPosition.x, vPosition.y); // Complex number is the same as what we passed
+
+    escape_time = Compute_ZN(complex, n_t); //Calculate escape time
+
+    vec4 color_value;
+
+    //Decide color based on escape time
+    if  (escape_time == 1.0)  
+
+                { color_value = vec4( mod(1.0 +scale , 1.0) , 0.0,   0.0 , 1.0 ) ; }
+
+    else if(  escape_time >= n_t)
+
+                { color_value = vec4( 0.0 , 0.0, mod(1.0 + scale , 1.0)  , 1.0 ) ;
+                 }
+    else{
+    
+                //Interpolate colors
+                float interr =  (escape_time - 1.0)/ (sqrt(n_t) - 1.0) ;
+    
+                 color_value =  (1.0 - interr) * vec4(1.0,0.0,0.0,1.0) + interr* vec4(0.0,1.0,0.0,1.0); 
+                  //color_value = vec4 (color_value.xyz * scale,1.0);
+
+                 color_value = vec4 ( mod(color_value[0] + scale, 1.0 ) , mod(color_value.y + scale,1.0), mod(color_value.z + scale , 1.0) , 1.0);
+            } 
+
+    //Pass color to the fragment-shader
+	color = color_value;
+
+      }
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+#version 300 es
+      precision highp float;
+
+      in vec4 color;
+      out vec4 fragColor;
+
+      void
+      main()
+      {
+	  fragColor = color;
+      }
+    </script>
+
+
+    <script src="initShadersES6.js"></script>
+    <script src="MVES6.js"></script>
+    <script src="https://unpkg.com/mathjs@9.5.0/lib/browser/math.js"></script>
+    <script src="helpers.js"></script>
+    <script type="text/javascript" src="mandelbrot-gpu.js"></script>
+
+  </head>
+
+  <body>
+        <h1>
+      Color Shifter
+      </h1>
+    <canvas id="gl-canvas" width="512" height="512">
+
+     
+
+      Oops ... your browser doesn't support the HTML5 canvas element
+    </canvas>
+
+    <p>
+      Allows you to shift your color values via a slider that increments all your colors, mod is done to prevent colors from going black/white. Helps you capture finer escape times especially ones that are interpolated</p>
+    <input type="range" min="-5" max="5" value="0.5" class="slider" step="0.001" id="myRange">
+
+    <p>
+    <a href=../index.html>Back to main page.</a></p>
+    
+  </body>
+</html>

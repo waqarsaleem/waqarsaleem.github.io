@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+    <title>Dichotomy, Multichotomy and Ordered Multichotomy</title>
+
+
+    <script id="vertex-shader" type="x-shader/x-vertex">
+#version 300 es
+
+    in vec4 vPosition;
+    uniform mat4 modelViewMatrix;
+    uniform mat4 projectionMatrix;
+    in vec4 vColor;
+    out vec4 Color;
+
+      void
+      main()
+      {
+        gl_Position = projectionMatrix * modelViewMatrix * vPosition;
+        Color = vColor;
+        gl_PointSize = 4.0;
+      }
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+#version 300 es
+      precision highp float;
+
+      in vec4 Color;
+      out vec4 fragColor;
+
+      void
+      main()
+      {
+	  fragColor = Color;
+      }
+    </script>
+
+    
+    <script src="http://interactivecomputergraphics.com/8E/Code%20update/Common/initShadersES6.js"></script>
+    <script src="http://interactivecomputergraphics.com/8E/Code%20update/Common/MVES6.js"></script>
+    <script src="perlin.js"></script>
+    <script type="text/javascript" src="render.js"></script>
+    <script type="text/javascript" src="colors.js"></script>
+  </head>
+
+  <body>
+    <div>
+      <h1>
+        Human Nature: Dichotomy, Multichotomy and Ordered Multichotomy
+      </h1>
+    </div>
+    <canvas id="gl-canvas" width="512" height="512">
+      Oops ... your browser doesn't support the HTML5 canvas element
+    </canvas>
+
+<h2 id="concept">Concept</h2>
+<p>The render, I believe, is a very good depiction of human nature and rationale. When we are born, things are so black and white (or red and green). Either an act is good or it is bad - no in between. While a simple view, it is never retained for long. As we grow up, our rationale and nature is corrupted by all sorts of things - making it ever so difficult for us to remain ourselves and to decide what is good and what is bad. When I said earlier, the third view was intentional, that was not just for the render. The third view, the ordered multichotomy has to be intentional for an individual - to order all the hues your rationale has been corrupted with and to have a perspective that analayses things step by step, color by color in order to reach the conclusion. That is what life is - figuring out our array of shades into ordered traces of colors and figuring our array of traits into ordered acts.</p>
+<h2 id="render">Render</h2>
+<p>For our CG project of flight simulator, I was exploring methods of using random or noise functions for creating 3D terrains. I came across Perlin noise - a very common noise function. I played around with it and eventually managed to create a terrain. I played further with ways of coloring the vertices.</p>
+<p>The initial view of the render with green and red dichotomy made me depict it as good and bad. Then by further playing around with it, I got the second view of the render - an array of shuffled colors. The third view was intentionally programmed by me through color sorting methods. To summarize, the render started with a Perlin noise generated 3D terrain which was then transformed in terms of colors. The colors were changed in two ways - shuffling/randomizing and by sorting color wise based on hue, saturation and luminosity.</p>
+<h2 id="credits">Credits</h2>
+<ul>
+<li>Perlin: <a href="https://github.com/josephg/noisejs/blob/master/perlin.js" class="uri">https://github.com/josephg/noisejs/blob/master/perlin.js</a></li>
+<li>Color Sorting: <a href="https://coderedirect.com/questions/326249/javascript-sort-rgb-values" class="uri">https://coderedirect.com/questions/326249/javascript-sort-rgb-values</a></li>
+</ul>
+<h2 id="other-infomration">Other Infomration</h2>
+<ul>
+<li>Tools used: WebGL 2.0, Javascript</li>
+<li>Render time: Negligible. Note that the render changes every 2 seconds for 2 times after running.</li>
+</ul>
+
+    <a href=../index.html>Back to main page.</a>
+    
+  </body>
+</html>

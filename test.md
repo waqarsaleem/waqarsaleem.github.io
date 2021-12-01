@@ -1,6 +1,8 @@
-# Heading
+# Render Jam, Fall 2021
 
-## Subheading
+## Weeks 10 t0 14
 
-- list item 1
-- list item 1
+- [Burning Ship](./BurningShip/index.html)
+- [Color Shifter](./ColorShifter/index.html)
+- [Dichotomy, Multichotomy and Ordered Multichotomy](./*-tomy/index.html)
+

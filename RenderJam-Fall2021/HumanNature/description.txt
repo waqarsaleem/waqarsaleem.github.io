@@ -1,0 +1,53 @@
+TITLE: Dichotomy, Multichotomy and Ordered Multichotomy
+TOPIC: Human Nature
+ZIPFILE: render.zip
+
+
+TOOLS USED: 
+
+ 
+  WebGL 2.0
+  Javascript
+
+
+RENDER TIME: 
+
+  
+  Negligible 
+
+  Note: The render changes every 2 seconds for 2 times after running. 
+
+
+DESCRIPTION OF HOW THIS IMAGE WAS CREATED: 
+
+
+    For our CG project of flight simulator, I was exploring methods of using random or noise functions
+    for creating 3D terrains. I came across Perlin noise - a very common noise function. I played around 
+    with it and eventually managed to create a terrain. I played further with ways of coloring the vertices.
+    The initial view of the render with green and red dichotomy made me depict it as good and bad. Then by further 
+    playing around with it, I got the second view of the render - an array of shuffled colors. The third view
+    was intentionally programmed by me through color sorting methods. To summarize, the render started with
+    a Perlin noise generated 3D terrain which was then transformed in terms of colors. The colors were changed
+    in two ways - shuffling/randomizing and by sorting color wise based on hue, saturation and luminosity. 
+
+
+IMAGE DESCRIPTION: 
+
+
+    The render, I believe, is a very good depiction of human nature and rationale. When we are born, things are so black and white (or red and green). Either 
+    an act is good or it is bad - no in between. While a simple view, it is never retained for long. As we 
+    grow up, our rationale and nature is corrupted by all sorts of things - making it ever so difficult for us
+    to remain ourselves and to decide what is good and what is bad. When I said earlier, the third view was 
+    intentional, that was not just for the render. The third view, the ordered multichotomy has to be intentional
+    for an individual - to order all the hues your rationale has been corrupted with and to have a perspective
+    that analayses things step by step, color by color in order to reach the conclusion. That is what life is - 
+    figuring out our array of shades into ordered traces of colors and figuring our array of traits into ordered 
+    acts. 
+
+
+
+CITATIONS:
+
+
+    Perlin: https://github.com/josephg/noisejs/blob/master/perlin.js
+    Color Sorting: https://coderedirect.com/questions/326249/javascript-sort-rgb-values
