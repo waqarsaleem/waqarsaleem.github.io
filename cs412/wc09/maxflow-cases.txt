@@ -58,7 +58,7 @@ a b 5
 c d 10
 d b 8
 b t 7
-d t 10
+d t 8
 15 8
 s a 7
 s c 8
