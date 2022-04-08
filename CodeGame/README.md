@@ -65,10 +65,10 @@ A brief session on selected problems from the contest will be held from 1315-134
 The registered teams for Code Game, Spring 2022 are
 
 
-|   | Team  | Member  | Member  | Member  | Special&nbsp;Eligiblity  |
-| - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
+|   | Team  | Member  | Member  | Member  | Special Eligiblity  |
+| - | - | - | - | - | - |
 | 1  | Snakes                | Sandesh Kumar | Iqra Siddiqui | Haania Siddiqui | | 
-| 2  | ashthetic.py		     | Syed&nbsp;Muhammad&nbsp;Abbas Haider Taqvi | Syed&nbsp;Muhammad&nbsp;Safi Haider Rizvi | Syed&nbsp;Muhammad&nbsp;Hussain | Wise Fools | 
+| 2  | ashthetic.py		     | Syed Muhammad Abbas Haider Taqvi | Syed Muhammad Safi Haider Rizvi | Syed Muhammad Hussain | Wise Fools | 
 | 3  | _Seg Fault_			 | Ali Asghar Yousuf | Saad Abdul Hakim Qureshi | Shehryar Amin | Wise Fools |
 | 4  | Multiverse			 | Mujtaba Syed | Ifrah Ilyas | Khubaib Naeem Kasbati | |
 | 5  | MonkeyType			 | Meesum Ali Qazalbash | Ronit Kumar Kataria | Muhammad Murtaza | Wise Fools |
@@ -76,7 +76,7 @@ The registered teams for Code Game, Spring 2022 are
 | 7  | FSM					 | Muneeb Shafique | Sajeel Alam | Fatima Alvi | Wise Fools |
 | 8  | HU Titans			 | Muhammad Oqba bin Jawed | abdul majid tanveer | Maha Usmani | Wise Fools |
 | 9  | Stack Underflow		 | Batool Ahmed | Muhammad Aqib Khan | Mohammad Hasan Tariq | |
-| 10 | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise&nbsp;Fools |
+| 10 | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise Fools |
 | 11 | _Aleph Null_          | Ali Rizvi | Mehdi Raza Khurasani | Syed Muhammad Ali Rizvi | |
 
 | foo | bar |
