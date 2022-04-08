@@ -54,7 +54,7 @@ Additionally, there are special participation prizes.
 
 1. Up and Coming: awarded to the top ranked team whose members are all currently in their first year.
 1. [Wise Fools](https://www.wgbh.org/news/2017/10/25/how-we-live/what-exactly-sophomore-and-what-does-it-mean-be-junior-and-senior): awarded to the top ranked team whose members are all currently in their sophomore year.
-1. [Coder Girls](https://www.wgbh.org/news/2017/10/25/how-we-live/what-exactly-sophomore-and-what-does-it-mean-be-junior-and-senior): awarded to the top ranked team whose members are all female.
+1. [Coder Girls](https://www.facebook.com/girlsintechsg/photos/a.10150798804401928/10158017542091928/?type=3): awarded to the top ranked team whose members are all female.
 
 A brief session on selected problems from the contest will be held from 1315-1345h. Certificates will be awarded to the prize winners at the end of the review session.
 
