@@ -1,5 +1,6 @@
 # Code Game, Spring 2022
 
+![poster](./images/poster.png "Code Game, Spring 2022")
 Below is important information regarding the contest. As much as possible, the contest will follow the [ICPC](https://icpc.global/) format. The platform on which the contest will be held is [CodeForces](https://codeforces.com/).
 
 ## Format
@@ -8,11 +9,11 @@ All teams will be assigned the same problem set through CodeForces. You will als
 
 ## Logistics
 
-The competition takes place on Saturday, 9 April, in Linux Lab, from 11-13h. Your team should reach the lab by 1045h so that you are settled in by 11h when the contest begins.
+The contest takes place on Saturday, 9 April, in Linux Lab, from 11-13h. Your team should reach the lab by 1045h so that you are settled in by 11h when the contest begins.
 
 ## Registration
 
-Prior registration is required to participate in the context. In order to register, you will need:
+Prior registration is required to participate in the contest. In order to register, you will need:
 
 1. a CodeForces username,
 2. a CodeForces team (see instructions below)
@@ -41,10 +42,22 @@ A scoreboard with live scores of all the participating teams will be projected o
 
 - Teams are grouped in the scoreboard by the number of problems that they have correctly solved.
 - Groups with more correct solutions are ranked higher.
+- Within a group, the team with the lesser score is ranked higher.
 - A team's score in any problem is the sum of:
   - the number of minutes between the start of the contest and the submission of a correct solution
-  - any penalty
-- There is a penalty for each incorrect submission.
-- Within a group, the team with the lesser score is ranked higher.
+  - the penalties for each incorrect submission for the problem.
+
+## Prizes and Review
+There is a prize for each of the top 3 ranked positions.
+
+Additionally, there are special participation prizes.
+
+1. Up and Coming: awarded to the top ranked team whose members are all currently in their first year.
+1. [Wise Fools](https://www.wgbh.org/news/2017/10/25/how-we-live/what-exactly-sophomore-and-what-does-it-mean-be-junior-and-senior): awarded to the top ranked team whose members are all currently in their sophomore year.
+1. [Coder Girls](https://www.wgbh.org/news/2017/10/25/how-we-live/what-exactly-sophomore-and-what-does-it-mean-be-junior-and-senior): awarded to the top ranked team whose members are all female.
+
+A brief session on selected problems from the contest will be held from 1315-1345h. Certificates will be awarded to the prize winners at the end of the review session.
+
+
 
 
