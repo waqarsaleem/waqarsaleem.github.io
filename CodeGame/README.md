@@ -75,6 +75,8 @@ The registered teams for Code Game, Spring 2022 so far are as follows. Team name
 | 6  | The Assassin's Creed  | Hamad Razzaq | Lakshman Maheshwari | Muhammad Jazzel Mehmood | Wise Fools |
 | 7  | FSM					 | Muneeb Shafique | Sajeel Alam | Fatima Alvi | Wise Fools |
 | 8  | HU Titans			 | Muhammad Oqba bin Jawed | abdul majid tanveer | Maha Usmani | Wise Fools |
-| 9  | Stack Underflow		 | Batool Ahmed | Muhammad Aqib Khan | Mohammad Hasan Tariq | |
-| 10 | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise Fools |
-| 11 | _Aleph Null_          | Ali Rizvi | Mehdi Raza Khurasani | Syed Muhammad Ali Rizvi | |
+| 9  | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise Fools |
+| 10 | _Aleph Null_          | Ali Rizvi | Mehdi Raza Khurasani | Syed Muhammad Ali Rizvi | |
+| 11 | Titanic               | Sameer Pervez | Fizza Rubab | Ruhama Naeem | |
+| 12 | PehlwanGOATS X Pappa  | Syed Muhammad Abbas Haider | Agha Syed Nasir Mahmood Azeemi | Moid Ul Huda | |
+
