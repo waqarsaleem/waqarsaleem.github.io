@@ -1,6 +1,7 @@
 # Code Game, Spring 2022
 
 <img src="images/poster.png" alt="drawing" width="500"/>
+
 Below is important information regarding the contest. As much as possible, the contest will follow the [ICPC](https://icpc.global/) format. The platform on which the contest will be held is [CodeForces](https://codeforces.com/).
 
 ## Format
@@ -30,7 +31,7 @@ Once you and your buddies have registered on CodeForces, you can form your team 
 1. Click on "Create new team",
 1. Add your buddies' usernames.
 
-![CodeForces screenshot](./images/teams.png "Specifying your team")
+<img src="images/teams.png" alt="drawing" width="800"/>
 
 ## Participation
 
@@ -59,5 +60,45 @@ Additionally, there are special participation prizes.
 A brief session on selected problems from the contest will be held from 1315-1345h. Certificates will be awarded to the prize winners at the end of the review session.
 
 
+## Teams
+
+The registered teams for Code Game, Spring 2022 are
 
 
+|   | Team  | Member  | Member  | Member  | Special&nbsp;Eligiblity  |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| 1  | Snakes                | Sandesh Kumar | Iqra Siddiqui | Haania Siddiqui | | 
+| 2  | ashthetic.py		     | Syed&nbsp;Muhammad&nbsp;Abbas Haider Taqvi | Syed&nbsp;Muhammad&nbsp;Safi Haider Rizvi | Syed&nbsp;Muhammad&nbsp;Hussain | Wise Fools | 
+| 3  | _Seg Fault_			 | Ali Asghar Yousuf | Saad Abdul Hakim Qureshi | Shehryar Amin | Wise Fools |
+| 4  | Multiverse			 | Mujtaba Syed | Ifrah Ilyas | Khubaib Naeem Kasbati | |
+| 5  | MonkeyType			 | Meesum Ali Qazalbash | Ronit Kumar Kataria | Muhammad Murtaza | Wise Fools |
+| 6  | The Assassin's Creed  | Hamad Razzaq | Lakshman Maheshwari | Muhammad Jazzel Mehmood | Wise Fools |
+| 7  | FSM					 | Muneeb Shafique | Sajeel Alam | Fatima Alvi | Wise Fools |
+| 8  | HU Titans			 | Muhammad Oqba bin Jawed | abdul majid tanveer | Maha Usmani | Wise Fools |
+| 9  | Stack Underflow		 | Batool Ahmed | Muhammad Aqib Khan | Mohammad Hasan Tariq | |
+| 10 | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise&nbsp;Fools |
+| 11 | _Aleph Null_          | Ali Rizvi | Mehdi Raza Khurasani | Syed Muhammad Ali Rizvi | |
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
