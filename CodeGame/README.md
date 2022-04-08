@@ -62,7 +62,7 @@ A brief session on selected problems from the contest will be held from 1315-134
 
 ## Teams
 
-The registered teams for Code Game, Spring 2022 are
+The registered teams for Code Game, Spring 2022 so far are as follows. Team names in _italics_ have been assigned.
 
 
 |   | Team  | Member  | Member  | Member  | Special Eligiblity  |
@@ -78,7 +78,3 @@ The registered teams for Code Game, Spring 2022 are
 | 9  | Stack Underflow		 | Batool Ahmed | Muhammad Aqib Khan | Mohammad Hasan Tariq | |
 | 10 | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise Fools |
 | 11 | _Aleph Null_          | Ali Rizvi | Mehdi Raza Khurasani | Syed Muhammad Ali Rizvi | |
-
-| foo | bar |
-| --- | --- |
-| baz | bim |
