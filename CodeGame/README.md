@@ -1,5 +1,7 @@
 # Code Game, Spring 2022
 
+<img src="images/poster.png" alt="drawing" width="200"/>
+
 ![poster](./images/poster.png =200x "Code Game, Spring 2022")
 Below is important information regarding the contest. As much as possible, the contest will follow the [ICPC](https://icpc.global/) format. The platform on which the contest will be held is [CodeForces](https://codeforces.com/).
 
