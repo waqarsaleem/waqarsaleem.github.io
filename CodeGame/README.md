@@ -79,26 +79,6 @@ The registered teams for Code Game, Spring 2022 are
 | 10 | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise&nbsp;Fools |
 | 11 | _Aleph Null_          | Ali Rizvi | Mehdi Raza Khurasani | Syed Muhammad Ali Rizvi | |
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
+| foo | bar |
+| --- | --- |
+| baz | bim |
