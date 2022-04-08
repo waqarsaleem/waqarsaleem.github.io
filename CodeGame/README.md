@@ -66,7 +66,7 @@ The registered teams for Code Game, Spring 2022 are
 
 
 |   | Team  | Member  | Member  | Member  | Special&nbsp;Eligiblity  |
-|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| - | - | - | - | - | - | - | - | - | - | - | - | - | - | - | - |
 | 1  | Snakes                | Sandesh Kumar | Iqra Siddiqui | Haania Siddiqui | | 
 | 2  | ashthetic.py		     | Syed&nbsp;Muhammad&nbsp;Abbas Haider Taqvi | Syed&nbsp;Muhammad&nbsp;Safi Haider Rizvi | Syed&nbsp;Muhammad&nbsp;Hussain | Wise Fools | 
 | 3  | _Seg Fault_			 | Ali Asghar Yousuf | Saad Abdul Hakim Qureshi | Shehryar Amin | Wise Fools |
