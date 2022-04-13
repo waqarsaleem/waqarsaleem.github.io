@@ -1,4 +1,3 @@
-/Users/wsaleem/Documents/Courses/CS201/assessments/hw3/solution-new/corpus/
 122
 fiction 12
 16 11-15/15.txt 11-15/14.txt 11-15/12.txt 11-15/11.txt 1-10/6-10/10 1-10/1-5/5.txt 1-10/1-5/4.txt 1-10/1-5/3.txt 1-10/1-5/1.txt
