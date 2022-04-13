@@ -1,0 +1,72 @@
+/Users/wsaleem/Documents/Courses/CS201/assessments/hw3/solution-new/corpus/
+35
+am
+16 126
+pan
+13 23
+hum
+12 52
+fee
+9 197
+cal
+14 83
+cry
+3 35
+fir
+10 110
+may
+5 101
+sud
+2 54
+wit
+15 689
+sme
+5 33
+mag
+6 78
+she
+18 938
+dev
+15 29
+exist
+4 26
+hel
+10 115
+lan
+6 42
+leg
+6 22
+mad
+6 127
+mar
+18 66
+mer
+10 30
+mis
+20 51
+nig
+9 125
+per
+27 96
+play
+4 23
+quest
+4 24
+real
+11 108
+sha
+41 217
+tea
+16 100
+gen
+8 32
+trim
+0 0
+univ
+3 10
+bina
+0 0
+inver
+0 0
+zoo
+0 0
