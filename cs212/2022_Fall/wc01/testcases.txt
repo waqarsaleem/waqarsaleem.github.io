@@ -1,0 +1,108 @@
+4
+13
+q1 q2 q3
+a b c
+q1
+q2 q3
+q1 a q1
+q1 b q2
+q1 c q3
+q2 a q3
+q2 b q2
+q2 c q2
+q3 a q1
+q3 b q3
+q3 c q2
+5
+abba
+baabaababbbba
+bccbbaaaabb
+cccccccc
+bcabcabaca
+1
+0
+1
+1
+0
+12
+q1 q2 q3 q4
+0 1
+q1
+q4
+q1 0 q2
+q1 1 q3
+q2 0 q2
+q2 1 q4
+q3 0 q3
+q3 1 q4
+q4 0 q4
+q4 1 q4
+6
+
+001
+110
+10
+1110010
+00000
+0
+1
+1
+0
+1
+0
+12
+q1 q2 q3 q4
+^ _
+q1
+q4
+q1 ^ q2
+q1 _ q1
+q2 ^ q2
+q2 _ q3
+q3 ^ q4
+q3 _ q1
+q4 ^ q4
+q4 _ q4
+5
+_^_
+^_^
+
+___^^_^
+__^__^_
+0
+1
+0
+1
+0
+16
+q0 q1 q2 qsink
+x y z
+q0
+q0 q1 q2
+q0 x q0
+q0 y q1
+q0 z q2
+q1 x qsink
+q1 y q1
+q1 z q2
+q2 x qsink
+q2 y qsink
+q2 z q2
+qsink x qsink
+qsink y qsink
+qsink z qsink
+7
+xxzyx
+xyx
+zz
+yzz
+
+xzzxyyx
+xxxxyzz
+0
+0
+1
+1
+1
+0
+1
