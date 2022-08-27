@@ -1,4 +1,4 @@
-4
+7
 13
 q1 q2 q3
 a b c
@@ -106,3 +106,79 @@ xxxxyzz
 1
 0
 1
+14
+q1 q2 q3 q4 q5
+u d
+q3
+q3
+q1 u q1
+q1 d q2
+q2 u q1
+q2 d q3
+q3 u q2
+q3 d q4
+q4 u q3
+q4 d q5
+q5 u q4
+q5 d q5
+4
+uuudu
+dudududu
+uududdudu
+uuudddu
+0
+1
+0
+1
+14
+q1 q2 q3 q4 q5
+a b
+q1
+q2 q4
+q1 a q2
+q1 b q4
+q2 a q2
+q2 b q3
+q3 a q2
+q3 b q3
+q4 a q5
+q4 b q4
+q5 a q5
+q5 b q4
+5
+bbba
+aa
+ababababababa
+ababababbabaaabbbabaab
+a
+0
+1
+1
+0
+1
+12
+q1 q2 q3 q4
+0 1
+q1
+q1 q2 q3
+q1 0 q1
+q1 1 q2
+q2 0 q3
+q2 1 q2
+q3 0 q4
+q3 1 q2
+q4 0 q4
+q4 1 q4
+6
+11111111011
+10101010100111
+100
+01010101011
+0001001100
+010101010
+1
+0
+0
+1
+0
+1 
