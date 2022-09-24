@@ -1,8 +1,12 @@
-# Code Game, Spring 2022
+# Code Game, Fall 2022, Session 1
 
-<img src="images/poster.png" alt="drawing" width="500"/>
+<img src="images/poster-fall-2022-1.png" alt="drawing" width="500"/>
 
-Below is important information regarding the contest. As much as possible, the contest will follow the [ICPC](https://icpc.global/) format. The platform on which the contest will be held is [CodeForces](https://codeforces.com/).
+The contest will be held on [CodeForces](https://codeforces.com/) and will follow the [ICPC](https://icpc.global/) format. Read below for futher information and instructions.
+
+(_Archived Code Games_: [Spring 2022](./spring-22.html))
+
+----
 
 ## Format
 
@@ -10,32 +14,28 @@ All teams will be assigned the same problem set through CodeForces. You will als
 
 ## Logistics
 
-The contest takes place on Saturday, 9 April, in Linux Lab, from 11-13h. Your team should reach the lab by 1045h so that you are settled in by 11h when the contest begins.
+The contest takes place on Wednesday, 28 September, in Math Lab, from 845-1130h. Your team should reach the lab by 830h so that you are settled in when the contest begins.
 
-## Registration
-
-Prior registration is required to participate in the contest. In order to register, you will need:
+Prior registration through [this form](https://forms.office.com/r/tm1WFaNYax) is required. In order to register, you will need:
 
 1. a CodeForces username,
 2. a CodeForces team (see instructions below)
 3. an invitation to register
 
-Updates on the registration process, if any, will be shared in the Teams chat.
+## Teams
 
-### Teams
+Once you and your buddies have registered individually on CodeForces, you can form your team as follows. Log in to CodeForces and
 
-Once you and your buddies have registered on CodeForces, you can form your team as follows. Once you are logged in to CodeForces,
-
-1. Click on your username on the top right,
-1. Click on "TEAMS" in the top menu,
-1. Click on "Create new team",
-1. Add your buddies' usernames.
+1. click on your username on the top right,
+1. click on "TEAMS" in the top menu,
+1. click on "Create new team",
+1. add your buddies' usernames.
 
 <img src="images/teams.png" alt="drawing" width="800"/>
 
 ## Participation
 
-Participation is in teams of 3. Each team will use a single computer with _no Internet access_ except to CodeForces. Rough paper will be provided but you must have your own writing implements. You will have to submit your devices during participation.
+Participation is in teams of 3. Each team will use a single computer with _no Internet access_ except to CodeForces. Rough paper will be provided but you must have your own writing implements. You will have to submit your devices prior to the start of the competition.
 
 ## Scoring
 
@@ -49,34 +49,33 @@ A scoreboard with live scores of all the participating teams will be projected o
   - the penalties for each incorrect submission for the problem.
 
 ## Prizes and Review
-There is a prize for each of the top 3 ranked positions.
+There is a certificate for each of the following teams
+- the team with the overall first rank
+- the team with the overall second rank
+- the team with the overall third rank
+- [Neophytes]: the best performing team consisting of all students in their first year.
+- [Wise Fools](https://www.wgbh.org/news/2017/10/25/how-we-live/what-exactly-sophomore-and-what-does-it-mean-be-junior-and-senior): the best performing team consisting of all students in their sophomore year.
+- [Coder Girls](https://www.facebook.com/girlsintechsg/photos/a.10150798804401928/10158017542091928/?type=3): the best performing team consisting of all female students.
 
-Additionally, there are special participation prizes.
-
-1. Up and Coming: awarded to the top ranked team whose members are all currently in their first year.
-1. [Wise Fools](https://www.wgbh.org/news/2017/10/25/how-we-live/what-exactly-sophomore-and-what-does-it-mean-be-junior-and-senior): awarded to the top ranked team whose members are all currently in their sophomore year.
-1. [Coder Girls](https://www.facebook.com/girlsintechsg/photos/a.10150798804401928/10158017542091928/?type=3): awarded to the top ranked team whose members are all female.
-
-A brief session on selected problems from the contest will be held from 1315-1345h. Certificates will be awarded to the prize winners at the end of the review session.
-
+We will take a short break at the end of the competition. This will be followed by a brief review of the problems and handing out of the certificates.
 
 ## Teams
 
-The registered teams for Code Game, Spring 2022 so far are as follows. Team names in _italics_ have been assigned.
+The registered teams for Code Game, Fall 2022, Session 1 so far are as follows. Team names in _italics_ have been assigned.
 
 
-|   | Team  | Member  | Member  | Member  | Special Eligiblity  |
+|   | Team  | Member  | Member  | Member  | Special Eligibility  |
 | - | - | - | - | - | - |
-| 1  | Snakes                | Sandesh Kumar | Iqra Siddiqui | Haania Siddiqui | | 
-| 2  | ashthetic.py		     | Syed Muhammad Abbas Haider Taqvi | Syed Muhammad Safi Haider Rizvi | Syed Muhammad Hussain | Wise Fools | 
-| 3  | _Seg Fault_			 | Ali Asghar Yousuf | Saad Abdul Hakim Qureshi | Shehryar Amin | Wise Fools |
-| 4  | Multiverse			 | Mujtaba Syed | Ifrah Ilyas | Khubaib Naeem Kasbati | |
-| 5  | MonkeyType			 | Meesum Ali Qazalbash | Ronit Kumar Kataria | Muhammad Murtaza | Wise Fools |
-| 6  | The Assassin's Creed  | Hamad Razzaq | Lakshman Maheshwari | Muhammad Jazzel Mehmood | Wise Fools |
-| 7  | FSM					 | Muneeb Shafique | Sajeel Alam | Fatima Alvi | Wise Fools |
-| 8  | HU Titans			 | Muhammad Oqba bin Jawed | abdul majid tanveer | Maha Usmani | Wise Fools |
-| 9  | GigaCorpus			 | Muhammad Najeeb Jilani | Ahmed Atif | Jahania Shah | Wise Fools |
-| 10 | _Aleph Null_          | Ali Rizvi | Mehdi Raza Khurasani | Syed Muhammad Ali Rizvi | |
-| 11 | Titanic               | Sameer Pervez | Fizza Rubab | Ruhama Naeem | |
-| 12 | PehlwanGOATS X Pappa  | Syed Muhammad Abbas Haider | Agha Syed Nasir Mahmood Azeemi | Moid Ul Huda | |
+| |  |  | | | | 
+| |  |  | | | | 
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
+| |  |  | | | |
 
