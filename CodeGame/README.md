@@ -1,6 +1,6 @@
 # Code Game, Fall 2022, Session 1
 
-<img src="images/poster-fall-2022-1.png" alt="drawing" width="500"/>
+<img src="images/poster-fall-22-1.jpeg" alt="drawing" width="500"/>
 
 The contest will be held on [CodeForces](https://codeforces.com/) and will follow the [ICPC](https://icpc.global/) format. Read below for futher information and instructions.
 
