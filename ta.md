@@ -12,10 +12,10 @@ Please share the following with me:
 1. Your earned grade in this course, and any other courses that you believe to be related or have taken with me.
 1. A note on any prior TA experience.
 1. An interesting problem (with solution) or proof that you think brings together several aspects of the course.
-1. A link to a post made by you in the [CS Students](https://web.yammer.com/main/org/habib.edu.pk/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI1NjM4MTI0MzM5MiJ9/all) group that alludes meaningfully to your problem above and its solution. 
+1. A link to a post made by you in the [CS Students](https://web.yammer.com/main/org/habib.edu.pk/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI1NjM4MTI0MzM5MiJ9/all) group that alludes meaningfully to your problem or proof.
 1. A statement, no more than a page, on the importance of this course in the CS major, why you want to TA it, and why you will be a good TA for it.
 
-Please submit your CV and LaTeX source for a document containing the remaining requirements. A Word submission or non-compiling LaTeX (it must compile on my machine, I use MacTeX) leads to automatic disqualification. The mode of submission is an email to me with the title: *TA application: <course_name> - <semester>*, e.g. _TA application: CS 113 - Spring 2023_. Your email will have 2 attachments as mentioned.
+Please submit your CV and LaTeX source for a document containing the remaining requirements. A Word submission or non-compiling LaTeX (it must compile on my machine, I use MacTeX) leads to automatic disqualification. The mode of submission is an email to me with the title, "TA application: \<course_name\> - \<semester\>", e.g. "TA application: CS 113 - Spring 2023". Your email will have 2 attachments as mentioned.
 
 I will judge your application on
 
