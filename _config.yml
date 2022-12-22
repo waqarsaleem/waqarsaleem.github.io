@@ -1,5 +1,14 @@
-theme: jekyll-theme-hacker
-name: Waqar Saleem's page
-description: Information about Waqar Saleem
-url: "https://waqarsaleem.github.io/"
-markdown: gfm
+name: Waqar Saleem
+description: Waqar Saleem's site
+url: "https://waqarsaleem.github.io"
+lsi: false
+safe: true
+source: [your repo's top level directory]
+incremental: false
+highlighter: rouge
+gist:
+  noscript: false
+markdown: GFM
+math_engine: mathjax
+syntax_highlighter: rouge
+title: null
