@@ -1,4 +1,4 @@
-# Graduate School Recommendations by WS
+# Graduate School Recommendation by WS
 
 It is great that you are thinking of pursuing higher studies. Learning is a lifelong journey and I am happy that you are taking the spark kindled in your undergraduate to the next level.
 
@@ -16,9 +16,9 @@ For me to be able to write you a [meaningful recommendation](https://cs.brown.ed
 * We have had significant interaction outside class, e.g. club events, hobby projects, Work Study, general meetings, etc.
 * You are a current student or graduated within the last two years
 
-If you meet the above, please share with me the items in the list below.
+If you meet the above, please share with me the requirements mentioned below.
 
-If you do not meet the above, any recommendation that I write for you will be flimsy, superficial, and may not even be positive. Ultimately, it will be counterproductive. In both our interests, I will not write it. Recommendation letters are personal and based on personal interaction. It seems that you did not build the necessary rapport with me. You should instead seek a letter from a faculty member with whom you did build this relation.
+If you do not meet the above, any recommendation that I write for you will be flimsy, superficial, and may not even be positive. Ultimately, it will be counterproductive. In both our interests, I will not write it. Recommendation letters are personal and based on substantial interaction. It seems that you did not build the necessary rapport with me. You should instead seek a letter from a faculty member with whom you did build this relation.
 
 ### Suitability
 
