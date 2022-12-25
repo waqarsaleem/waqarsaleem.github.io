@@ -1,6 +1,6 @@
 # Hall of Fame
 
-<font size = "2">[WS](https://waqarsaleem.github.io/) > [Teaching](./teaching) > Hall of Fame</font>
+<font size = "2">[WS](https://waqarsaleem.github.io/) > [Teaching](./index) > Hall of Fame</font>
 
 Course evaluations are a lot of fun. Every once in a while, a student formulates their frustrations so cleverly that I cannot help but chuckle. Here is my Hall of Fame of interesting comments from student evaluations. I am putting them here verbatim. In some cases, I will put the relevant fragment instead of the entire comment.
 
