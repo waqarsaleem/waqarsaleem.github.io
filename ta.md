@@ -14,7 +14,21 @@ Please share the following with me:
 1. An interesting problem (with solution) or proof that you think brings together several aspects of the course.
 1. A link to a post made by you in the [CS Students](https://web.yammer.com/main/org/habib.edu.pk/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI1NjM4MTI0MzM5MiJ9/all) group that alludes meaningfully to your problem or proof.
 1. A statement, no more than a page, on the importance of this course in the CS major, why you want to TA it, and why you will be a good TA for it.
-
+1. Your availability for each of the recitation sections of your intended course in Spring 2023.
+   - CS/MATH 113:
+	 1. R1: Fri, 1730-1820h, WS, E-101
+	 1. R2: Fri, 1730-1820h, MAZ, W-321
+	 1. R3: Wed, 1730-1820h, MSS, W-321
+	 1. R4: Thu, 1330-1420h, RR, W-234
+	 1. R5: Thu, 1030-1120h, RR, E-003
+	 1. R6: Fri, 1730-1820h, TBA, W-242
+	 1. R7: Fri, 1730-1820h, TBA, E-011
+   - CS 412:
+	 1. R1: Fri, 1030-1120h, WS, E-011
+	 1. R2: Fri, 1430-1520h, FA, E-010
+	 1. R3: Tue, 1130-1220h, TBA, E-003
+	 1. R4: Wed, 1330-1420h, TBA, W-242
+ 
 Please submit your CV and LaTeX source for a document containing the remaining requirements. A Word submission or non-compiling LaTeX (it must compile on my machine, I use MacTeX) leads to automatic disqualification. The mode of submission is an email to me with the title, "TA application: \<course_name\> - \<semester\>", e.g. "TA application: CS 113 - Spring 2023". Your email will have 2 attachments as mentioned.
 
 I will judge your application on
