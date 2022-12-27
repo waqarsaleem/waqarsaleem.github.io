@@ -18,4 +18,4 @@ Course evaluations are a lot of fun. Every once in a while, a student formulates
 
 Full evaluations are available at the course-wise links on my [teaching page](./index).
 
-<font size = "2">[Back to teaching](./index)</font>
+<font size = "2">[Back to teaching](./)</font>
