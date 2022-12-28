@@ -28,7 +28,13 @@ Different people have different strategies. Some only want to apply to reach pro
 
 ## Requirements
 
-Now that eligibility is out of the way, _see me in person_ and _seek my consent_. If I already have too many requests and will not be able to meet your deadlines, I will tell you so. If we decide to proceed, I will ask you to share the following items with me. 
+Now that eligibility is out of the way, _see me in person_ and _seek my consent_. I may still not be able to write you a recommendation. Some reasons are:
+
+- I have too many requests and will not be able to meet your deadlines.
+- I have already recommended or have committed to recommend someone else to the target admission cycle of your program.
+- In my opinion, you are not a good fit for your target program, e.g. your demonstrated interest lies in applications but you are applying to a theory-heavy group.
+
+In such cases, I will let you know. If we decide to proceed, I will ask you to share the following items with me. 
 
 My list of requirements below is long but necessary. The items serve to jog my memory, provide me an overview of your achievements and ambitions, and inform about typical items asked in recommendation forms. Please share the following with me:
 
@@ -47,9 +53,11 @@ My list of requirements below is long but necessary. The items serve to jog my m
 
 Some of the above may overlap. The more information I have on you, the better I will be able to write a recommendation letter that is not generic. They may also be repetition from our meeting. I meet many students - having everything in one place in written form will help me to consult the necessary details when I begin to write your letter.
 
-In sharing the above, please be decent and do not send me Word files.
+### Submission
 
-## Conditions
+Please share the above as an email to me with the title: "Material for recommendation letter". Please be decent and do not send me Word files.
+
+## Conditions and Expectations
 
 Recommendations are confidential and I will not share my recommendation with you. Rather, you may enter my information as a referee at your target university. Be sure to waive your right to access the recommendation otherwise I will not provide it. This is standard procedure for recommendations. The university will then contact me and I will share the recommendation with them directly.
 
