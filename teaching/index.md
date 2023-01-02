@@ -25,7 +25,7 @@ I am a first-principles person. My approach is articulated nicely in the followi
 - CS 212 Nature of Computation: Fall 2021, Fall 2022 
 - CS 224 Object Oriented Programming and Design Methodologies: Summer 2017, Fall 2018, Summer 2019, Fall 2019
 - CS 400 Computer Science Senior Seminar: Fall 2018
-- CS 412 Algorithms: Design and Analysis: Spring 2022, Spring 2023
+- [CS 412 Algorithms: Design and Analysis](./cs412): Spring 2022, Spring 2023
 - CS 440 Computer Graphics: Spring 2018, Fall 2019, Fall 2020, Fall 2021, Fall 2022
 
 ## Other
