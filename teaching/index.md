@@ -16,7 +16,7 @@ I am a first-principles person. My approach is summarized in the following comme
 
 - CS 100 Computer Science Freshman Seminar: Fall 2017, Fall 2018
 - CS 101 Programming Fundamentals: Fall 2017, Fall 2018, Fall 2019 (lab only), Fall 2022
-- CS 110-1 Computational Thinking I-II: Fall 2014, Fall 2015, Spring 2016, Summer 2016, Fall 2016, Spring 2017
+- CS 110-1 Computational Thinking I-II: Fall 2014, Fall 2015, Spring 2016, _Summer 2016_, Fall 2016, Spring 2017
 - CORE 111 Logical Problem Solving: Fall 2016, Spring 2017
 - [CS/MATH 113 Discrete Mathematics](cs113): Spring 2018, Spring 2020, Spring 2021, Spring 2022, Spring 2023
 - CS 130 Digital Logic and Design: Spring 2016
@@ -24,10 +24,11 @@ I am a first-principles person. My approach is summarized in the following comme
 - CS 200 Functional Data Structures: Spring 2016, Spring 2017
 - CS 201 Data Structures II: Spring 2018, Spring 2020, Spring 2021, Spring 2022 
 - CS 212 Nature of Computation: Fall 2021, Fall 2022 
-- CS 224 Object Oriented Programming and Design Methodologies: Summer 2017, Fall 2018, Summer 2019, Fall 2019
+- CS 224 Object Oriented Programming and Design Methodologies: _Summer 2017_, Fall 2018, _Summer 2019_, Fall 2019
 - CS 400 Computer Science Senior Seminar: Fall 2018
 - [CS 412 Algorithms: Design and Analysis](./cs412): Spring 2022, Spring 2023
 - CS 440 Computer Graphics: Spring 2018, Fall 2019, Fall 2020, Fall 2021, Fall 2022
+- [CS 491-2 Kaavish I-II](./kaavish): every semester since Fall 2017
 
 ## [__Pitzer College__](https://www.tamu.edu), Spring 2019
 
