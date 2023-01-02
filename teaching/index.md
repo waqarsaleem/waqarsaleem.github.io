@@ -6,7 +6,7 @@ This page covers my teaching at [Habib University](https://habib.edu.pk) with wh
 
 I have taught diverse courses, listed below, but some constants in my courses are minimal use of paper, the use of technology, and teamwork. Except for short, in-class quizzes and in-person exams, none of my coursework involves paper submissions. This is made possible by the use of LMS and, more usefully, [GitHub Classroom](https://classroom.github.com). Assignment submissions are usually code and/or LaTeX files.
 
-Students today have immense access to information. I am but one source. Rather than a purveyor of information, I try to be a deliverer of outcomes. One important outcome is for students to see each other as collaborators, and to build the confidence to convey, share, and receive information among each other. Working with others is an important life skill required in whichever pursuit the students choose after their undergraduate. I enforce teamwork in my courses and over time have built a [_buddy system_](./buddy) around it.
+Students today have immense access to information. I am but one source. Rather than a purveyor of information, I try to be a deliverer of outcomes. One important outcome is for students to see each other as collaborators, and to build the confidence to convey, share, and receive information among each other. Working with others is an important life skill required in whichever pursuit the students choose after their undergraduate. I enforce teamwork in my courses and over time have developed a [_buddy system_](./buddy) around it.
 
 I am a first-principles person. My approach is articulated nicely in the following comment from a student evaluation of one of my courses.
 
