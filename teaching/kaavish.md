@@ -1,6 +1,11 @@
-# CS/MATH 113 Discrete Mathematics
+# CS 491-2 Kaavish I-II
 
-<font size = "2">[WS](https://waqarsaleem.github.io/) > [Teaching](./) > CS 113</font>
+<font size = "2">[WS](https://waqarsaleem.github.io/) > [Teaching](./) > CS 491-2</font>
+
+[Kaavish](https://www.rekhta.org/urdudictionary?keyword=kaavish) is the CS capstone project. It spans the entirety of the senior year.
+
+<!---
+
 
 This is a second-semester course for CS students at Habib University and very quickly got cross-listed with MATH. Like similar courses in most CS programs, this course introduces students to logic, proofs, and other foundational mathematical material like sets, functions, and graphs. The intention is two-fold. One, students are prepared for rigorous logical arguments such as those needed in later courses to prove computability and correctness of algorithms. Two, students become familiar with the mathematical constructs that underlie much of theoretical computer science.
 
@@ -41,5 +46,7 @@ We had to transition online in the middle of this semester.
 [LMS](https://lms.habib.edu.pk/portal/site/99da1b59-6b84-4954-8a67-8abcade30512/page/17f66821-21d7-48f7-b7fc-bf2424dbbf26) (now defunct) | [Syllabus](./syllabi/Syllabus - CS 113 - Spring 2018.pdf) | [Evaluation](./evals/Eval - CS 113 - Spring 2018.pdf) | [GitHub Classroom](https://classroom.github.com/classrooms/34622007-cs-113-discrete-mathematics-spring-2018)
 
 This was the first and most ambitious offering. Many topics were originally included in the syllabus, which turned out to be unrealistic.
+
+-->
 
 <font size = "2">[Back to teaching](./)</font>
