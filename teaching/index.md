@@ -36,7 +36,7 @@ I am a first-principles person. My approach is summarized in the following comme
 
 ## [__Texas A&M Univeristy__](https://www.tamu.edu), Fall 2013
 
-- CSCE 443/VIST 487 Game Development: Fall 2013
+- CSCE 443/VIST 487 Game Development: Fall 2013 (with [Scott Schaefer](https://people.engr.tamu.edu/schaefer/index.html))
 
 ## [__FAST-NUCES Karachi__](https://khi.nu.edu.pk), 2011-2012
 
