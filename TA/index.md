@@ -16,7 +16,7 @@ I need the following from you.
 1. Your availability for each of the sections of your intended courses in Fall 2023, as indicated in the [information page](./times).
 1. (optional) A link to a post made by you in the [CS Students](https://web.yammer.com/main/org/habib.edu.pk/groups/eyJfdHlwZSI6Ikdyb3VwIiwiaWQiOiI1NjM4MTI0MzM5MiJ9/all) group that alludes meaningfully to your problem or proof.
 
-Please submit your CV and LaTeX source for a document containing the remaining requirements. A Word submission or non-compiling LaTeX (it must compile on my machine, I use the latest [MacTeX](https://www.tug.org/mactex/)) leads to automatic disqualification. The mode of submission is an email to the email addresses indicated in the [information page](./times) and with the title, "TA application: \<course_name\> - \<semester\>", e.g. "TA application: CS 101 - Fall 2023". Your email will have 2 attachments as mentioned.
+Please submit your CV and LaTeX source for a document containing the remaining requirements. A Word submission or non-compiling LaTeX (it must compile on my machine, I use the latest [MacTeX](https://www.tug.org/mactex/)) leads to automatic disqualification. The mode of submission is an email to the email addresses indicated in the [information page](./times) and with the title, "TA application: \<course_name\> - \<semester\>", e.g., "TA application: CS 101 - Fall 2023". Your email will have 2 attachments as mentioned.
 
 I will judge your application on
 
@@ -30,6 +30,6 @@ I will judge your application on
 - your creativity in the above tasks - good CS people are rational, great CS people are crazy (within reasonable bounds)
 - your judgement in the above tasks - achieving the right balance between too little and too much
 
-The above may seem arbitrary but I hope that with some thought, you can appreciate how these relate to your eventual responsibilities as a TA. Some of the criteria may contradict, e.g., you may be find a more creative problem if you take longer. I hope that you also appreciate that achieving the right trade-off among competing factors is an important life skill, one that plays out quite explicitly in CS. Lastly, some things above may be vague. That is intentional, and yes, it can be unfair. But I want to test your judgment as a CS student.
+The above may seem arbitrary but I hope that with some thought, you can appreciate how these relate to your eventual responsibilities as a TA. Some of the criteria may contradict, e.g., given more time, you may find a more creative problem. I hope that you also appreciate that achieving the right trade-off among competing factors is an important life skill, one that plays out quite explicitly in CS. Lastly, some things above may be vague. That is intentional, and yes, it can be unfair. But I want to test your judgment as a CS student.
 
 viel Spaß!
