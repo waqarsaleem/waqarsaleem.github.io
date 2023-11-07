@@ -80,7 +80,7 @@ Please share the above as an email to me with the title: "Material for recommend
 
 Recommendations are confidential and I will not share my recommendation with you. Rather, you may enter my information as a referee at your target university. Be sure to waive your right to access the recommendation otherwise I will not provide it. This is standard procedure for recommendations. The university will then contact me and I will share the recommendation with them directly.
 
-I lose track of recommendations and will not be able to help if the deadline is less than a week away. So please give me ample time and send me reminders, if necessary, as the deadline approaches. I expect you to inform me about the outcome, positive or negative, of each application as it becomes known to you.
+I lose track of recommendations and will not be able to help if the deadline is less than a week away. So please give me ample time and send me reminders, if necessary, as the deadline approaches. I expect you to inform me about the outcome, positive or negative, of each application as it becomes known to you. If your application is positive, I will happily add your name to the list above.
 
 ---
 
