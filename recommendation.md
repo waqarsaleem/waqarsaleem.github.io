@@ -70,7 +70,7 @@ My list of requirements below is long but necessary. The items serve to jog my m
 1. your general career goals
 1. any of the statements (personal statement, statement of purpose, etc.) that you have submitted or are going to submit as part of your application. If the personal nature of these statements makes it uncomfortable for you to share them, please share an edited version or some other formulation of its content as appropriate.
 
-Some of the above may overlap. The more information I have on you, the better I will be able to write a recommendation letter that is not generic. They may also be repetition from our meeting. I meet many students and things get mixe dup in my head - having everything in one place in written form will help me to consult the necessary details when I begin to write your letter.
+Some of the above may overlap. The more information I have on you, the better I will be able to write a recommendation letter that is not generic. They may also be repetition from our meeting. It is difficult for me to precisely remember the details of specific students so having everything in one place in written form helps me to look up the necessary information when I begin to write your letter.
 
 ### Submission
 
