@@ -4,22 +4,26 @@ It is great that you are thinking of pursuing higher studies. Learning is a life
 
 ## The Importance of a Recommendation Letter
 
-Graduate studies in CS are rigorous and demanding. Graduate programs want to make sure that you will fit - are you up to the mark; can you handle the pressure; have you demonstrated the necessary skills, aptitude, and character; do you have appropriate work habits; have you built a good foundation in your undergraduate; can you work well in teams; can you work independently and solve your own problems; are you a good communicator; will you be able to assist professors as a TA; have you demonstrated suitable intellectual ability; and so on. You have probably filled forms and written statements to convince the program of your qualities. Faculty at the program wants a peer assessment of your abilities and achievements. That is where recommendation letters come in.
+Graduate studies in CS are rigorous and demanding. Graduate programs want to make sure that you will fit - are you up to the mark; can you handle the pressure; have you demonstrated the necessary skills, aptitude, and character; do you have appropriate work habits; have you built a good foundation in your undergraduate; can you work well in teams; can you work independently and solve your own problems; are you a good communicator; will you be able to assist professors as a TA; have you demonstrated suitable intellectual ability; and so on. You have probably filled forms and written statements to convince the program of your qualities. Faculty at the program wants a peer assessment of your abilities and achievements. That is where faculty recommendations come in.
 
 ## Successful Applications
 
-I have written many recommendation letters over the years. I put good effort into them and remember them fondly. Hence, my list of requirements further below. My letters were included in the successful applications of the following students.
-- [Aala Masood Siddiqi](https://www.linkedin.com/in/aala-siddiqi-5036a4189), HU 2020, Fulbright 2022
-- [Aliza Rafiq](https://www.linkedin.com/in/aliza-rafiq-230500/), HU 2023, Perimeter 2021
-- [Anas Masood](https://www.linkedin.com/in/anas-masood/), HU 2018, Neurasmus 2018
-- [Anisa Aisha Ahmed](https://www.linkedin.com/in/anisa-aisha-1a7903176/), HU 2021, Fulbright 2023
-- [Iqra Siddiqui](https://www.linkedin.com/in/iqra-siddiqui-ab278519a/), HU 2023, GHC 2022
-- [Julia Read](https://www.linkedin.com/in/juliahread/), HMC 2020, SFU 2020
-- [Muhammad Shahrom Ali](https://www.linkedin.com/in/mshahromali/), HU 2021, Concordia 2022
-- [Osman Ali Mian](https://www.linkedin.com/in/osman-ali-mian-79476b41/), FAST 2014, Saarland 2016
-- [Saman Gaziani](https://www.linkedin.com/in/samangaziani/), HU 2020, UT Dallas 2020
-- [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU 2020, Georgia Tech 2022
+I have written many recommendation letters over the years. I put good effort into them and remember them fondly. Hence my list of requirements further below. My letters were part of the successful applications of the following candidates.
 
+- [Aala Masood Siddiqi](https://www.linkedin.com/in/aala-siddiqi-5036a4189), HU CND 2020, Fulbright 2022
+- [Aliza Rafiq](https://www.linkedin.com/in/aliza-rafiq-230500/), HU CS 2023, Perimeter Summer School 2021
+- [Anand Kumar](https://www.linkedin.com/in/anand-kumar-rajpal/), HU CS 2022, MS CS at University of Calgary starting 2024
+- [Anas Masood](https://www.linkedin.com/in/anas-masood/), HU CS 2018, Neurasmus 2018
+- [Anisa Aisha Ahmed](https://www.linkedin.com/in/anisa-aisha-1a7903176/), HU CS 2021, Fulbright 2023
+- [Iqra Siddiqui](https://www.linkedin.com/in/iqra-siddiqui-ab278519a/), HU CS 2023, Grace Hopper Celebration (GHC) Student Scholars ship 2022
+- [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU CS 2020, MS CS at Georgia Institute of Technology starting 2022
+- [Muhammad Shahrom Ali](https://www.linkedin.com/in/mshahromali/), HU CS 2021, MS CS Concordia University starting 2022
+- [Julia Read](https://www.linkedin.com/in/juliahread/), HMC CS 2020, MS CS at Simon Fraser University starting 2020
+- [Saman Gaziani](https://www.linkedin.com/in/samangaziani/), HU CS 2020, PhD at UT Dallas starting 2020
+- [Osman Ali Mian](https://www.linkedin.com/in/osman-ali-mian-79476b41/), FAST CS 2014, MS CS at Universität Saarland starting 2016
+- [Unaiza Ahsan](http://unaizahsan.com), Georgia Tech 2018, Schlumberger Faculty for the Future Fellowship 2017-18
+
+The achievements of the individuals above are due to their efforts, only a facet of which is documented by my letter. More of my recommendations are part of unsuccessful applications than of successful ones (the ratio exceeds 5 to 1 as of November 2023).
 
 ## Eligibility
 
@@ -70,7 +74,7 @@ Some of the above may overlap. The more information I have on you, the better I 
 
 ### Submission
 
-Please share the above as an email to me with the title: "Material for recommendation letter". Please be decent and do not send me Word files.
+Please share the above as an email to me with the title: "Material for recommendation letter". Please be decent and do not send Word files.
 
 ## Conditions and Expectations
 
