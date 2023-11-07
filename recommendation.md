@@ -62,7 +62,7 @@ My list of requirements below is long but necessary. The items serve to jog my m
 1. the names of my courses for which you served as a TA
 1. the semesters (absolute and relative, e.g., Fall 2020, first semester at university) in which you took the above courses or served as TA
 1. any other notable experiences with me, e.g., work study, hobby project etc.
-1. accounts of notable interactions from the above experiences. Be specific, e.g., "in our CS 101 class, during our discussion of the Tower of Hanoi problem, I pointed out how it can also be solved using iteration". The recommendation letter is much more impactful if I can include several of these. We have probably had many such interactions, and I very likely do not remember any of them. I am relying on you to remind me of them in detail.
+1. accounts of notable interactions from the above experiences. Be specific, e.g., "in our CS 101 class, during our discussion of the Towers of Hanoi problem, I pointed out how it can also be solved using iteration". The recommendation letter is much more impactful if I can include several of these. We have probably had many such interactions, and I very likely do not remember any of them. I am relying on you to remind me of them in detail.
 1. a copy of your transcript
 1. any university honor rolls (Dean's list, President's list, etc.) that you have been on
 1. the program(s) applied to and your reasons for doing so
