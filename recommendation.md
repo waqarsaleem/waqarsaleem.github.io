@@ -23,7 +23,7 @@ I have written many recommendation letters over the years. I put good effort int
 - [Osman Ali Mian](https://www.linkedin.com/in/osman-ali-mian-79476b41/), FAST CS 2014, MS CS at Universität Saarland starting 2016
 - [Unaiza Ahsan](http://unaizahsan.com), Georgia Tech 2018, Schlumberger Faculty for the Future Fellowship 2017-18
 
-The achievements of the individuals above are due to their efforts, only a facet of which is documented by my letter. More of my recommendations are part of unsuccessful applications than of successful ones (the ratio exceeds 5 to 1 as of November 2023).
+The achievements of the individuals above are due to their efforts, only a few facets of which are partially documented by my letter. More applicants who sought my recommendation were unsuccessful in their application than were successful (the ratio exceeds 5 to 1 as of November 2023), just so you know!
 
 ## Eligibility
 
