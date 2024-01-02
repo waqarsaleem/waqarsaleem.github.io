@@ -16,11 +16,11 @@ I have written many recommendation letters over the years. I put good effort int
 - [Anas Masood](https://www.linkedin.com/in/anas-masood/), HU CS 2018, Neurasmus 2018
 - [Anisa Aisha Ahmed](https://www.linkedin.com/in/anisa-aisha-1a7903176/), HU CS 2021, Fulbright 2023
 - [Iqra Siddiqui](https://www.linkedin.com/in/iqra-siddiqui-ab278519a/), HU CS 2023, Grace Hopper Celebration (GHC) Student Scholars ship 2022
-- [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU CS 2020, MS CS at Georgia Institute of Technology starting 2022
-- [Muhammad Shahrom Ali](https://www.linkedin.com/in/mshahromali/), HU CS 2021, MS CS Concordia University starting 2022
 - [Julia Read](https://www.linkedin.com/in/juliahread/), HMC CS 2020, MS CS at Simon Fraser University starting 2020
-- [Saman Gaziani](https://www.linkedin.com/in/samangaziani/), HU CS 2020, PhD at UT Dallas starting 2020
+- [Muhammad Shahrom Ali](https://www.linkedin.com/in/mshahromali/), HU CS 2021, MS CS Concordia University starting 2022
 - [Osman Ali Mian](https://www.linkedin.com/in/osman-ali-mian-79476b41/), FAST CS 2014, MS CS at Universität Saarland starting 2016
+- [Saman Gaziani](https://www.linkedin.com/in/samangaziani/), HU CS 2020, PhD at UT Dallas starting 2020
+- [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU CS 2020, MS CS at Georgia Institute of Technology starting 2022
 - [Unaiza Ahsan](http://unaizahsan.com), Georgia Tech 2018, Schlumberger Faculty for the Future Fellowship 2017-18
 
 The achievements of the individuals above are due to their efforts, only a few facets of which are partially documented by my letter. More applicants who sought my recommendation were unsuccessful in their application than were successful (the ratio exceeds 5 to 1 as of November 2023), just so you know!
