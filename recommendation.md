@@ -14,16 +14,18 @@ I have written many recommendation letters over the years. I put good effort int
 - [Ali Hamza](https://www.linkedin.com/in/alihamza99/), HU CS 2022, MS CS at New York University starting 2024
 - [Alina Qureshi](https://www.linkedin.com/in/alina-qureshi/), HU CS 2021, REPLAY European Master Program starting 2024
 - [Aliza Rafiq](https://www.linkedin.com/in/aliza-rafiq-230500/), HU CS 2023, Perimeter Summer School 2021
-- [Altaf Shaikh](https://www.linkedin.com/in/altafshk/), HU CS 2022, MS studies in CS at Universität des Saarlandes starting 2024
+- [Altaf Shaikh](https://www.linkedin.com/in/altafshk/), HU CS 2022, MS CS at Universität des Saarlandes starting 2024
 - [Anand Kumar](https://www.linkedin.com/in/anand-kumar-rajpal/), HU CS 2022, MS CS at University of Calgary starting 2024
 - [Anas Masood](https://www.linkedin.com/in/anas-masood/), HU CS 2018, Neurasmus 2018
 - [Anisa Aisha Ahmed](https://www.linkedin.com/in/anisa-aisha-1a7903176/), HU CS 2021, Fulbright 2023
+- [Arham Ahmed](https://www.linkedin.com/in/arham-ahmed-5502a2233/), HU CS 2022, MS Visual Computing at Universität des Saarlandes starting 2024
 - [Iqra Siddiqui](https://www.linkedin.com/in/iqra-siddiqui-ab278519a/), HU CS 2023, Grace Hopper Celebration (GHC) Student Scholarship 2022
 - [Julia Read](https://www.linkedin.com/in/juliahread/), HMC CS 2020, MS CS at Simon Fraser University starting 2020
-- [Moid ul Huda](https://www.linkedin.com/in/moid-huda/), HU CS 2022, MS Visual Computing at Saarland University starting 2025
+- [Moid ul Huda](https://www.linkedin.com/in/moid-huda/), HU CS 2022, MS Visual Computing at Universität des Saarlandes starting 2025
 - [Muhammad Shahrom Ali](https://www.linkedin.com/in/mshahromali/), HU CS 2021, MS CS Concordia University starting 2022
 - [Osman Ali Mian](https://www.linkedin.com/in/osman-ali-mian-79476b41/), FAST CS 2014, MS CS at Universität des Saarlandes starting 2016
 - [Saman Gaziani](https://www.linkedin.com/in/samangaziani/), HU CS 2020, PhD at UT Dallas starting 2020 (not pursued)
+- [Sameer Pervez](https://www.linkedin.com/in/sameerpervez/), HU CS 2023, MS HCI at University of Trento starting 2024 (not pursued)
 - [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU CS 2020, MS CS (online) at Georgia Institute of Technology starting 2022
 - [Syed Bilal Hoda](https://www.linkedin.com/in/syedbilalhoda/), HU CS 2020, MS CS (online) at Georgia Institute of Technology starting 2024
 - [Unaiza Ahsan](http://unaizahsan.com), Georgia Tech 2018, Schlumberger Faculty for the Future Fellowship 2017-18
