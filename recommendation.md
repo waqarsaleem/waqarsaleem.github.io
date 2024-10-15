@@ -18,7 +18,7 @@ I have written many recommendation letters over the years. I put good effort int
 - [Anand Kumar](https://www.linkedin.com/in/anand-kumar-rajpal/), HU CS 2022, MS CS at University of Calgary starting 2024
 - [Anas Masood](https://www.linkedin.com/in/anas-masood/), HU CS 2018, Neurasmus 2018
 - [Anisa Aisha Ahmed](https://www.linkedin.com/in/anisa-aisha-1a7903176/), HU CS 2021, Fulbright 2023
-- [Arham Ahmed](https://www.linkedin.com/in/arham-ahmed-5502a2233/), HU CS 2022, MS Visual Computing at Universität des Saarlandes starting 2025
+- [Arham Ahmed](https://www.linkedin.com/in/arham-ahmed-5502a2233/), HU CS 2022, MS Visual Computing at Universität des Saarlandes starting 2024
 - [Iqra Siddiqui](https://www.linkedin.com/in/iqra-siddiqui-ab278519a/), HU CS 2023, Grace Hopper Celebration (GHC) Student Scholarship 2022
 - [Julia Read](https://www.linkedin.com/in/juliahread/), HMC CS 2020, MS CS at Simon Fraser University starting 2020
 - [Moid ul Huda](https://www.linkedin.com/in/moid-huda/), HU CS 2022, MS Visual Computing at Universität des Saarlandes starting 2025
