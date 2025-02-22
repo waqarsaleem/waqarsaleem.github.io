@@ -16,7 +16,7 @@ I chose not to pursue any action that immediately or potentially violated any of
 
 Actions speak louder than words, I believe. Back when I followed cricket, a commentator said of Tendulkar that he is a quiet guy who lets his bat do the talking. Various life experiences have led me to abhor gossip and view with suspicion, those who relish it. I was keenly aware of the privilege that comes with positions of authority, and sought to subvert the common misuse of it by being especially fair and inclusive. 
 
-Essentially a lazy person, I leverage my comfort with computational tools to take an automation approach. I recognize the amount of botheration that can be saved by some forethought and structure. An ex-professor always advised to avoid "a system within a system". I remained by-the-book, straightforward, and forthright because, frankly, the alternatives are too much hassle to maintain.
+Essentially a lazy person, I leverage my comfort with computational tools to take an automation approach. I recognize the amount of botheration that can be saved by some forethought and structure. An ex-professor always advised to avoid "a system within a system". I remained by-the-book, straightforward, and forthright because, honestly, the alternatives are too much hassle to maintain.
 
 My CS background not only influenced my practices but was essential in shaping my sense of organization and systems.
 
