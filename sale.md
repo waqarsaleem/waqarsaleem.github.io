@@ -9,6 +9,7 @@ A curated collection of home and lifestyle items — each carefully photographed
 
 ---
   
+  
 ## ❌ SOLD — 🍽️ ChenOne Floral Dinnerware & Serveware Set  
 Elegant white 82-piece porcelain dinner and tea set with delicate green floral patterns. Includes plates, bowls, teapot, sugar pot, creamer, gravy boat, cups, and more — perfect for formal or festive dining. The soft botanical design and smooth ceramic finish bring both grace and durability to your table.
 
@@ -86,6 +87,7 @@ Frame dimensions:
 - Face: 35 in x 35 in
 - Depth: 1.5 in
 - Mirror diameter: 29 in
+
 The piece is deceptively heavy! Here is the [original product listing](https://www.customcreation.com.pk/product/raven-wooden-frame-mirror/).
 
 **Price:** PKR 20,000  
