@@ -8,8 +8,8 @@ title: Moving Out Sale
 A curated collection of home and lifestyle items — each carefully photographed and described below. Click on the links to view full photo albums on Facebook.
 
 ---
-
-## 🍽️ ChenOne Floral Dinnerware & Serveware Set  
+  
+## ❌ SOLD — 🍽️ ChenOne Floral Dinnerware & Serveware Set  
 Elegant white 82-piece porcelain dinner and tea set with delicate green floral patterns. Includes plates, bowls, teapot, sugar pot, creamer, gravy boat, cups, and more — perfect for formal or festive dining. The soft botanical design and smooth ceramic finish bring both grace and durability to your table.
 
 One tea cup is chipped. Everything else is in excellent condition.
