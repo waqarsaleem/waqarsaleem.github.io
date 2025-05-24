@@ -95,7 +95,7 @@ The piece is deceptively heavy! Here is the [original product listing](https://w
 
 ---
 
-## 🔌 Set of 2 Instant Electric Heating Water Faucets (Homelux)  
+## 🔌 Set of 2 Instant Electric Heating Water Faucets  
 Compact and efficient electric water heating taps. These plug-and-play faucet units heat water instantly — ideal for kitchens, utility areas, or backup hot water needs. Easy installation with no need for a geyser or central heating system.
 
 **Condition:** Brand new in original packaging (boxes slightly worn)  
