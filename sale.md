@@ -66,7 +66,7 @@ Table Dimensions:
 
 ---
 
-## 📌 Softboard Set (2 Pieces)  
+## ❌ SOLD — 📌 Softboard Set (2 Pieces)  
 Set of two green felt pinboards with silver edges. Perfect for home offices, study corners, or kitchens to pin up notes, lists, or artwork. Moderate visible wear.
 
 Dimensions and price:
