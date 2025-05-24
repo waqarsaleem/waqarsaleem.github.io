@@ -8,10 +8,11 @@ Graduate studies in CS are rigorous and demanding. Graduate programs want to mak
 
 ## Successful Applications
 
-I have written many recommendation letters over the years. I put good effort into them and remember them fondly. Hence my list of requirements further below. My letters were part of the successful applications of the following candidates.
+I have written many recommendation letters over the years. I put good effort into them and remember them fondly. Hence my list of requirements further below. My letters were included in the successful applications of the following candidates.
 
 - [Aala Masood Siddiqi](https://www.linkedin.com/in/aala-siddiqi-5036a4189), HU CND 2020, Fulbright 2022
-- [Adnan Asif](https://www.linkedin.com/in/aala-siddiqi-5036a4189), HU CS 2023, MS CS at Universität des Saarlandes starting 2025
+- [Abdul Wasay Usmani](https://www.linkedin.com/in/wasayusmani/), HU CS 2021, MS CS at George Washington University starting 2025 (not pursued)
+- [Adnan Asif](https://www.linkedin.com/in/aala-siddiqi-5036a4189), HU CS 2023, MS CS at Universität des Saarlandes starting 2025 (deferred)
 - [Ali Hamza](https://www.linkedin.com/in/alihamza99/), HU CS 2022, MS CS at New York University starting 2024
 - [Alina Qureshi](https://www.linkedin.com/in/alina-qureshi/), HU CS 2021, REPLAY European Master Program starting 2024
 - [Aliza Rafiq](https://www.linkedin.com/in/aliza-rafiq-230500/), HU CS 2023, Perimeter Summer School 2021
@@ -20,6 +21,7 @@ I have written many recommendation letters over the years. I put good effort int
 - [Anas Masood](https://www.linkedin.com/in/anas-masood/), HU CS 2018, Neurasmus 2018
 - [Anisa Aisha Ahmed](https://www.linkedin.com/in/anisa-aisha-1a7903176/), HU CS 2021, Fulbright 2023
 - [Arham Ahmed](https://www.linkedin.com/in/arham-ahmed-5502a2233/), HU CS 2022, MS CS at Universität des Saarlandes starting 2024
+- [Ifrah Ilays](https://www.linkedin.com/in/ifrah-ilyas-3361931aa/), HU CS 2023, MS CS at University of Delaware starting 2025
 - [Iqra Siddiqui](https://www.linkedin.com/in/iqra-siddiqui-ab278519a/), HU CS 2023, Grace Hopper Celebration (GHC) Student Scholarship 2022
 - [Julia Read](https://www.linkedin.com/in/juliahread/), HMC CS 2020, MS CS at Simon Fraser University starting 2020
 - [Moid ul Huda](https://www.linkedin.com/in/moid-huda/), HU CS 2022, MS Visual Computing at Universität des Saarlandes starting 2025
@@ -27,8 +29,9 @@ I have written many recommendation letters over the years. I put good effort int
 - [Osman Ali Mian](https://www.linkedin.com/in/osman-ali-mian-79476b41/), FAST CS 2014, MS CS at Universität des Saarlandes starting 2016
 - [Saman Gaziani](https://www.linkedin.com/in/samangaziani/), HU CS 2020, PhD at UT Dallas starting 2020 (not pursued)
 - [Sameer Pervez](https://www.linkedin.com/in/sameerpervez/), HU CS 2023, MS HCI at University of Trento starting 2024 (not pursued)
-- [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU CS 2020, MS CS (online) at Georgia Institute of Technology starting 2022
 - [Syed Bilal Hoda](https://www.linkedin.com/in/syedbilalhoda/), HU CS 2020, MS CS (online) at Georgia Institute of Technology starting 2024
+- [Syeda Naeema Hasan](https://www.linkedin.com/in/naeemahasan/), HU CS 2019, MS CS at Universität des Saarlandes starting 2025 (deferred)
+- [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU CS 2020, MS CS (online) at Georgia Institute of Technology starting 2022
 - [Unaiza Ahsan](http://unaizahsan.com), Georgia Tech 2018, Schlumberger Faculty for the Future Fellowship 2017-18
 
 The achievements of the individuals above are due to their efforts, only a few facets of which are partially documented by my letter. More applicants who sought my recommendation were unsuccessful in their application than were successful (the ratio exceeds 5 to 1 as of November 2023), just so you know!
