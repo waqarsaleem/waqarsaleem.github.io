@@ -43,7 +43,7 @@ Timeless and versatile, these 6 clear stemmed glasses are perfect for serving mo
 ---
 
 ## 🎨 3-Panel Abstract Wall Art  
-A bold and vibrant triptych that adds modern flair to any room. This original 3-panel artwork features geometric abstraction in warm tones of orange, yellow, red, and black — ideal for living rooms, dining areas, or office spaces. Framed and ready to hang.
+A bold and vibrant triptych in oil and acrylic that adds modern flair to any room. This original 3-panel artwork features geometric abstraction in warm tones of orange, yellow, red, and black — ideal for living rooms, dining areas, or office spaces. Framed and ready to hang.
 
 Panel dimensions:
 - Center: 53 in x 41 in
