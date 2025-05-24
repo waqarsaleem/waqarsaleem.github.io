@@ -100,7 +100,7 @@ Compact and efficient electric water heating taps. These plug-and-play faucet un
 
 **Condition:** Brand new in original packaging (boxes slightly worn)  
 
-**Price:** PKR 2,500 for each, PKR 4,000 for both  
+**Price:** PKR 2,000 for each, PKR 3,500 for both  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171275184060591&type=3)
 
 ---
