@@ -49,8 +49,6 @@ The painting is substantial in scale and can cover a full wall:
 - **Center panel:** 53 x 41 inches  
 - **Each side panel:** 53 x 23 inches  
 
-Framed and ready to hang.
-
 **Price:** PKR 20,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273723270591&type=3)
 
