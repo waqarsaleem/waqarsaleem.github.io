@@ -45,9 +45,11 @@ Timeless and versatile, these 6 clear stemmed glasses are perfect for serving mo
 ## 🎨 3-Panel Abstract Wall Art  
 A bold and vibrant triptych in oil and acrylic that adds modern flair to any room. This original 3-panel artwork features geometric abstraction in warm tones of orange, yellow, red, and black — ideal for living rooms, dining areas, or office spaces. Framed and ready to hang.
 
-Panel dimensions:
-- Center: 53 in x 41 in
-- Each side: 53 in x 23 in
+The painting is substantial in scale and can cover a full wall:  
+- **Center panel:** 53 x 41 inches  
+- **Each side panel:** 53 x 23 inches  
+
+Framed and ready to hang.
 
 **Price:** PKR 20,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273723270591&type=3)
@@ -58,8 +60,8 @@ Panel dimensions:
 Sturdy wooden dining table with beveled glass top and six matching high-back chairs. Chairs include fitted burgundy covers over lightly cushioned seats. Some visible wear on table edges and surface, reflected in the price. Great for daily use or as a starter dining set.
 
 Table Dimensions:
-- Top: 60 in x 36 in (5 ft x 3 ft)
-- Height: 30 in (2.5 ft)
+- Top: 60 x 36 inches (5 x 3 feet)
+- Height: 30 inches (2.5 feet)
 
 **Price:** PKR 20,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273737740591&type=3)
@@ -72,8 +74,8 @@ Set of two green felt pinboards with silver edges. Perfect for home offices, stu
 Dimensions and price:
 
 **Price:** 
-- 35.5 in x 23.5 in: PKR 700
-- 23.5 in x 17.5 in: PKR 500
+- 35.5 x 23.5 inches: PKR 700
+- 23.5 x 17.5 inches: PKR 500
 - PKR 1,000 for both
 
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273696020591&type=3)
@@ -84,9 +86,9 @@ Dimensions and price:
 An eye-catching large round mirror framed in a square wooden base with black-and-white triangle tile inlays. The bold, modern geometric pattern adds depth and character to any space — perfect for entryways, living rooms, or statement walls.
 
 Frame dimensions:
-- Face: 35 in x 35 in
-- Depth: 1.5 in
-- Mirror diameter: 29 in
+- Face: 35 x 35 inches
+- Depth: 1.5 inches
+- Mirror diameter: 29 inches
 
 The piece is deceptively heavy! Here is the [original product listing](https://www.customcreation.com.pk/product/raven-wooden-frame-mirror/).
 
