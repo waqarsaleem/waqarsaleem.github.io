@@ -69,8 +69,6 @@ Table Dimensions:
 ## ❌ SOLD — 📌 Softboard Set (2 Pieces)  
 Set of two green felt pinboards with silver edges. Perfect for home offices, study corners, or kitchens to pin up notes, lists, or artwork. Moderate visible wear.
 
-Dimensions and price:
-
 **Price:** 
 - 35.5 x 23.5 inches: PKR 700
 - 23.5 x 17.5 inches: PKR 500
@@ -80,15 +78,17 @@ Dimensions and price:
 
 ---
 
-## 🪞 Geometric Round Wall Mirror  
-An eye-catching large round mirror framed in a square wooden base with black-and-white triangle tile inlays. The bold, modern geometric pattern adds depth and character to any space — perfect for entryways, living rooms, or statement walls.
+## 🪞 Large Designer Wall Mirror with Geometric Frame  
 
-Frame dimensions:
-- Face: 35 x 35 inches
-- Depth: 1.5 inches
-- Mirror diameter: 29 inches
+A striking and substantial accent piece that commands attention. This large round mirror is set within a handcrafted square wood frame featuring bold black-and-white triangular tile inlays. The high-contrast geometric pattern gives it a sleek, modern edge — perfect for elevating entryways, lounges, or feature walls.
 
-The piece is deceptively heavy! Here is the [original product listing](https://www.customcreation.com.pk/product/raven-wooden-frame-mirror/).
+📏 **Dimensions:**  
+- **Overall frame:** 35 x 35 inches  
+- **Mirror diameter:** 29 inches  
+- **Depth:** 1.5 inches  
+- The mirror is deceptively heavy and built to last.
+
+This is not just a mirror — it's wall art that reflects your taste. Here is the [original product listing](https://www.customcreation.com.pk/product/raven-wooden-frame-mirror/).
 
 **Price:** PKR 20,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273776065591&type=3)
