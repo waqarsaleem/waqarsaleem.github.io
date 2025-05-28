@@ -9,7 +9,6 @@ A curated collection of home and lifestyle items — each carefully photographed
 
 ---
   
-  
 ## ❌ SOLD — 🍽️ ChenOne Floral Dinnerware & Serveware Set  
 Elegant white 82-piece porcelain dinner and tea set with delicate green floral patterns. Includes plates, bowls, teapot, sugar pot, creamer, gravy boat, cups, and more — perfect for formal or festive dining. The soft botanical design and smooth ceramic finish bring both grace and durability to your table.
 
@@ -54,7 +53,7 @@ The painting is substantial in scale and can cover a full wall:
 
 ---
 
-## 🍽️ 6-Seater Dining Table with Chairs  
+## ❌ SOLD — 🍽️ 6-Seater Dining Table with Chairs  
 Sturdy wooden dining table with beveled glass top and six matching high-back chairs. Chairs include fitted burgundy covers over lightly cushioned seats. Some visible wear on table edges and surface, reflected in the price. Great for daily use or as a starter dining set.
 
 Table Dimensions:
