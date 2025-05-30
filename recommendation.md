@@ -9,11 +9,11 @@ It is great that you are thinking of pursuing higher studies. Learning is a life
 
 ## The Importance of a Recommendation Letter
 
-Graduate studies in CS are rigorous and demanding. Graduate programs want to make sure that you will fit - are you up to the mark; can you handle the pressure; have you demonstrated the necessary skills, aptitude, and character; do you have appropriate work habits; have you built a good foundation in your undergraduate; can you work well in teams; can you work independently and solve your own problems; are you a good communicator; will you be able to assist professors as a TA; have you demonstrated suitable intellectual ability; and so on. You have probably filled forms and written statements to convince the program of your qualities. Faculty at the program wants a peer assessment of your abilities and achievements. That is where faculty recommendations come in.
+Graduate studies in CS are rigorous and demanding. Graduate programs want to make sure that you will fit - are you up to the mark; can you handle the pressure; have you demonstrated the necessary skills, aptitude, and character; do you have appropriate work habits; have you built a good foundation in your undergraduate; can you work well in teams; can you work independently and solve your own problems; are you a good communicator; will you be able to assist professors as a TA; have you demonstrated suitable intellectual ability; and so on. You have probably filled forms and written statements to convince the program of your qualities. Faculty at the program wants a peer assessment of your abilities and achievements. This is where faculty recommendations come in.
 
 ## Successful Applications
 
-I have written many recommendation letters over the years. I put good effort into them and remember them fondly. Hence my list of requirements further below. My letters were included in the successful applications of the following candidates.
+I have written many recommendation letters over the years. I invest good effort and remember each fondly. Hence my list of requirements further below. My letters were included in the successful applications of the following candidates.
 
 - [Aala Masood Siddiqi](https://www.linkedin.com/in/aala-siddiqi-5036a4189), HU CND 2020, Fulbright 2022
 - [Abdul Wasay Usmani](https://www.linkedin.com/in/wasayusmani/), HU CS 2021, MS CS at George Washington University starting 2025 (not pursued)
@@ -39,7 +39,7 @@ I have written many recommendation letters over the years. I put good effort int
 - [Syeda Areeba Kazmi](https://www.linkedin.com/in/areeba-kazmi-a840a8112/), HU CS 2020, MS CS (online) at Georgia Institute of Technology starting 2022
 - [Unaiza Ahsan](http://unaizahsan.com), Georgia Tech 2018, Schlumberger Faculty for the Future Fellowship 2017-18
 
-The achievements of the individuals above are due to their efforts, only a few facets of which are partially documented by my letter. More applicants who sought my recommendation were unsuccessful in their application than were successful (the ratio exceeds 5 to 1 as of November 2023), just so you know!
+The achievements of these individuals are due to their efforts, only a few facets of which are documented by my letter. More applicants who sought my recommendation were unsuccessful in their application than were successful (the ratio exceeds 5 to 1 as of November 2023), just so you know!
 
 ## Eligibility
 
@@ -53,11 +53,11 @@ For me to be able to write you a [meaningful recommendation](https://cs.brown.ed
 
 If you meet the above, please share with me the requirements mentioned below.
 
-If you do not meet the above, any recommendation that I write for you will be flimsy, superficial, and may not even be positive. Ultimately, it will be counterproductive. In both our interests, I will not write it. Recommendation letters are personal and based on substantial interaction. It seems that you did not build the necessary rapport with me. You should instead seek a letter from a faculty member with whom you did build this relation.
+If you do not meet the above, any recommendation that I write for you will be flimsy, superficial, and may not even be positive. Ultimately, it will be counterproductive. In both our interests, I will not write it. Recommendation letters are personal and based on substantial interaction. It seems that you did not build the necessary rapport with me. You should instead seek a letter from a faculty member with whom you built this relation.
 
 ### Suitability
 
-When applying to a program, it is helpful to think about students who joined the program previously and self-assess how you compare with them. This should give you a fair idea about your own chances there. That said, there is no harm in trying for a few schools which seem to have higher standards than what you have so far been able to demonstrate. In fact, it is recommended to apply to a few _reach_ programs, a good number of _safe_ programs, and a couple of _backup_ programs.
+When applying to a program, it is helpful to think about students who joined the program previously and self-assess how you compare with them. This should give you a fair idea about your own chances. That said, there is no harm in trying for a few schools which seem to have higher standards than what you have so far been able to demonstrate. In fact, it is recommended to apply to a few _reach_ programs, a good number of _safe_ programs, and a couple of _backup_ programs.
 
 Different people have different strategies. Some only want to apply to reach programs as they want to join top programs only. Some are not comfortable applying to backup programs as they do not feel it worth their while to join a below-par program. Some just want to join any program. Whatever your strategy, be realistic about your applications, and orient yourself accordingly.
 
