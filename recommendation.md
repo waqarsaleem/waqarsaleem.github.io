@@ -1,3 +1,8 @@
+---
+layout: no-header
+title: Moving Out Sale
+---
+
 # Graduate School Recommendation by WS
 
 It is great that you are thinking of pursuing higher studies. Learning is a lifelong journey and I am happy that you are taking the spark kindled in your undergraduate to the next level.
