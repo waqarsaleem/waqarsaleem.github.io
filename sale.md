@@ -87,7 +87,7 @@ A striking and substantial accent piece that commands attention. This large roun
 - **Depth:** 1.5 inches  
 - The mirror is deceptively heavy and built to last.
 
-This is not just a mirror — it's wall art that reflects your taste. Here is the [original product listing](https://www.customcreation.com.pk/product/raven-wooden-frame-mirror/).
+This is not just a mirror — it's wall art that reflects your taste. Here is the [original product listing](https://www.instagram.com/p/Crl4JX0Iu__/?hl=en&img_index=1).
 
 **Price:** PKR 20,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273776065591&type=3)
