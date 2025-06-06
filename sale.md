@@ -103,3 +103,14 @@ Compact and efficient electric water heating taps. These plug-and-play faucet un
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171275184060591&type=3)
 
 ---
+
+# For Sale: Toyota Corolla Altis 1.6 Automatic – 2020 Model (BSL-122)
+
+A well-maintained **Toyota Corolla Altis 1.6L Automatic (2020)**, registered in **November 2020** in **Sindh**, with **clear CPLC and safe custody status**. This elegant **silver saloon** combines style, reliability, and comfort, making it perfect for city drives and longer journeys alike.
+
+This vehicle has been kept in excellent condition and is up-to-date with tax and registration. It's a reliable choice for personal or family use.
+
+**Price:** PKR 5M
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171370675650591)
+
+---
