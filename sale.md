@@ -147,3 +147,14 @@ Modern and sophisticated, this eye-catching console table features an **oval-sha
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371248350591)
 
 ---
+
+## 🔥🍽️ Dawlance Microwave Oven
+
+This is a **[Dawlance MWO DW-132 S Digital Solo](https://www.dawlance.com.pk/heating-microwave-oven/mwo-dw-132-s-digital-solo-microwave-ovens)** microwave oven with a spacious **32-litre capacity**, perfect for everyday heating and cooking needs. It has been used for a year and is in **excellent working condition**, very well-maintained and almost like new. There are a few **minor rust spots on the metallic body near the door** but these are purely cosmetic and do not affect functionality in any way. The oven heats and operates perfectly.
+
+Here is a [short video](https://drive.google.com/file/d/1ycwMfh2mZ3GwgA13L81kqg0FKqqfqGXk/view?usp=sharing) of the oven.
+
+**Price:** PKR 20,000  
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371961395591)
+
+---
