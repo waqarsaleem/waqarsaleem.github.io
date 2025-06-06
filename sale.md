@@ -113,7 +113,7 @@ This vehicle has been kept in excellent condition and is up-to-date with tax and
 
 **Note:** Will be delivered in early to mid July
 
-**Price:** PKR 5M
+**Price:** PKR 5M  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171370675650591)
 
 ---
@@ -130,7 +130,7 @@ This charming vintage-style console table features a **solid wooden top with a w
 - **Top:** 16 x 44 inches  
 - **Height:** 30 inches  
 
-**Price:** PKR 7,000
+**Price:** PKR 7,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371223780591)
 
 ### 🧊 Glass-Top Oval Console Table
@@ -141,7 +141,7 @@ Modern and sophisticated, this eye-catching console table features an **oval-sha
 - **Top:** 25 x 60 inches  
 - **Height:** 36 inches  
 
-**Price:** PKR 12,000
+**Price:** PKR 12,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371248350591)
 
 ---
