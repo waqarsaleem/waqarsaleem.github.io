@@ -117,3 +117,32 @@ This vehicle has been kept in excellent condition and is up-to-date with tax and
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171370675650591)
 
 ---
+
+## 🪑 Two Stylish Console Tables from ChenOne
+
+Both were purchased less than a year ago and are in **excellent condition**. Each one features a sturdy **wrought iron base**, but they differ in design and personality — one leans vintage and ornate, the other modern and bold.
+
+### 🪵 Antique-Finish Wooden Console Table
+
+This charming vintage-style console table features a **solid wooden top with a whitewashed antique finish**, delicately accented with **hand-carved edge detailing** that adds character and texture. The base is made of **elegantly curved wrought iron**, complete with cross-bracing that enhances both stability and aesthetics. It fits perfectly behind a sofa, in an entryway, or as a decorative piece against a wall. 
+
+📏 **Dimensions:**  
+- **Top:** 16 x 44 inches  
+- **Height:** 30 inches  
+
+**Price:** PKR 7,000
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371223780591)
+
+### 🧊 Glass-Top Oval Console Table
+
+Modern and sophisticated, this eye-catching console table features an **oval-shaped glass top** supported by a **black wrought iron frame with a geometric grid design**. The sleek lines and open structure make it a striking yet functional addition to any lounge, hallway, or even a stylish serving corner. At **36 inches tall**, it stands slightly higher than standard consoles, adding a bold vertical presence. 
+
+📏 **Dimensions:**  
+- **Top:** 25 x 60 inches  
+- **Height:** 36 inches  
+
+**Price:** PKR 12,000
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371248350591)
+
+---
+
