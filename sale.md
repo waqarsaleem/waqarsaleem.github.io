@@ -5,7 +5,7 @@ title: Moving Out Sale
 
 # 🛒 Featured Products for Sale
 
-A curated collection of home and lifestyle items — each carefully photographed and described below. Click on the links to view full photo albums on Facebook. You will have to pick them up from Clifton on your own.
+A curated collection of home and lifestyle items — each carefully photographed and described below. Click on the links to view full photo albums on Facebook. Purchased items will have to be picked up from Clifton.
 
 ---
   
@@ -122,6 +122,8 @@ This vehicle has been kept in excellent condition and is up-to-date with tax and
 
 Both were purchased less than a year ago and are in **excellent condition**. Each one features a sturdy **wrought iron base**, but they differ in design and personality — one leans vintage and ornate, the other modern and bold.
 
+**Price:** PKR 17,000 for both, individual prices given below  
+
 ### 🪵 Antique-Finish Wooden Console Table
 
 This charming vintage-style console table features a **solid wooden top with a whitewashed antique finish**, delicately accented with **hand-carved edge detailing** that adds character and texture. The base is made of **elegantly curved wrought iron**, complete with cross-bracing that enhances both stability and aesthetics. It fits perfectly behind a sofa, in an entryway, or as a decorative piece against a wall. 
@@ -145,4 +147,3 @@ Modern and sophisticated, this eye-catching console table features an **oval-sha
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371248350591)
 
 ---
-
