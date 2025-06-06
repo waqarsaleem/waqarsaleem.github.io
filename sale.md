@@ -5,7 +5,7 @@ title: Moving Out Sale
 
 # 🛒 Featured Products for Sale
 
-A curated collection of home and lifestyle items — each carefully photographed and described below. Click on the links to view full photo albums on Facebook.
+A curated collection of home and lifestyle items — each carefully photographed and described below. Click on the links to view full photo albums on Facebook. You will have to pick them up from Clifton on your own.
 
 ---
   
