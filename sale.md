@@ -122,9 +122,9 @@ This vehicle has been kept in excellent condition and is up-to-date with tax and
 
 Both were purchased less than a year ago and are in **excellent condition**. Each one features a sturdy **wrought iron base**, but they differ in design and personality — one leans vintage and ornate, the other modern and bold.
 
-**Price:** PKR 17,000 for both, individual prices given below  
+~**Price:** PKR 17,000 for both, individual prices given below~  
 
-### 🪵 Antique-Finish Wooden Console Table
+### ❌ SOLD — 🪵 Antique-Finish Wooden Console Table
 
 This charming vintage-style console table features a **solid wooden top with a whitewashed antique finish**, delicately accented with **hand-carved edge detailing** that adds character and texture. The base is made of **elegantly curved wrought iron**, complete with cross-bracing that enhances both stability and aesthetics. It fits perfectly behind a sofa, in an entryway, or as a decorative piece against a wall. 
 
@@ -158,3 +158,14 @@ Here is a [short video](https://drive.google.com/file/d/1ycwMfh2mZ3GwgA13L81kqg0
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371961395591)
 
 ---
+
+## 🪑 Mega Johnny Chair Set – 6 Chairs + Table
+
+This is a 7-piece set including **six Mega Johnny plastic armchairs** and a matching **rattan-style plastic table** — perfect for both indoor and outdoor use.
+
+The chairs are **lightweight, durable, stackable, and weather-resistant**, with **metal legs**, armrests, and built-in grip handles for easy movement. The set is **used**, with **minor rust and light scratch marks on some chair legs**, but remains in **good functional condition**.
+
+Ideal for **rooftop BBQ parties on Eid** and for **patios, gardens, balconies, lounges, or cafés**. The set is easy to maintain and provides comfortable, casual seating with a clean, modern look.
+
+**Price:** PKR 5,000  
+[📸 Original product listing on Daraz](https://www.daraz.pk/products/i109208684-s1448255990.html)
