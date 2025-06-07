@@ -94,7 +94,6 @@ The seat is upholstered in **soft fabric** with a modern design and its neutral 
 - **Harness:** Adjustable strap system with central buckle  
 - **Comfort:** Deep padding and contoured support  
 - **Brand:** Nania (Made in Europe)  
-- **Installation:** Compatible with rear- or forward-facing positions  
 
 Perfect for daily use or long trips — clean, safe, and child-friendly.
 
