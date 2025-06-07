@@ -159,7 +159,7 @@ Here is a [short video](https://drive.google.com/file/d/1ycwMfh2mZ3GwgA13L81kqg0
 
 ---
 
-## 🪑 Mega Johnny Chair Set – 6 Chairs + Table
+## ❌ SOLD — 🪑 Mega Johnny Chair Set – 6 Chairs + Table
 
 This is a 7-piece set including **six Mega Johnny plastic armchairs** and a matching **rattan-style plastic table** — perfect for both indoor and outdoor use.
 
