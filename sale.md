@@ -68,7 +68,7 @@ Purchased less than a year ago and is in **excellent condition**. Modern and sop
 - **Top:** 25 x 60 inches  
 - **Height:** 36 inches  
 
-**Price:** PKR 12,000  
+**Price:** PKR 7,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371248350591)
 
 ---
@@ -79,7 +79,7 @@ This is a **[Dawlance MWO DW-132 S Digital Solo](https://www.dawlance.com.pk/hea
 
 Here is a [short video](https://drive.google.com/file/d/1ycwMfh2mZ3GwgA13L81kqg0FKqqfqGXk/view?usp=sharing) of the oven.
 
-**Price:** PKR 20,000  
+**Price:** PKR 10,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371961395591)
 
 ---
