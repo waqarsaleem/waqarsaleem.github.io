@@ -73,7 +73,7 @@ Purchased less than a year ago and is in **excellent condition**. Modern and sop
 
 ---
 
-## 🔥🍽️ Dawlance Microwave Oven
+## ❌ SOLD — 🔥🍽️ Dawlance Microwave Oven
 
 This is a **[Dawlance MWO DW-132 S Digital Solo](https://www.dawlance.com.pk/heating-microwave-oven/mwo-dw-132-s-digital-solo-microwave-ovens)** microwave oven with a spacious **32-litre capacity**, perfect for everyday heating and cooking needs. It has been used for a year and is in **excellent working condition**, very well-maintained and almost like new. There are a few **minor rust spots on the metallic body near the door** but these are purely cosmetic and do not affect functionality in any way. The oven heats and operates perfectly.
 
