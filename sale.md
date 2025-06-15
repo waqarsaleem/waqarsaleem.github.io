@@ -9,26 +9,6 @@ A curated collection of home and lifestyle items — each carefully photographed
 
 ---
 
-## ❌ SOLD — 🥂 Stemware   
-Timeless and versatile, these 6 clear stemmed glasses are perfect for serving mocktails or sparkling water. The classic shape and comfortable grip make them suitable for both formal dinners and casual gatherings.
-
-**Price:** PKR 2,000  
-[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273712200591&type=3)
-
----
-
-## ❌ SOLD — 🎨 3-Panel Abstract Wall Art  
-A bold and vibrant triptych in oil and acrylic that adds modern flair to any room. This original 3-panel artwork features geometric abstraction in warm tones of orange, yellow, red, and black — ideal for living rooms, dining areas, or office spaces. Framed and ready to hang.
-
-The painting is substantial in scale and can cover a full wall:  
-- **Center panel:** 53 x 41 inches  
-- **Each side panel:** 53 x 23 inches  
-
-**Price:** PKR 20,000  
-[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273723270591&type=3)
-
----
-
 ## 🪞 Large Designer Wall Mirror with Geometric Frame  
 
 A striking and substantial accent piece that commands attention. This large round mirror is set within a handcrafted square wood frame featuring bold black-and-white triangular tile inlays. The high-contrast geometric pattern gives it a sleek, modern edge — perfect for elevating entryways, lounges, or feature walls.
@@ -181,5 +161,27 @@ Ideal for **rooftop BBQ parties on Eid** and for **patios, gardens, balconies, l
 
 **Price:** PKR 5,000  
 [📸 Original product listing on Daraz](https://www.daraz.pk/products/i109208684-s1448255990.html)
+
+---
+
+## ❌ SOLD — 🥂 Stemware   
+Timeless and versatile, these 6 clear stemmed glasses are perfect for serving mocktails or sparkling water. The classic shape and comfortable grip make them suitable for both formal dinners and casual gatherings.
+
+**Price:** PKR 2,000  
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273712200591&type=3)
+
+---
+
+## ❌ SOLD — 🎨 3-Panel Abstract Wall Art  
+A bold and vibrant triptych in oil and acrylic that adds modern flair to any room. This original 3-panel artwork features geometric abstraction in warm tones of orange, yellow, red, and black — ideal for living rooms, dining areas, or office spaces. Framed and ready to hang.
+
+The painting is substantial in scale and can cover a full wall:  
+- **Center panel:** 53 x 41 inches  
+- **Each side panel:** 53 x 23 inches  
+
+**Price:** PKR 20,000  
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273723270591&type=3)
+
+---
 
 -->
