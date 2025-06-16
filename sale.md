@@ -53,17 +53,6 @@ Purchased less than a year ago and is in **excellent condition**. Modern and sop
 
 ---
 
-## ❌ SOLD — 🔥🍽️ Dawlance Microwave Oven
-
-This is a **[Dawlance MWO DW-132 S Digital Solo](https://www.dawlance.com.pk/heating-microwave-oven/mwo-dw-132-s-digital-solo-microwave-ovens)** microwave oven with a spacious **32-litre capacity**, perfect for everyday heating and cooking needs. It has been used for a year and is in **excellent working condition**, very well-maintained and almost like new. There are a few **minor rust spots on the metallic body near the door** but these are purely cosmetic and do not affect functionality in any way. The oven heats and operates perfectly.
-
-Here is a [short video](https://drive.google.com/file/d/1ycwMfh2mZ3GwgA13L81kqg0FKqqfqGXk/view?usp=sharing) of the oven.
-
-**Price:** PKR 10,000  
-[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371961395591)
-
----
-
 ## 👶 Nania Child Car Seat – Comfortable & Secure
 
 This is a **Nania-brand child car seat** in good condition, offering a safe and comfortable travel solution for infants and toddlers. It features an **adjustable harness system**, padded sides, and a high back for added support.
@@ -181,6 +170,16 @@ The painting is substantial in scale and can cover a full wall:
 
 **Price:** PKR 20,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171273723270591&type=3)
+
+---
+## ❌ SOLD — 🔥🍽️ Dawlance Microwave Oven
+
+This is a **[Dawlance MWO DW-132 S Digital Solo](https://www.dawlance.com.pk/heating-microwave-oven/mwo-dw-132-s-digital-solo-microwave-ovens)** microwave oven with a spacious **32-litre capacity**, perfect for everyday heating and cooking needs. It has been used for a year and is in **excellent working condition**, very well-maintained and almost like new. There are a few **minor rust spots on the metallic body near the door** but these are purely cosmetic and do not affect functionality in any way. The oven heats and operates perfectly.
+
+Here is a [short video](https://drive.google.com/file/d/1ycwMfh2mZ3GwgA13L81kqg0FKqqfqGXk/view?usp=sharing) of the oven.
+
+**Price:** PKR 10,000  
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371961395591)
 
 ---
 
