@@ -26,7 +26,7 @@ This is not just a mirror — it's wall art that reflects your taste. Here is th
 
 ---
 
-## 🚗 Toyota Corolla Altis 1.6 Automatic – 2020 Model
+## ❌ SOLD — 🚗 Toyota Corolla Altis 1.6 Automatic – 2020 Model
 
  **For Sale: Toyota Corolla Altis 1.6 Automatic – 2020 Model (BSL-122)**
 A well-maintained **Toyota Corolla Altis 1.6L Automatic (2020)**, registered in **November 2020** in **Sindh**, with **clear CPLC and safe custody status** and **total running under 40K km** and **no touch-ups**. This elegant **silver saloon** combines style, reliability, and comfort, making it perfect for city drives and longer journeys alike.
@@ -53,7 +53,7 @@ Purchased less than a year ago and is in **excellent condition**. Modern and sop
 
 ---
 
-## 👶 Nania Child Car Seat – Comfortable & Secure
+## ❌ SOLD — 👶 Nania Child Car Seat – Comfortable & Secure
 
 This is a **Nania-brand child car seat** in good condition, offering a safe and comfortable travel solution for infants and toddlers. It features an **adjustable harness system**, padded sides, and a high back for added support.
 
