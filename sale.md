@@ -26,6 +26,9 @@ This is not just a mirror — it's wall art that reflects your taste. Here is th
 
 ---
 
+<!--
+
+
 ## ❌ SOLD — 🚗 Toyota Corolla Altis 1.6 Automatic – 2020 Model
 
  **For Sale: Toyota Corolla Altis 1.6 Automatic – 2020 Model (BSL-122)**
@@ -69,7 +72,9 @@ Perfect for daily use or long trips — clean, safe, and child-friendly.
 **Price:** PKR 2,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171378381245591&type=3)
 
-<!--
+---
+
+
 ## ❌ SOLD — 🍽️ ChenOne Floral Dinnerware & Serveware Set  
 Elegant white 82-piece porcelain dinner and tea set with delicate green floral patterns. Includes plates, bowls, teapot, sugar pot, creamer, gravy boat, cups, and more — perfect for formal or festive dining. The soft botanical design and smooth ceramic finish bring both grace and durability to your table.
 
