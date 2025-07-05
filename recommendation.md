@@ -1,6 +1,6 @@
 ---
 layout: no-header
-title: Moving Out Sale
+title: WS recommendation
 ---
 
 # Graduate School Recommendation by WS
