@@ -46,7 +46,7 @@ Photos show the lamps in various lighting configurations-main light on, body lig
 These lamps add both **ambient lighting** and **visual elegance**, making them ideal for drawing rooms, bedrooms, or formal sitting areas.
 
 **Price:** PKR 10,000  
-[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171623685460591&type=3]
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171623685460591&type=3)
 
 ---
 
