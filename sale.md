@@ -26,30 +26,6 @@ This is not just a mirror — it's wall art that reflects your taste. Here is th
 
 ---
 
-## 🛋️ Pair of Decorative Table Lamps with Dual Lighting – Bronze Base & Faux Mother-of-Pearl Body
-
-This elegant **set of two matching table lamps** combines classic charm with warm ambiance, making it perfect for framing a sofa or enhancing a cozy corner. Each lamp features a **bronze-finished base** and a sculpted body with a **faux mother-of-pearl finish**, giving it a luxurious, opalescent glow whether lit or unlit.
-
-Both lamps come with **two light sources**:
-- A **main bulb** under the drum shade for general lighting  
-- An **inner body light** (night light / accent light) within the base, which creates a soft, golden glow when turned on independently or with the main bulb
-
-Please note that the **slightly tilted shade** which can be easily adjusted or realigned.
-
-Photos show the lamps in various lighting configurations-main light on, body light on, or both—alongside a full-room shot where they **flank a grey velvet couch**, offering a glimpse of how striking they look in a living room setting.
-
-- **Includes:** 2 matching lamps  
-- **Material:** Bronze-finish base, faux pearl body, drum shades  
-- **Lighting:** Dual light sources – main bulb + inner accent light  
-- **Condition:** Very good overall; minor shade tilt needs fixing
-
-These lamps add both **ambient lighting** and **visual elegance**, making them ideal for drawing rooms, bedrooms, or formal sitting areas.
-
-**Price:** PKR 10,000  
-[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171623685460591&type=3)
-
----
-
 <!--
 
 
@@ -209,6 +185,30 @@ Here is a [short video](https://drive.google.com/file/d/1ycwMfh2mZ3GwgA13L81kqg0
 
 **Price:** PKR 10,000  
 [📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171371961395591)
+
+---
+
+## 🛋️ Pair of Decorative Table Lamps with Dual Lighting – Bronze Base & Faux Mother-of-Pearl Body
+
+This elegant **set of two matching table lamps** combines classic charm with warm ambiance, making it perfect for framing a sofa or enhancing a cozy corner. Each lamp features a **bronze-finished base** and a sculpted body with a **faux mother-of-pearl finish**, giving it a luxurious, opalescent glow whether lit or unlit.
+
+Both lamps come with **two light sources**:
+- A **main bulb** under the drum shade for general lighting  
+- An **inner body light** (night light / accent light) within the base, which creates a soft, golden glow when turned on independently or with the main bulb
+
+Please note that the **slightly tilted shade** which can be easily adjusted or realigned.
+
+Photos show the lamps in various lighting configurations-main light on, body light on, or both—alongside a full-room shot where they **flank a grey velvet couch**, offering a glimpse of how striking they look in a living room setting.
+
+- **Includes:** 2 matching lamps  
+- **Material:** Bronze-finish base, faux pearl body, drum shades  
+- **Lighting:** Dual light sources – main bulb + inner accent light  
+- **Condition:** Very good overall; minor shade tilt needs fixing
+
+These lamps add both **ambient lighting** and **visual elegance**, making them ideal for drawing rooms, bedrooms, or formal sitting areas.
+
+**Price:** PKR 10,000  
+[📸 View Facebook Album](https://www.facebook.com/media/set/?set=a.10171623685460591&type=3)
 
 ---
 
