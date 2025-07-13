@@ -29,6 +29,7 @@ I have written many recommendation letters over the years. I invest good effort 
 - [Ifrah Ilays](https://www.linkedin.com/in/ifrah-ilyas-3361931aa/), HU CS 2023, MS CS at University of Delaware starting 2025
 - [Iqra Siddiqui](https://www.linkedin.com/in/iqra-siddiqui-ab278519a/), HU CS 2023, Grace Hopper Celebration (GHC) Student Scholarship 2022
 - [Julia Read](https://www.linkedin.com/in/juliahread/), HMC CS 2020, MS CS at Simon Fraser University starting 2020
+- [Ma'aaz Arshad Shaheen](https://www.linkedin.com/in/maaazshaheen/), HU CS 20XX, MS Bioinformatics at Universität des Saarlandes starting 2025
 - [Moid ul Huda](https://www.linkedin.com/in/moid-huda/), HU CS 2022, MS Visual Computing at Universität des Saarlandes starting 2025
 - [Muhammad Shahrom Ali](https://www.linkedin.com/in/mshahromali/), HU CS 2021, MS CS Concordia University starting 2022
 - [Osman Ali Mian](https://www.linkedin.com/in/osman-ali-mian-79476b41/), FAST CS 2014, MS CS at Universität des Saarlandes starting 2016
