@@ -27,7 +27,9 @@ This project is foreseen to be heavy in research, math, and implementation, espe
 
 _Prerequisites_: Some introduction to 3D shape representation and rendering, e.g. as gained in the course CS 440 Computer Graphics, will be helpful. A strong grip on mathematics and programming, as well as comfort reading technical research papers will also be required.
 
-_References_: [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/), Takikawa et al., CVPR 2021.
+_References_: 
+
+- [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/), Takikawa et al., CVPR 2021.
 
 [top](#kaavish-with-ws)
 

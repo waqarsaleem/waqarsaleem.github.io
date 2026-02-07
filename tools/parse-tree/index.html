@@ -1,388 +1,391 @@
 <!--
-SPDX-License-Identifier: GPL-2.0-only
+    SPDX-License-Identifier: GPL-2.0-only
 
-This file is a modified derivative of jsSyntaxTree
-https://github.com/int2str/jssyntaxtree
+    This file is a modified derivative of jsSyntaxTree
+    https://github.com/int2str/jssyntaxtree
 
-Original work © André Eisenbach and contributors.
-Modifications and accessibility enhancements © Waqar Saleem.
+    Original work © André Eisenbach and contributors.
+    Modifications and accessibility enhancements © Waqar Saleem.
 
-Distributed under the GNU General Public License v2.
+    Distributed under the GNU General Public License v2.
   -->
 
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Accessible Parse Tree Renderer (Bracket Notation)</title>
-  <meta name="description" content="Title II / WCAG-aligned parse tree renderer for bracket notation. Keyboard operable, screen-reader friendly, with text alternative and SVG/PNG export." />
-  <style>
-    :root{
-      --bg:#fff; --fg:#111; --muted:#444; --border:#b8b8b8; --focus:#0b57d0;
-      --nt-fill:#e8f0fe; --t-fill:#fff4e5; --nt-stroke:#174ea6; --t-stroke:#b06000;
-      --line:#222; --error:#b00020; --ok:#0b6b0b;
-    }
-    
-    /* Theme variants (set on <html data-theme="...">). */
-    html[data-theme="soft-blue"]{
-      --bg:#f3f8ff;
-      --fg:#0f172a;
-      --muted:#334155;
-      --border:#aab7c6;
-      --focus:#0b57d0;
-
-      --nt-fill:#e3efff;
-      --t-fill:#fff4e5;
-      --nt-stroke:#1d4ed8;
-      --t-stroke:#b45309;
-
-      --line:#0f172a;
-      --error:#b00020;
-      --ok:#0b6b0b;
-    }
-
-    html[data-theme="sepia"]{
-      --bg:#fbf4e6;
-      --fg:#1f1b16;
-      --muted:#4b3f34;
-      --border:#b7a99a;
-      --focus:#0b57d0;
-
-      --nt-fill:#efe4d2;
-      --t-fill:#f6eddc;
-      --nt-stroke:#4b5563;
-      --t-stroke:#8a4b11;
-
-      --line:#2b241d;
-      --error:#b00020;
-      --ok:#0b6b0b;
-    }
-
-    html[data-theme="dark"]{
-      --bg:#0b0f19;
-      --fg:#e5e7eb;
-      --muted:#b6c0d1;
-      --border:#2b3548;
-      --focus:#ffbf47;
-
-      --nt-fill:#111a2e;
-      --t-fill:#1b1520;
-      --nt-stroke:#7aa2ff;
-      --t-stroke:#f3a35c;
-
-      --line:#d1d5db;
-      --error:#ff6b6b;
-      --ok:#7ee787;
-    }
-
-    body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.4}
-    header,main,footer{max-width:1100px;margin:0 auto;padding:16px}
-    h1{margin:0 0 6px 0;font-size:1.25rem}
-    header p{margin:0;color:var(--muted)}
-
-    .topbar{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      flex-wrap:wrap;
-    }
-    .themeCtl{
-      display:flex;
-      align-items:center;
-      gap:8px;
-      font-size:0.95rem;
-      color:var(--muted);
-    }
-    .themeCtl label{
-      font-weight:600;
-      margin:0;
-    }
-    .themeCtl select{
-      border:1px solid var(--border);
-      background:#fff;
-      color:var(--fg);
-      border-radius:10px;
-      padding:6px 10px;
-      font:inherit;
-    }
-    html[data-theme="dark"] .themeCtl select{
-      background:#0f1626;
-    }
-    .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
-    .skip:focus{left:16px;top:16px;width:auto;height:auto;padding:10px 12px;background:#000;color:#fff;border-radius:10px;z-index:9999}
-    .grid{display:grid;grid-template-columns:1fr;gap:16px}
-    @media(min-width:900px){.grid{grid-template-columns:420px 1fr;align-items:start}}
-    .card{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
-    label{display:block;font-weight:600;margin-bottom:6px}
-    textarea{width:100%;min-height:240px;resize:vertical;padding:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:14px;border-radius:8px;border:1px solid var(--border);color:var(--fg)}
-    textarea:focus,button:focus,details summary:focus{outline:3px solid color-mix(in oklab,var(--focus),white 70%);outline-offset:2px}
-    .hint{margin-top:6px;color:var(--muted);font-size:.95rem}
-    .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
-    button{appearance:none;border:1px solid var(--border);background:#f7f7f7;padding:8px 12px;border-radius:10px;cursor:pointer;color:var(--fg);font-weight:600}
-    button:hover{background:#efefef}
-    button.primary{background:#e8f0fe;border-color:#c7d2fe}
-    button.primary:hover{background:#dbeafe}
-    button[disabled]{opacity:.6;cursor:not-allowed}
-    .status{margin-top:10px;font-weight:600}
-    .status.ok{color:var(--ok)} .status.err{color:var(--error)}
-    details summary{cursor:pointer;font-weight:600}
-    .outputHeader{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
-    .outputHeader h2{margin:0;font-size:1.1rem}
-    .legend{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:.95rem}
-    .badge{display:inline-flex;gap:6px;align-items:center;padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:#fafafa}
-    .shape{display:inline-block;width:14px;height:14px;border:2px solid currentColor;background:transparent}
-    .shape.nt{border-radius:3px} .shape.t{border-radius:999px}
-    .svgWrap{border:1px solid var(--border);border-radius:12px;padding:8px;background:#fff;overflow:auto;max-height:520px}
-    pre{margin:0;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fbfbfb;overflow:auto;max-height:320px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:13px}
-    footer{color:var(--muted);font-size:.95rem;padding-bottom:26px}
-  </style>
-</head>
-<body>
-<a class="skip" href="#main">Skip to main content</a>
-
-<header>
-  <div class="topbar">
-    <div>
-      <h1>Accessible Parse Tree Renderer (Bracket Notation)</h1>
-      <p>Enter a tree like <code>(S (NP (A the) (N dog)) (VP (V loves) (NP (A the) (N cat))))</code> and render it as an image.</p>
-<p class="hint">
-  Source: Based on <a href="https://github.com/int2str/jssyntaxtree">jsSyntaxTree</a>
-  by André Eisenbach et&nbsp;al. (GPL-2.0), with accessibility enhancements.
-</p>      
-    </div>
-
-    <div class="themeCtl" role="group" aria-label="Theme controls">
-      <label for="themeSelect">Theme</label>
-      <select id="themeSelect">
-        <option value="default">Default</option>
-        <option value="soft-blue">Soft blue</option>
-        <option value="sepia">Sepia</option>
-        <option value="dark">Dark</option>
-      </select>
-    </div>
-  </div>
-</header>
-
-<main id="main" class="grid">
-  <section class="card" aria-labelledby="inputTitle">
-    <h2 id="inputTitle" style="margin:0 0 10px 0; font-size:1.1rem;">Input</h2>
-
-    <label for="treeInput">Parse tree in bracket notation</label>
-    <textarea id="treeInput" spellcheck="false" aria-describedby="inputHelp inputExample"></textarea>
-    <div id="inputHelp" class="hint">
-      Format: parentheses for nodes. A node is <code>(Label child1 child2 ...)</code>. Leaves can be plain tokens, or <code>(Label token)</code>.
-    </div>
-
-    <details style="margin-top:10px;">
-      <summary id="inputExample">Example</summary>
-      <div class="hint" style="margin-top:8px;">
-        Try:
-        <pre aria-label="Example input">(S
-  (NP (A the) (N dog))
-  (VP (V loves) (NP (A the) (N cat))))</pre>
-      </div>
-    </details>
-
-    <div class="row" role="group" aria-label="Actions">
-      <button class="primary" id="renderBtn">Render</button>
-      <button id="clearBtn">Clear</button>
-      <button id="loadExampleBtn">Load example</button>
-    </div>
-
-    <div class="row" role="group" aria-label="Export actions">
-      <button id="downloadSvgBtn" disabled>Download SVG</button>
-      <button id="downloadPngBtn" disabled>Download PNG</button>
-    </div>
-
-    <div id="status" class="status" aria-live="polite" aria-atomic="true"></div>
-  </section>
-
-  <section class="card" aria-labelledby="outputTitle">
-    <div class="outputHeader">
-      <h2 id="outputTitle">Output</h2>
-      <div class="legend" aria-label="Legend">
-        <span class="badge" style="color: var(--nt-stroke);">
-          <span class="shape nt" aria-hidden="true"></span> Non-terminal (square)
-        </span>
-        <span class="badge" style="color: var(--t-stroke);">
-          <span class="shape t" aria-hidden="true"></span> Terminal (circle)
-        </span>
-      </div>
-    </div>
-
-    <div class="svgWrap" aria-label="Rendered parse tree graphic">
-      <div id="svgHost" style="min-height:120px;">
-        <p class="hint" id="emptyHint">Nothing rendered yet. Enter a tree and select “Render”.</p>
-      </div>
-    </div>
-
-    <h3 style="margin:14px 0 8px 0; font-size:1.0rem;">Text alternative</h3>
-    <p class="hint" style="margin:0 0 8px 0;">
-      This outline provides a text-based representation of the tree and updates when you render.
-    </p>
-    <pre id="textAlt" aria-label="Tree outline (text alternative)">(no output)</pre>
-  </section>
-</main>
-
-<footer>
-  Notes: This tool is keyboard-operable, provides labels and live status updates,
-  and includes a text alternative to the graphic.
-  <br />
-  License: GNU GPL v2. Source based on
-  <a href="https://github.com/int2str/jssyntaxtree">jsSyntaxTree</a>.
-</footer>
-
-<script>
-
-// ---- Theme switcher (non-intrusive, user preference persists locally) ----
-(function(){
-  const sel = document.getElementById("themeSelect");
-  if(!sel) return;
-
-  const KEY = "parseTreeTheme";
-  const apply = (val) => {
-    const htmlEl = document.documentElement;
-    if(!val || val === "default"){
-      htmlEl.removeAttribute("data-theme");
-    }else{
-      htmlEl.setAttribute("data-theme", val);
-    }
-  };
-
-  // Initialize from saved preference, else prefer user's OS theme for dark mode
-  let saved = null;
-  try{ saved = localStorage.getItem(KEY); }catch(e){ /* ignore */ }
-
-  if(saved){
-    sel.value = saved;
-    apply(saved);
-  }else{
-    const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if(prefersDark){
-      sel.value = "dark";
-      apply("dark");
-    }
-  }
-
-  sel.addEventListener("change", () => {
-    const val = sel.value;
-    apply(val);
-    try{ localStorage.setItem(KEY, val); }catch(e){ /* ignore */ }
-  });
-})();
-
-class ParseError extends Error{constructor(message,index){super(message);this.name="ParseError";this.index=index;}}
-
-function tokenize(input){
-  const tokens=[]; let i=0;
-  while(i<input.length){
-    const ch=input[i];
-    if(/\s/.test(ch)){i++;continue;}
-    if(ch==='('||ch===')'){tokens.push({type:ch,value:ch,index:i});i++;continue;}
-    let start=i;
-    while(i<input.length && !/\s/.test(input[i]) && input[i]!=='(' && input[i]!==')') i++;
-    tokens.push({type:"ATOM",value:input.slice(start,i),index:start});
-  }
-  return tokens;
-}
-
-function parseBracket(input){
-  const tokens=tokenize(input); let pos=0;
-  function expect(type){
-    const t=tokens[pos];
-    if(!t || t.type!==type){
-      const where=t? t.index : input.length;
-      throw new ParseError(`Expected "${type}" but found ${t? `"${t.value}"`:"end of input"}.`, where);
-    }
-    pos++; return t;
-  }
-  function parseNode(){
-    const t=tokens[pos];
-    if(!t) throw new ParseError("Unexpected end of input.", input.length);
-
-    if(t.type==="ATOM"){ pos++; return {label:t.value,children:[],terminal:true}; }
-
-    if(t.type==="("){
-      expect("(");
-      const labTok=tokens[pos];
-      if(!labTok || labTok.type!=="ATOM"){
-        const where=labTok? labTok.index : input.length;
-        throw new ParseError("A node must start with a label atom after '('.", where);
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Accessible Parse Tree Renderer (Bracket Notation)</title>
+    <meta name="description" content="Title II / WCAG-aligned parse tree renderer for bracket notation. Keyboard operable, screen-reader friendly, with text alternative and SVG/PNG export." />
+    <style>
+      :root{
+	  --bg:#fff; --fg:#111; --muted:#444; --border:#b8b8b8; --focus:#0b57d0;
+	  --nt-fill:#e8f0fe; --t-fill:#fff4e5; --nt-stroke:#174ea6; --t-stroke:#b06000;
+	  --line:#222; --error:#b00020; --ok:#0b6b0b;
       }
-      pos++;
-      const label=labTok.value;
-      const children=[];
-      while(tokens[pos] && tokens[pos].type!==")") children.push(parseNode());
-      expect(")");
-      return {label,children,terminal:false};
-    }
-    throw new ParseError(`Unexpected token "${t.value}".`, t.index);
-  }
-  const root=parseNode();
-  if(pos!==tokens.length){
-    const t=tokens[pos];
-    throw new ParseError(`Extra input after complete tree at "${t.value}".`, t.index);
-  }
-  return root;
-}
+      
+      /* Theme variants (set on <html data-theme="...">). */
+      html[data-theme="soft-blue"]{
+	  --bg:#f3f8ff;
+	  --fg:#0f172a;
+	  --muted:#334155;
+	  --border:#aab7c6;
+	  --focus:#0b57d0;
 
-function computeLayout(root){
-  const NODE_W=90, NODE_H=34, H_GAP=18, V_GAP=60, PAD_X=20, PAD_Y=20;
+	  --nt-fill:#e3efff;
+	  --t-fill:#fff4e5;
+	  --nt-stroke:#1d4ed8;
+	  --t-stroke:#b45309;
 
-  function measure(node){
-    if(node.children.length===0){ node._subW=NODE_W; return node._subW; }
-    const childW=node.children.map(measure);
-    const sum=childW.reduce((a,b)=>a+b,0);
-    const gaps=H_GAP*Math.max(0,node.children.length-1);
-    node._subW=Math.max(NODE_W, sum+gaps);
-    return node._subW;
-  }
-  function place(node, xLeft, depth){
-    node.x = xLeft + node._subW/2;
-    node.y = PAD_Y + depth*(NODE_H+V_GAP);
-    if(node.children.length===0) return;
-    let cursor=xLeft;
-    for(const c of node.children){
-      place(c, cursor, depth+1);
-      cursor += c._subW + H_GAP;
-    }
-  }
-  measure(root); place(root, PAD_X, 0);
+	  --line:#0f172a;
+	  --error:#b00020;
+	  --ok:#0b6b0b;
+      }
 
-  let maxY=0;
-  (function walk(n){ maxY=Math.max(maxY,n.y); for(const c of n.children) walk(c); })(root);
+      html[data-theme="sepia"]{
+	  --bg:#fbf4e6;
+	  --fg:#1f1b16;
+	  --muted:#4b3f34;
+	  --border:#b7a99a;
+	  --focus:#0b57d0;
 
-  const width=(PAD_X*2)+root._subW;
-  const height=(maxY+PAD_Y+80);
-  return {width,height,NODE_W,NODE_H};
-}
+	  --nt-fill:#efe4d2;
+	  --t-fill:#f6eddc;
+	  --nt-stroke:#4b5563;
+	  --t-stroke:#8a4b11;
 
-function isTerminalNode(node){ return node.terminal===true; }
+	  --line:#2b241d;
+	  --error:#b00020;
+	  --ok:#0b6b0b;
+      }
 
-function buildTreeOutline(root){
-  const lines=[];
-  (function rec(node,depth){
-    const indent="  ".repeat(depth);
-    const kind=isTerminalNode(node)?"T":"NT";
-    lines.push(`${indent}${kind}: ${node.label}`);
-    for(const c of node.children) rec(c, depth+1);
-  })(root,0);
-  return lines.join("\n");
-}
+      html[data-theme="dark"]{
+	  --bg:#0b0f19;
+	  --fg:#e5e7eb;
+	  --muted:#b6c0d1;
+	  --border:#2b3548;
+	  --focus:#ffbf47;
 
-function escapeXml(s){
-  return s.replace(/[<>&'"]/g, ch => ({ "<":"&lt;", ">":"&gt;", "&":"&amp;", "'":"&apos;", '"':"&quot;" }[ch]));
-}
+	  --nt-fill:#111a2e;
+	  --t-fill:#1b1520;
+	  --nt-stroke:#7aa2ff;
+	  --t-stroke:#f3a35c;
 
-function renderSvg(root){
-  const {width,height,NODE_W,NODE_H}=computeLayout(root);
-  const nodes=[]; const edges=[];
-  (function walk(n){ nodes.push(n); for(const c of n.children){ edges.push([n,c]); walk(c);} })(root);
+	  --line:#d1d5db;
+	  --error:#ff6b6b;
+	  --ok:#7ee787;
+      }
 
-  const parts=[];
-  parts.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${Math.ceil(width)}" height="${Math.ceil(height)}" viewBox="0 0 ${Math.ceil(width)} ${Math.ceil(height)}" role="img" aria-labelledby="svgTitle svgDesc">
+      body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:var(--bg);color:var(--fg);line-height:1.4}
+      header,main,footer{max-width:1100px;margin:0 auto;padding:16px}
+      h1{margin:0 0 6px 0;font-size:1.25rem}
+      header p{margin:0;color:var(--muted)}
+
+      .topbar{
+	  display:flex;
+	  align-items:center;
+	  justify-content:space-between;
+	  gap:12px;
+	  flex-wrap:wrap;
+      }
+      .themeCtl{
+	  display:flex;
+	  align-items:center;
+	  gap:8px;
+	  font-size:0.95rem;
+	  color:var(--muted);
+      }
+      .themeCtl label{
+	  font-weight:600;
+	  margin:0;
+      }
+      .themeCtl select{
+	  border:1px solid var(--border);
+	  background:#fff;
+	  color:var(--fg);
+	  border-radius:10px;
+	  padding:6px 10px;
+	  font:inherit;
+      }
+      html[data-theme="dark"] .themeCtl select{
+	  background:#0f1626;
+      }
+      .skip{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+      .skip:focus{left:16px;top:16px;width:auto;height:auto;padding:10px 12px;background:#000;color:#fff;border-radius:10px;z-index:9999}
+      .grid{display:grid;grid-template-columns:1fr;gap:16px}
+      @media(min-width:900px){.grid{grid-template-columns:420px 1fr;align-items:start}}
+      .card{border:1px solid var(--border);border-radius:12px;padding:12px;background:#fff}
+      label{display:block;font-weight:600;margin-bottom:6px}
+      textarea{width:100%;min-height:240px;resize:vertical;padding:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:14px;border-radius:8px;border:1px solid var(--border);color:var(--fg)}
+      textarea:focus,button:focus,details summary:focus{outline:3px solid color-mix(in oklab,var(--focus),white 70%);outline-offset:2px}
+      .hint{margin-top:6px;color:var(--muted);font-size:.95rem}
+      .row{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:10px}
+      button{appearance:none;border:1px solid var(--border);background:#f7f7f7;padding:8px 12px;border-radius:10px;cursor:pointer;color:var(--fg);font-weight:600}
+      button:hover{background:#efefef}
+      button.primary{background:#e8f0fe;border-color:#c7d2fe}
+      button.primary:hover{background:#dbeafe}
+      button[disabled]{opacity:.6;cursor:not-allowed}
+      .status{margin-top:10px;font-weight:600}
+      .status.ok{color:var(--ok)} .status.err{color:var(--error)}
+      details summary{cursor:pointer;font-weight:600}
+      .outputHeader{display:flex;align-items:baseline;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+      .outputHeader h2{margin:0;font-size:1.1rem}
+      .legend{display:flex;gap:10px;flex-wrap:wrap;align-items:center;color:var(--muted);font-size:.95rem}
+      .badge{display:inline-flex;gap:6px;align-items:center;padding:4px 8px;border-radius:999px;border:1px solid var(--border);background:#fafafa}
+      .shape{display:inline-block;width:14px;height:14px;border:2px solid currentColor;background:transparent}
+      .shape.nt{border-radius:3px} .shape.t{border-radius:999px}
+      .svgWrap{border:1px solid var(--border);border-radius:12px;padding:8px;background:#fff;overflow:auto;max-height:520px}
+      pre{margin:0;padding:10px;border:1px solid var(--border);border-radius:12px;background:#fbfbfb;overflow:auto;max-height:320px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace;font-size:13px}
+      footer{color:var(--muted);font-size:.95rem;padding-bottom:26px}
+    </style>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to main content</a>
+
+    <header>
+      <div class="topbar">
+	<div>
+	  <h1>Accessible Parse Tree Renderer (Bracket Notation)</h1>
+	  <p>Enter a tree like <code>(S (NP (A the) (N dog)) (VP (V loves) (NP (A the) (N cat))))</code> and render it as an image.</p>
+	  <p class="hint">
+	    Source: Based on <a href="https://github.com/int2str/jssyntaxtree">jsSyntaxTree</a>
+	    by André Eisenbach et&nbsp;al. (GPL-2.0), with accessibility enhancements.
+	  </p>      
+	</div>
+
+	<div class="themeCtl" role="group" aria-label="Theme controls">
+	  <label for="themeSelect">Theme</label>
+	  <select id="themeSelect">
+            <option value="default">Default</option>
+            <option value="soft-blue">Soft blue</option>
+            <option value="sepia">Sepia</option>
+            <option value="dark">Dark</option>
+	  </select>
+	</div>
+      </div>
+    </header>
+
+    <main id="main" class="grid">
+      <section class="card" aria-labelledby="inputTitle">
+	<h2 id="inputTitle" style="margin:0 0 10px 0; font-size:1.1rem;">Input</h2>
+
+	<label for="treeInput">Parse tree in bracket notation</label>
+	<textarea id="treeInput" spellcheck="false" aria-describedby="inputHelp inputExample"></textarea>
+	<div id="inputHelp" class="hint">
+	  Format: Trees are written using parentheses to show structure. Each node has the form
+	  <code>(Label child1 child2 …)</code>, where <code>Label</code> names the node and the children
+	  are its subtrees. Leaves may be written either as plain tokens or as
+	  <code>(Label token)</code>.
+	</div>
+
+	<details style="margin-top:10px;">
+	  <summary id="inputExample">Example</summary>
+	  <div class="hint" style="margin-top:8px;">
+            Try:
+            <pre aria-label="Example input">(S
+	      (NP (A the) (N dog))
+	      (VP (V loves) (NP (A the) (N cat))))</pre>
+	  </div>
+	</details>
+
+	<div class="row" role="group" aria-label="Actions">
+	  <button class="primary" id="renderBtn">Render</button>
+	  <button id="clearBtn">Clear</button>
+	  <button id="loadExampleBtn">Load example</button>
+	</div>
+
+	<div class="row" role="group" aria-label="Export actions">
+	  <button id="downloadSvgBtn" disabled>Download SVG</button>
+	  <button id="downloadPngBtn" disabled>Download PNG</button>
+	</div>
+
+	<div id="status" class="status" aria-live="polite" aria-atomic="true"></div>
+      </section>
+
+      <section class="card" aria-labelledby="outputTitle">
+	<div class="outputHeader">
+	  <h2 id="outputTitle">Output</h2>
+	  <div class="legend" aria-label="Legend">
+            <span class="badge" style="color: var(--nt-stroke);">
+              <span class="shape nt" aria-hidden="true"></span> Non-terminal (square)
+            </span>
+            <span class="badge" style="color: var(--t-stroke);">
+              <span class="shape t" aria-hidden="true"></span> Terminal (circle)
+            </span>
+	  </div>
+	</div>
+
+	<div class="svgWrap" aria-label="Rendered parse tree graphic">
+	  <div id="svgHost" style="min-height:120px;">
+            <p class="hint" id="emptyHint">Nothing rendered yet. Enter a tree and select “Render”.</p>
+	  </div>
+	</div>
+
+	<h3 style="margin:14px 0 8px 0; font-size:1.0rem;">Text alternative</h3>
+	<p class="hint" style="margin:0 0 8px 0;">
+	  This outline provides a text-based representation of the tree and updates when you render.
+	</p>
+	<pre id="textAlt" aria-label="Tree outline (text alternative)">(no output)</pre>
+      </section>
+    </main>
+
+    <footer>
+      Notes: This tool is keyboard-operable, provides labels and live status updates,
+      and includes a text alternative to the graphic.
+      <br />
+      License: GNU GPL v2. Source based on
+      <a href="https://github.com/int2str/jssyntaxtree">jsSyntaxTree</a>.
+    </footer>
+
+    <script>
+
+      // ---- Theme switcher (non-intrusive, user preference persists locally) ----
+      (function(){
+	  const sel = document.getElementById("themeSelect");
+	  if(!sel) return;
+
+	  const KEY = "parseTreeTheme";
+	  const apply = (val) => {
+	      const htmlEl = document.documentElement;
+	      if(!val || val === "default"){
+		  htmlEl.removeAttribute("data-theme");
+	      }else{
+		  htmlEl.setAttribute("data-theme", val);
+	      }
+	  };
+
+	  // Initialize from saved preference, else prefer user's OS theme for dark mode
+	  let saved = null;
+	  try{ saved = localStorage.getItem(KEY); }catch(e){ /* ignore */ }
+
+	  if(saved){
+	      sel.value = saved;
+	      apply(saved);
+	  }else{
+	      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+	      if(prefersDark){
+		  sel.value = "dark";
+		  apply("dark");
+	      }
+	  }
+
+	  sel.addEventListener("change", () => {
+	      const val = sel.value;
+	      apply(val);
+	      try{ localStorage.setItem(KEY, val); }catch(e){ /* ignore */ }
+	  });
+      })();
+
+      class ParseError extends Error{constructor(message,index){super(message);this.name="ParseError";this.index=index;}}
+
+      function tokenize(input){
+	  const tokens=[]; let i=0;
+	  while(i<input.length){
+	      const ch=input[i];
+	      if(/\s/.test(ch)){i++;continue;}
+	      if(ch==='('||ch===')'){tokens.push({type:ch,value:ch,index:i});i++;continue;}
+	      let start=i;
+	      while(i<input.length && !/\s/.test(input[i]) && input[i]!=='(' && input[i]!==')') i++;
+	      tokens.push({type:"ATOM",value:input.slice(start,i),index:start});
+	  }
+	  return tokens;
+      }
+
+      function parseBracket(input){
+	  const tokens=tokenize(input); let pos=0;
+	  function expect(type){
+	      const t=tokens[pos];
+	      if(!t || t.type!==type){
+		  const where=t? t.index : input.length;
+		  throw new ParseError(`Expected "${type}" but found ${t? `"${t.value}"`:"end of input"}.`, where);
+	      }
+	      pos++; return t;
+	  }
+	  function parseNode(){
+	      const t=tokens[pos];
+	      if(!t) throw new ParseError("Unexpected end of input.", input.length);
+
+	      if(t.type==="ATOM"){ pos++; return {label:t.value,children:[],terminal:true}; }
+
+	      if(t.type==="("){
+		  expect("(");
+		  const labTok=tokens[pos];
+		  if(!labTok || labTok.type!=="ATOM"){
+		      const where=labTok? labTok.index : input.length;
+		      throw new ParseError("A node must start with a label atom after '('.", where);
+		  }
+		  pos++;
+		  const label=labTok.value;
+		  const children=[];
+		  while(tokens[pos] && tokens[pos].type!==")") children.push(parseNode());
+		  expect(")");
+		  return {label,children,terminal:false};
+	      }
+	      throw new ParseError(`Unexpected token "${t.value}".`, t.index);
+	  }
+	  const root=parseNode();
+	  if(pos!==tokens.length){
+	      const t=tokens[pos];
+	      throw new ParseError(`Extra input after complete tree at "${t.value}".`, t.index);
+	  }
+	  return root;
+      }
+
+      function computeLayout(root){
+	  const NODE_W=90, NODE_H=34, H_GAP=18, V_GAP=60, PAD_X=20, PAD_Y=20;
+
+	  function measure(node){
+	      if(node.children.length===0){ node._subW=NODE_W; return node._subW; }
+	      const childW=node.children.map(measure);
+	      const sum=childW.reduce((a,b)=>a+b,0);
+	      const gaps=H_GAP*Math.max(0,node.children.length-1);
+	      node._subW=Math.max(NODE_W, sum+gaps);
+	      return node._subW;
+	  }
+	  function place(node, xLeft, depth){
+	      node.x = xLeft + node._subW/2;
+	      node.y = PAD_Y + depth*(NODE_H+V_GAP);
+	      if(node.children.length===0) return;
+	      let cursor=xLeft;
+	      for(const c of node.children){
+		  place(c, cursor, depth+1);
+		  cursor += c._subW + H_GAP;
+	      }
+	  }
+	  measure(root); place(root, PAD_X, 0);
+
+	  let maxY=0;
+	  (function walk(n){ maxY=Math.max(maxY,n.y); for(const c of n.children) walk(c); })(root);
+
+	  const width=(PAD_X*2)+root._subW;
+	  const height=(maxY+PAD_Y+80);
+	  return {width,height,NODE_W,NODE_H};
+      }
+
+      function isTerminalNode(node){ return node.terminal===true; }
+
+      function buildTreeOutline(root){
+	  const lines=[];
+	  (function rec(node,depth){
+	      const indent="  ".repeat(depth);
+	      const kind=isTerminalNode(node)?"T":"NT";
+	      lines.push(`${indent}${kind}: ${node.label}`);
+	      for(const c of node.children) rec(c, depth+1);
+	  })(root,0);
+	  return lines.join("\n");
+      }
+
+      function escapeXml(s){
+	  return s.replace(/[<>&'"]/g, ch => ({ "<":"&lt;", ">":"&gt;", "&":"&amp;", "'":"&apos;", '"':"&quot;" }[ch]));
+      }
+
+      function renderSvg(root){
+	  const {width,height,NODE_W,NODE_H}=computeLayout(root);
+	  const nodes=[]; const edges=[];
+	  (function walk(n){ nodes.push(n); for(const c of n.children){ edges.push([n,c]); walk(c);} })(root);
+
+	  const parts=[];
+	  parts.push(`<svg xmlns="http://www.w3.org/2000/svg" width="${Math.ceil(width)}" height="${Math.ceil(height)}" viewBox="0 0 ${Math.ceil(width)} ${Math.ceil(height)}" role="img" aria-labelledby="svgTitle svgDesc">
   <title id="svgTitle">Rendered parse tree</title>
   <desc id="svgDesc">A parse tree diagram. Non-terminals are drawn as squares, terminals as circles, with connecting lines.</desc>
   <defs>
@@ -391,218 +394,218 @@ function renderSvg(root){
       .nt{fill: var(--nt-fill); stroke: var(--nt-stroke); stroke-width:2;}
       .t{fill: var(--t-fill); stroke: var(--t-stroke); stroke-width:2;}
       .label{font:14px ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; fill: var(--fg);}
-    </style>
-  </defs>`);
+      </style>
+</defs>`);
 
-  for(const [a,b] of edges){
-    const x1=a.x, y1=a.y+NODE_H/2, x2=b.x, y2=b.y-NODE_H/2;
-    parts.push(`<path class="edge" d="M ${x1} ${y1} L ${x2} ${y2}" />`);
-  }
+	  for(const [a,b] of edges){
+	      const x1=a.x, y1=a.y+NODE_H/2, x2=b.x, y2=b.y-NODE_H/2;
+	      parts.push(`<path class="edge" d="M ${x1} ${y1} L ${x2} ${y2}" />`);
+	  }
 
-  for(const n of nodes){
-    const term=isTerminalNode(n);
-    const cls=term?"t":"nt";
-    const cx=n.x, cy=n.y;
+	  for(const n of nodes){
+	      const term=isTerminalNode(n);
+	      const cls=term?"t":"nt";
+	      const cx=n.x, cy=n.y;
 
-    if(term){
-      const r=Math.max(18, Math.min(26, NODE_H/2+4));
-      parts.push(`<g tabindex="0" aria-label="${escapeXml(n.label)} (terminal)">
-        <circle class="${cls}" cx="${cx}" cy="${cy}" r="${r}" />
-        <text class="label" x="${cx}" y="${cy+5}" text-anchor="middle">${escapeXml(n.label)}</text>
-      </g>`);
-    }else{
-      const w=NODE_W, h=NODE_H, x=cx-w/2, y=cy-h/2, rx=6;
-      parts.push(`<g tabindex="0" aria-label="${escapeXml(n.label)} (non-terminal)">
-        <rect class="${cls}" x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" />
-        <text class="label" x="${cx}" y="${cy+5}" text-anchor="middle">${escapeXml(n.label)}</text>
-      </g>`);
-    }
-  }
+	      if(term){
+		  const r=Math.max(18, Math.min(26, NODE_H/2+4));
+		  parts.push(`<g tabindex="0" aria-label="${escapeXml(n.label)} (terminal)">
+  <circle class="${cls}" cx="${cx}" cy="${cy}" r="${r}" />
+  <text class="label" x="${cx}" y="${cy+5}" text-anchor="middle">${escapeXml(n.label)}</text>
+</g>`);
+	      }else{
+		  const w=NODE_W, h=NODE_H, x=cx-w/2, y=cy-h/2, rx=6;
+		  parts.push(`<g tabindex="0" aria-label="${escapeXml(n.label)} (non-terminal)">
+  <rect class="${cls}" x="${x}" y="${y}" width="${w}" height="${h}" rx="${rx}" />
+  <text class="label" x="${cx}" y="${cy+5}" text-anchor="middle">${escapeXml(n.label)}</text>
+</g>`);
+	      }
+	  }
 
-  parts.push(`</svg>`);
-  return parts.join("\n");
-}
-
-
-function getInlinedSvgString(){
-  // Build an export-safe SVG by cloning the on-screen SVG and inlining computed styles.
-  const liveSvg = document.querySelector("#svgHost svg");
-  if(!liveSvg) return null;
-
-  const clone = liveSvg.cloneNode(true);
-
-  // Ensure namespace (some serializers omit it on clones)
-  if(!clone.getAttribute("xmlns")) clone.setAttribute("xmlns","http://www.w3.org/2000/svg");
-
-  // Inline computed styles from the live SVG onto the clone.
-  // This avoids loss of CSS variables / <style> blocks when rasterizing via <img>.
-  const liveEls = liveSvg.querySelectorAll("*");
-  const cloneEls = clone.querySelectorAll("*");
-
-  const copyStyle = (liveEl, outEl) => {
-    const cs = getComputedStyle(liveEl);
-
-    // Fill / stroke
-    if(cs.fill && cs.fill !== "none") outEl.setAttribute("fill", cs.fill);
-    if(cs.stroke && cs.stroke !== "none") outEl.setAttribute("stroke", cs.stroke);
-    if(cs.strokeWidth) outEl.setAttribute("stroke-width", cs.strokeWidth);
-
-    // Text styling (only meaningful for <text>)
-    if(liveEl.tagName && liveEl.tagName.toLowerCase() === "text"){
-      if(cs.fontFamily) outEl.setAttribute("font-family", cs.fontFamily);
-      if(cs.fontSize) outEl.setAttribute("font-size", cs.fontSize);
-      if(cs.fontWeight) outEl.setAttribute("font-weight", cs.fontWeight);
-      // Ensure text is visible even if CSS variables fail
-      if(!outEl.getAttribute("fill")) outEl.setAttribute("fill", cs.color || "#111");
-    }
-  };
-
-  for(let i=0;i<liveEls.length && i<cloneEls.length;i++){
-    copyStyle(liveEls[i], cloneEls[i]);
-  }
-
-  // Remove any embedded <style> that references CSS variables; the clone is now self-styled.
-  const defs = clone.querySelector("defs");
-  if(defs){
-    const styles = defs.querySelectorAll("style");
-    styles.forEach(s => s.remove());
-  }
-
-  // Serialize
-  const serializer = new XMLSerializer();
-  return serializer.serializeToString(clone);
-}
-
-function downloadText(filename,text,mime){
-  const blob=new Blob([text],{type:mime});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=url; a.download=filename;
-  document.body.appendChild(a); a.click(); a.remove();
-  URL.revokeObjectURL(url);
-}
-
-async function downloadPngFromSvg(svgString, filename){
-  // Prefer an export-safe SVG with inline styles (prevents missing text/edges in PNG).
-  const exportSvg = getInlinedSvgString() || svgString;
-  const svgBlob=new Blob([exportSvg],{type:"image/svg+xml"});
-  const url=URL.createObjectURL(svgBlob);
-
-  const img=new Image();
-  img.decoding="async";
-  img.src=url;
-
-  await new Promise((res,rej)=>{img.onload=res; img.onerror=()=>rej(new Error("Could not load SVG for PNG export."));});
-
-  // Try to size canvas to the SVG's declared dimensions if present.
-  let w = 0, h = 0;
-  try{
-    const doc = new DOMParser().parseFromString(exportSvg, "image/svg+xml");
-    const s = doc.documentElement;
-    w = parseFloat(s.getAttribute("width")) || 0;
-    h = parseFloat(s.getAttribute("height")) || 0;
-    // If width/height missing, infer from viewBox
-    if((!w || !h) && s.getAttribute("viewBox")){
-      const vb = s.getAttribute("viewBox").trim().split(/\s+/).map(Number);
-      if(vb.length === 4){
-        w = w || vb[2];
-        h = h || vb[3];
+	  parts.push(`</svg>`);
+	  return parts.join("\n");
       }
-    }
-  }catch(e){ /* ignore */ }
 
-  const canvas=document.createElement("canvas");
-  canvas.width = (w && w > 0) ? Math.ceil(w) : (img.width||1200);
-  canvas.height = (h && h > 0) ? Math.ceil(h) : (img.height||800);
 
-  const ctx=canvas.getContext("2d");
-  ctx.fillStyle="#ffffff"; ctx.fillRect(0,0,canvas.width,canvas.height);
-  ctx.drawImage(img,0,0);
+      function getInlinedSvgString(){
+	  // Build an export-safe SVG by cloning the on-screen SVG and inlining computed styles.
+	  const liveSvg = document.querySelector("#svgHost svg");
+	  if(!liveSvg) return null;
 
-  URL.revokeObjectURL(url);
+	  const clone = liveSvg.cloneNode(true);
 
-  const pngBlob=await new Promise(res=>canvas.toBlob(res,"image/png"));
-  const pngUrl=URL.createObjectURL(pngBlob);
-  const a=document.createElement("a");
-  a.href=pngUrl; a.download=filename;
-  document.body.appendChild(a); a.click(); a.remove();
-  URL.revokeObjectURL(pngUrl);
-}
+	  // Ensure namespace (some serializers omit it on clones)
+	  if(!clone.getAttribute("xmlns")) clone.setAttribute("xmlns","http://www.w3.org/2000/svg");
 
-const inputEl=document.getElementById("treeInput");
-const renderBtn=document.getElementById("renderBtn");
-const clearBtn=document.getElementById("clearBtn");
-const loadExampleBtn=document.getElementById("loadExampleBtn");
-const statusEl=document.getElementById("status");
-const svgHost=document.getElementById("svgHost");
-const textAltEl=document.getElementById("textAlt");
-const downloadSvgBtn=document.getElementById("downloadSvgBtn");
-const downloadPngBtn=document.getElementById("downloadPngBtn");
+	  // Inline computed styles from the live SVG onto the clone.
+	  // This avoids loss of CSS variables / <style> blocks when rasterizing via <img>.
+	  const liveEls = liveSvg.querySelectorAll("*");
+	  const cloneEls = clone.querySelectorAll("*");
 
-let lastSvg=null;
+	  const copyStyle = (liveEl, outEl) => {
+	      const cs = getComputedStyle(liveEl);
 
-function setStatusOk(msg){statusEl.className="status ok";statusEl.textContent=msg;}
-function setStatusErr(msg){statusEl.className="status err";statusEl.textContent=msg;}
-function setStatusNeutral(msg){statusEl.className="status";statusEl.textContent=msg||"";}
+	      // Fill / stroke
+	      if(cs.fill && cs.fill !== "none") outEl.setAttribute("fill", cs.fill);
+	      if(cs.stroke && cs.stroke !== "none") outEl.setAttribute("stroke", cs.stroke);
+	      if(cs.strokeWidth) outEl.setAttribute("stroke-width", cs.strokeWidth);
 
-function setRendered(svgString, outline){
-  lastSvg=svgString;
-  svgHost.innerHTML=svgString;
-  textAltEl.textContent=outline;
-  downloadSvgBtn.disabled=false;
-  downloadPngBtn.disabled=false;
-}
+	      // Text styling (only meaningful for <text>)
+	      if(liveEl.tagName && liveEl.tagName.toLowerCase() === "text"){
+		  if(cs.fontFamily) outEl.setAttribute("font-family", cs.fontFamily);
+		  if(cs.fontSize) outEl.setAttribute("font-size", cs.fontSize);
+		  if(cs.fontWeight) outEl.setAttribute("font-weight", cs.fontWeight);
+		  // Ensure text is visible even if CSS variables fail
+		  if(!outEl.getAttribute("fill")) outEl.setAttribute("fill", cs.color || "#111");
+	      }
+	  };
 
-renderBtn.addEventListener("click", ()=>{
-  const raw=inputEl.value.trim();
-  if(!raw){ setStatusErr("Please enter a parse tree first."); inputEl.focus(); return; }
-  try{
-    const root=parseBracket(raw);
-    const svg=renderSvg(root);
-    const outline=buildTreeOutline(root);
-    setRendered(svg, outline);
-    setStatusOk("Rendered successfully.");
-  }catch(e){
-    if(e instanceof ParseError) setStatusErr(`Parse error: ${e.message}`);
-    else setStatusErr(`Error: ${e.message || String(e)}`);
-  }
-});
+	  for(let i=0;i<liveEls.length && i<cloneEls.length;i++){
+	      copyStyle(liveEls[i], cloneEls[i]);
+	  }
+	  
+	  // Remove any embedded <style> that references CSS variables; the clone is now self-styled.
+	  const defs = clone.querySelector("defs");
+	  if(defs){
+	      const styles = defs.querySelectorAll("style");
+	      styles.forEach(s => s.remove());
+	  }
+	  
+	  // Serialize
+	  const serializer = new XMLSerializer();
+	  return serializer.serializeToString(clone);
+      }
 
-clearBtn.addEventListener("click", ()=>{
-  inputEl.value="";
-  svgHost.innerHTML='<p class="hint" id="emptyHint">Nothing rendered yet. Enter a tree and select “Render”.</p>';
-  textAltEl.textContent="(no output)";
-  lastSvg=null;
-  downloadSvgBtn.disabled=true;
-  downloadPngBtn.disabled=true;
-  setStatusNeutral("");
-  inputEl.focus();
-});
+      function downloadText(filename,text,mime){
+	  const blob=new Blob([text],{type:mime});
+	  const url=URL.createObjectURL(blob);
+	  const a=document.createElement("a");
+	  a.href=url; a.download=filename;
+	  document.body.appendChild(a); a.click(); a.remove();
+	  URL.revokeObjectURL(url);
+      }
 
-loadExampleBtn.addEventListener("click", ()=>{
-  inputEl.value='(S\n  (NP (A the) (N dog))\n  (VP (V loves) (NP (A the) (N cat))))';
-  setStatusOk("Example loaded. Select “Render”.");
-  inputEl.focus();
-});
+      async function downloadPngFromSvg(svgString, filename){
+	  // Prefer an export-safe SVG with inline styles (prevents missing text/edges in PNG).
+	  const exportSvg = getInlinedSvgString() || svgString;
+	  const svgBlob=new Blob([exportSvg],{type:"image/svg+xml"});
+	  const url=URL.createObjectURL(svgBlob);
 
-downloadSvgBtn.addEventListener("click", ()=>{
-  const inlined = getInlinedSvgString();
-  if(!inlined){ setStatusErr("Nothing to download."); return; }
-  downloadText("parse-tree.svg", inlined, "image/svg+xml");
-});
-downloadPngBtn.addEventListener("click", async ()=>{
-  const liveSvg = document.querySelector("#svgHost svg");
-  if(!liveSvg){ setStatusErr("Nothing to download."); return; }
-  setStatusOk("Preparing PNG download…");
-  try{
-    await downloadPngFromSvg(lastSvg || liveSvg.outerHTML, "parse-tree.png");
-    setStatusOk("PNG downloaded.");
-  }catch(e){
-    setStatusErr(e.message || "Could not export PNG.");
-  }
-});
-// initialize with example
-loadExampleBtn.click();
-</script>
-</body>
+	  const img=new Image();
+	  img.decoding="async";
+	  img.src=url;
+
+	  await new Promise((res,rej)=>{img.onload=res; img.onerror=()=>rej(new Error("Could not load SVG for PNG export."));});
+
+	  // Try to size canvas to the SVG's declared dimensions if present.
+	  let w = 0, h = 0;
+	  try{
+	      const doc = new DOMParser().parseFromString(exportSvg, "image/svg+xml");
+	      const s = doc.documentElement;
+	      w = parseFloat(s.getAttribute("width")) || 0;
+	      h = parseFloat(s.getAttribute("height")) || 0;
+	      // If width/height missing, infer from viewBox
+	      if((!w || !h) && s.getAttribute("viewBox")){
+		  const vb = s.getAttribute("viewBox").trim().split(/\s+/).map(Number);
+		  if(vb.length === 4){
+		      w = w || vb[2];
+		      h = h || vb[3];
+		  }
+	      }
+	  }catch(e){ /* ignore */ }
+
+	  const canvas=document.createElement("canvas");
+	  canvas.width = (w && w > 0) ? Math.ceil(w) : (img.width||1200);
+	  canvas.height = (h && h > 0) ? Math.ceil(h) : (img.height||800);
+
+	  const ctx=canvas.getContext("2d");
+	  ctx.fillStyle="#ffffff"; ctx.fillRect(0,0,canvas.width,canvas.height);
+	  ctx.drawImage(img,0,0);
+
+	  URL.revokeObjectURL(url);
+
+	  const pngBlob=await new Promise(res=>canvas.toBlob(res,"image/png"));
+	  const pngUrl=URL.createObjectURL(pngBlob);
+	  const a=document.createElement("a");
+	  a.href=pngUrl; a.download=filename;
+	  document.body.appendChild(a); a.click(); a.remove();
+	  URL.revokeObjectURL(pngUrl);
+      }
+
+      const inputEl=document.getElementById("treeInput");
+      const renderBtn=document.getElementById("renderBtn");
+      const clearBtn=document.getElementById("clearBtn");
+      const loadExampleBtn=document.getElementById("loadExampleBtn");
+      const statusEl=document.getElementById("status");
+      const svgHost=document.getElementById("svgHost");
+      const textAltEl=document.getElementById("textAlt");
+      const downloadSvgBtn=document.getElementById("downloadSvgBtn");
+      const downloadPngBtn=document.getElementById("downloadPngBtn");
+
+      let lastSvg=null;
+
+      function setStatusOk(msg){statusEl.className="status ok";statusEl.textContent=msg;}
+      function setStatusErr(msg){statusEl.className="status err";statusEl.textContent=msg;}
+      function setStatusNeutral(msg){statusEl.className="status";statusEl.textContent=msg||"";}
+
+      function setRendered(svgString, outline){
+	  lastSvg=svgString;
+	  svgHost.innerHTML=svgString;
+	  textAltEl.textContent=outline;
+	  downloadSvgBtn.disabled=false;
+	  downloadPngBtn.disabled=false;
+      }
+
+      renderBtn.addEventListener("click", ()=>{
+	  const raw=inputEl.value.trim();
+	  if(!raw){ setStatusErr("Please enter a parse tree first."); inputEl.focus(); return; }
+	  try{
+	      const root=parseBracket(raw);
+	      const svg=renderSvg(root);
+	      const outline=buildTreeOutline(root);
+	      setRendered(svg, outline);
+	      setStatusOk("Rendered successfully.");
+	  }catch(e){
+	      if(e instanceof ParseError) setStatusErr(`Parse error: ${e.message}`);
+	      else setStatusErr(`Error: ${e.message || String(e)}`);
+	  }
+      });
+
+      clearBtn.addEventListener("click", ()=>{
+	  inputEl.value="";
+	  svgHost.innerHTML='<p class="hint" id="emptyHint">Nothing rendered yet. Enter a tree and select “Render”.</p>';
+	  textAltEl.textContent="(no output)";
+	  lastSvg=null;
+	  downloadSvgBtn.disabled=true;
+	  downloadPngBtn.disabled=true;
+	  setStatusNeutral("");
+	  inputEl.focus();
+      });
+
+      loadExampleBtn.addEventListener("click", ()=>{
+	  inputEl.value='(S\n  (NP (A the) (N dog))\n  (VP (V loves) (NP (A the) (N cat))))';
+	  setStatusOk("Example loaded. Select “Render”.");
+	  inputEl.focus();
+      });
+
+      downloadSvgBtn.addEventListener("click", ()=>{
+	  const inlined = getInlinedSvgString();
+	  if(!inlined){ setStatusErr("Nothing to download."); return; }
+	  downloadText("parse-tree.svg", inlined, "image/svg+xml");
+      });
+      downloadPngBtn.addEventListener("click", async ()=>{
+	  const liveSvg = document.querySelector("#svgHost svg");
+	  if(!liveSvg){ setStatusErr("Nothing to download."); return; }
+	  setStatusOk("Preparing PNG download…");
+	  try{
+	      await downloadPngFromSvg(lastSvg || liveSvg.outerHTML, "parse-tree.png");
+	      setStatusOk("PNG downloaded.");
+	  }catch(e){
+	      setStatusErr(e.message || "Could not export PNG.");
+	  }
+      });
+      // initialize with example
+      loadExampleBtn.click();
+    </script>
+  </body>
 </html>

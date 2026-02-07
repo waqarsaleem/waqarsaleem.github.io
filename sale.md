@@ -43,7 +43,7 @@ This vehicle has been kept in excellent condition and is up-to-date with tax and
 
 ---
 
-## 🧊 Stylish Glass-Top Oval Console Table from ChenOne
+## ❌ SOLD — 🧊 Stylish Glass-Top Oval Console Table from ChenOne
 
 Purchased less than a year ago and is in **excellent condition**. Modern and sophisticated, this eye-catching console table features an **oval-shaped glass top** supported by a **black wrought iron frame with a geometric grid design**. The sleek lines and open structure make it a striking yet functional addition to any lounge, hallway, or even a stylish serving corner. At **36 inches tall**, it stands slightly higher than standard consoles, adding a bold vertical presence. 
 
