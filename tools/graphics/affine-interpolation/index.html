@@ -1,0 +1,860 @@
+<!--
+SPDX-License-Identifier: MIT
+Copyright (c) 2026 Waqar Saleem
+-->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Affine Combinations Demo</title>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --ink:#111827;
+      --muted:#4b5563;
+      --panel:#f8fafc;
+      --border:#e5e7eb;
+      --focus:#2563eb;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.35;
+    }
+    header{
+      padding:18px 18px 10px;
+      border-bottom:1px solid var(--border);
+    }
+    h1{ margin:0; font-size:20px; font-weight:700; }
+    header p{
+      margin:8px 0 0;
+      color:var(--muted);
+      max-width: 980px;
+    }
+
+    .wrap{
+      display:grid;
+      grid-template-columns: minmax(340px, 1fr) 380px;
+      gap:16px;
+      padding:16px;
+      align-items:start;
+    }
+    @media (max-width: 1020px){
+      .wrap{ grid-template-columns: 1fr; }
+    }
+
+    .stage, .side{
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:12px;
+      box-shadow: 0 1px 2px rgba(0,0,0,.04);
+    }
+
+    canvas{
+      width:100%;
+      height:auto;
+      display:block;
+      border-radius:12px;
+      background:#fff;
+      border:1px solid var(--border);
+    }
+
+    .controls{ margin-top:12px; display:grid; gap:12px; }
+    .row{ display:grid; grid-template-columns: 1fr; gap:6px; }
+    label{ font-weight:600; font-size:13px; }
+    .muted{ color:var(--muted); font-size:12px; }
+    input[type="range"]{ width:100%; }
+
+    .inline{ display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background:#fff;
+      font-size:12px;
+    }
+    .pill strong{ font-variant-numeric: tabular-nums; }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:14px;
+      padding:12px;
+      margin-top:10px;
+    }
+
+    .formula{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:12.5px;
+      line-height:1.5;
+      white-space:pre-wrap;
+    }
+    .hl{
+      background: rgba(37, 99, 235, 0.10);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      padding: 0 4px;
+      border-radius: 6px;
+    }
+
+    .grid2{ display:grid; grid-template-columns: 1fr 1fr; gap:10px; }
+
+    button{
+      border:1px solid var(--border);
+      background:#fff;
+      border-radius:12px;
+      padding:10px 12px;
+      font-weight:600;
+      cursor:pointer;
+    }
+    button:focus, input:focus{
+      outline:2px solid var(--focus);
+      outline-offset:2px;
+    }
+    .kbd{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size:11px;
+      padding:1px 6px;
+      border:1px solid var(--border);
+      border-bottom-width:2px;
+      border-radius:6px;
+      background:#fff;
+    }
+    .notice{ color:var(--muted); font-size:12px; margin-top:8px; }
+    .mono{ font-variant-numeric: tabular-nums; }
+  
+    .sr-only{
+      position:absolute;
+      width:1px;
+      height:1px;
+      padding:0;
+      margin:-1px;
+      overflow:hidden;
+      clip:rect(0,0,0,0);
+      white-space:nowrap;
+      border:0;
+    }
+  </style>
+</head>
+<body>
+<header>
+  <h1>Affine combinations on a line segment</h1>
+  <p>
+    Drag <strong>P</strong> and <strong>Q</strong>. Use the slider for <strong>t</strong> to move <strong>X</strong> where
+    <span class="mono">X(t) = (1−t)P + tQ</span>.
+    Turn on “Extrapolate” to allow <span class="mono">t</span> outside <span class="mono">[0,1]</span>.
+  </p>
+</header>
+
+<main class="wrap">
+  <section class="stage" aria-label="Interactive diagram">
+    <canvas id="c" width="900" height="520" aria-label="Canvas showing points P, Q, and X" role="img"></canvas>
+
+    <div class="controls" aria-label="Controls">
+      <div class="row">
+        <div class="inline" style="justify-content:space-between">
+          <label for="t">Parameter t</label>
+          <span class="pill" aria-live="polite">t = <strong id="tOut" class="mono">0.500</strong></span>
+        </div>
+        <input id="t" type="range" min="0" max="1" value="0.5" step="0.001" />
+        <div class="muted">
+          Keyboard: use <span class="kbd">←</span>/<span class="kbd">→</span> to adjust <span class="mono">t</span>.
+          
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="card">
+          <label class="inline" style="gap:8px; margin:0;">
+            <input id="extrap" type="checkbox" />
+            Extrapolate (line mode)
+          </label>
+          <div class="notice">If enabled, t ranges from −1 to 2. Values <span class="mono">t&lt;0</span> go past P; <span class="mono">t&gt;1</span> go past Q.</div>
+        </div>
+
+        <div class="card">
+          <label class="inline" style="gap:8px; margin:0;">
+            <input id="coords" type="checkbox" checked />
+            Show coordinates
+          </label>
+          <div class="notice">Coordinates are shown in the side panel and next to points in the diagram.</div>
+        </div>
+      </div>
+
+      <div class="grid2">
+        <button id="reset" type="button">Reset P and Q</button>
+        <button id="mid" type="button">Set t = 1/2 (midpoint)</button>
+      </div>
+
+
+      <div class="card" aria-label="Keyboard selection for points">
+        <strong style="font-size:13px;">Keyboard access for points</strong>
+        <div class="notice" style="margin-top:6px;">
+          Select a point, then nudge it with <span class="kbd">Shift</span> + arrow keys.
+        </div>
+        <div class="inline" role="radiogroup" aria-label="Select point to move" style="margin-top:10px; gap:12px;">
+          <label class="inline" style="gap:8px; margin:0;">
+            <input type="radio" name="selPoint" id="selP" value="P">
+            Select P
+          </label>
+          <label class="inline" style="gap:8px; margin:0;">
+            <input type="radio" name="selPoint" id="selQ" value="Q">
+            Select Q
+          </label>
+          <button id="clearSel" type="button">Clear selection</button>
+        </div>
+      </div>
+
+      <div id="a11yStatus" class="sr-only" aria-live="polite" aria-atomic="true"></div>
+
+
+      <div class="notice">
+        Drag points with the mouse or trackpad. Click a point to “select” it; then nudge with
+        <span class="kbd">Shift</span> + <span class="kbd">←</span>/<span class="kbd">→</span>/<span class="kbd">↑</span>/<span class="kbd">↓</span>.
+      </div>
+    </div>
+  </section>
+
+  <aside class="side" aria-label="Explanation">
+    <div class="card">
+      <strong>Key idea</strong>
+      <p class="muted" style="margin:8px 0 0;">
+        An <em>affine combination</em> of points uses weights that sum to 1.
+        Here the weights are <span class="mono">(1−t)</span> and <span class="mono">t</span>, and <span class="mono">(1−t)+t=1</span>.
+      </p>
+    </div>
+
+    <div class="card" aria-label="Formulas">
+      <strong>Formulas (equivalent)</strong>
+      <div class="formula" id="formulas"></div>
+      <div class="muted" style="margin-top:8px;">
+        Endpoints: <span class="mono">t=0 ⇒ X=P</span>, <span class="mono">t=1 ⇒ X=Q</span>.
+        Midpoint: <span class="mono">t=1/2 ⇒ X=(P+Q)/2</span>.
+      </div>
+    </div>
+
+    <div class="card" aria-label="Weights">
+      <strong>Weights</strong>
+      <div class="inline" style="margin-top:10px; gap:10px; flex-wrap:wrap;">
+        <span class="pill">w<sub>P</sub> = 1 − t = <strong id="wP" class="mono">0.500</strong></span>
+        <span class="pill">w<sub>Q</sub> = t = <strong id="wQ" class="mono">0.500</strong></span>
+        <span class="pill">w<sub>P</sub> + w<sub>Q</sub> = <strong id="wSum" class="mono">1.000</strong></span>
+      </div>
+      <div style="margin-top:10px;">
+        <div class="muted" style="margin-bottom:6px;">Weight bars</div>
+        <div style="height:12px; border:1px solid var(--border); border-radius:999px; overflow:hidden; background:#fff;">
+          <div id="barLeft" style="height:100%; width:50%; background:rgba(37,99,235,0.16); float:left;"></div>
+          <div id="barRight" style="height:100%; width:50%; background:rgba(17,24,39,0.10); float:left;"></div>
+        </div>
+        <div class="muted" style="margin-top:6px;">
+          Left bar corresponds to <span class="mono">wP</span>; right bar corresponds to <span class="mono">wQ</span>.
+          (When extrapolating, weights can go outside [0,1]; bars are clamped for display.)
+        </div>
+      </div>
+    </div>
+
+    <div class="card" aria-label="Color interpolation">
+      <strong>Same weights, different range: color</strong>
+      <p class="muted" style="margin:8px 0 10px;">
+        If <span class="mono">X(t) = (1−t)P + tQ</span>, then we can also set
+        <span class="mono">Color(X) = (1−t)Color(P) + tColor(Q)</span>.
+        With Color(P)=black and Color(Q)=white, grayscale(X)=t.
+      </p>
+
+      <div class="grid2" style="align-items:center;">
+        <div>
+          <label for="colP">Color(P)</label><br/>
+          <input id="colP" type="color" value="#000000" aria-label="Color of P" />
+        </div>
+        <div>
+          <label for="colQ">Color(Q)</label><br/>
+          <input id="colQ" type="color" value="#ffffff" aria-label="Color of Q" />
+        </div>
+      </div>
+
+      <label class="inline" style="gap:8px; margin-top:10px;">
+        <input id="clampColor" type="checkbox" checked />
+        Clamp color channels to [0, 1]
+      </label>
+
+      <div class="inline" style="margin-top:10px; gap:10px; flex-wrap:wrap;">
+        <span class="pill">Color(X) = <strong id="colXText" class="mono">rgb(128, 128, 128)</strong></span>
+      </div>
+
+      <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap:10px; margin-top:10px;">
+        <div>
+          <div class="muted">P</div>
+          <div id="swP" style="height:26px;border:1px solid var(--border);border-radius:10px;background:#000;"></div>
+        </div>
+        <div>
+          <div class="muted">X</div>
+          <div id="swX" style="height:26px;border:1px solid var(--border);border-radius:10px;background:#777;"></div>
+        </div>
+        <div>
+          <div class="muted">Q</div>
+          <div id="swQ" style="height:26px;border:1px solid var(--border);border-radius:10px;background:#fff;"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" aria-label="Coordinates panel">
+      <strong>Coordinates</strong>
+      <div class="formula" id="coordsPanel"></div>
+    </div>
+  </aside>
+</main>
+
+<script>
+(() => {
+  const canvas = document.getElementById('c');
+  const ctx = canvas.getContext('2d');
+
+  const tSlider = document.getElementById('t');
+  const tOut = document.getElementById('tOut');
+  const extrap = document.getElementById('extrap');
+  const coords = document.getElementById('coords');
+  const resetBtn = document.getElementById('reset');
+  const midBtn = document.getElementById('mid');
+
+
+  // Accessibility / keyboard selection
+  const selP = document.getElementById('selP');
+  const selQ = document.getElementById('selQ');
+  const clearSel = document.getElementById('clearSel');
+  const a11yStatus = document.getElementById('a11yStatus');
+
+  const formulasEl = document.getElementById('formulas');
+  const coordsPanel = document.getElementById('coordsPanel');
+  const wP = document.getElementById('wP');
+  const wQ = document.getElementById('wQ');
+  const wSum = document.getElementById('wSum');
+  const barLeft = document.getElementById('barLeft');
+  const barRight = document.getElementById('barRight');
+
+  const colP = document.getElementById('colP');
+  const colQ = document.getElementById('colQ');
+  const clampColor = document.getElementById('clampColor');
+  const swP = document.getElementById('swP');
+  const swQ = document.getElementById('swQ');
+  const swX = document.getElementById('swX');
+  const colXText = document.getElementById('colXText');
+
+  const state = {
+    P: { x: 220, y: 320 },
+    Q: { x: 680, y: 200 },
+    t: 0.5,
+    dragging: null,   // 'P' | 'Q' | null
+    hover: null,      // 'P' | 'Q' | null
+    selected: null,   // 'P' | 'Q' | null
+    showCoords: true,
+    extrapolate: false,
+  };
+
+  function clamp(v, lo, hi){ return Math.max(lo, Math.min(hi, v)); }
+  function fmt3(x){ const v = Math.abs(x) < 5e-10 ? 0 : x; return v.toFixed(3); }
+  function fmt2(x){ const v = Math.abs(x) < 5e-7 ? 0 : x; return v.toFixed(2); }
+  function lerp(a, b, t){ return { x: (1-t)*a.x + t*b.x, y: (1-t)*a.y + t*b.y }; }
+  function sub(a, b){ return { x: a.x - b.x, y: a.y - b.y }; }
+
+  function canvasRect(){
+    const rect = canvas.getBoundingClientRect();
+    const w = rect.width;
+    const h = rect.width * (520/900);
+    return { w, h };
+  }
+
+  function setupHiDPI(){
+    const dpr = window.devicePixelRatio || 1;
+    const rect = canvas.getBoundingClientRect();
+    const cssW = rect.width;
+    const cssH = rect.width * (520/900);
+    canvas.width = Math.round(cssW * dpr);
+    canvas.height = Math.round(cssH * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  }
+
+  function getPointerPos(evt){
+    const rect = canvas.getBoundingClientRect();
+    return { x: evt.clientX - rect.left, y: evt.clientY - rect.top };
+  }
+
+  function hitTest(pt, center, radius){
+    const dx = pt.x - center.x;
+    const dy = pt.y - center.y;
+    return (dx*dx + dy*dy) <= radius*radius;
+  }
+
+  function XPoint(){ return lerp(state.P, state.Q, state.t); }
+
+  function drawGrid(w, h){
+    ctx.clearRect(0,0,w,h);
+    ctx.save();
+
+    ctx.strokeStyle = 'rgba(17,24,39,0.08)';
+    ctx.lineWidth = 1;
+    const step = 40;
+    for (let x=0; x<=w; x+=step){ ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,h); ctx.stroke(); }
+    for (let y=0; y<=h; y+=step){ ctx.beginPath(); ctx.moveTo(0,y); ctx.lineTo(w,y); ctx.stroke(); }
+
+    ctx.strokeStyle = 'rgba(17,24,39,0.12)';
+    ctx.beginPath(); ctx.moveTo(w/2, 0); ctx.lineTo(w/2, h); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(0, h/2); ctx.lineTo(w, h/2); ctx.stroke();
+
+    ctx.restore();
+  }
+
+  function drawLineExtension(P, Q, w, h){
+    const d = sub(Q, P);
+    if (Math.abs(d.x) < 1e-9 && Math.abs(d.y) < 1e-9) return;
+
+    const candidates = [];
+    function addIfInside(x, y, s){
+      if (Number.isFinite(x) && Number.isFinite(y) && Number.isFinite(s)){
+        if (x >= -1 && x <= w+1 && y >= -1 && y <= h+1) candidates.push({x,y,s});
+      }
+    }
+
+    if (Math.abs(d.x) > 1e-9){
+      let s = (0 - P.x)/d.x; addIfInside(0, P.y + s*d.y, s);
+      s = (w - P.x)/d.x; addIfInside(w, P.y + s*d.y, s);
+    }
+    if (Math.abs(d.y) > 1e-9){
+      let s = (0 - P.y)/d.y; addIfInside(P.x + s*d.x, 0, s);
+      s = (h - P.y)/d.y; addIfInside(P.x + s*d.x, h, s);
+    }
+
+    if (candidates.length < 2) return;
+    candidates.sort((a,b) => a.s - b.s);
+    const A = candidates[0];
+    const B = candidates[candidates.length-1];
+
+    ctx.save();
+    ctx.setLineDash([6,6]);
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = 'rgba(17,24,39,0.35)';
+    ctx.beginPath();
+    ctx.moveTo(A.x, A.y);
+    ctx.lineTo(B.x, B.y);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawSegment(P, Q){
+    ctx.save();
+    ctx.lineWidth = 3;
+    ctx.strokeStyle = 'rgba(17,24,39,0.55)';
+    ctx.beginPath();
+    ctx.moveTo(P.x, P.y);
+    ctx.lineTo(Q.x, Q.y);
+    ctx.stroke();
+    ctx.restore();
+  }
+
+  function drawPoint(pt, label, opts={}){
+    const r = opts.r ?? 8;
+    const fill = opts.fill ?? '#111827';
+    const stroke = opts.stroke ?? 'rgba(17,24,39,0.35)';
+    const halo = opts.halo ?? false;
+    const coordsText = opts.coords ?? null;
+
+    ctx.save();
+    if (halo){
+      ctx.beginPath();
+      ctx.arc(pt.x, pt.y, r+7, 0, Math.PI*2);
+      ctx.fillStyle = 'rgba(37,99,235,0.12)';
+      ctx.fill();
+    }
+
+    ctx.beginPath();
+    ctx.arc(pt.x, pt.y, r, 0, Math.PI*2);
+    ctx.fillStyle = fill;
+    ctx.fill();
+    ctx.lineWidth = 2;
+    ctx.strokeStyle = stroke;
+    ctx.stroke();
+
+    ctx.font = '600 14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial';
+    ctx.fillStyle = '#111827';
+    ctx.textBaseline = 'middle';
+    ctx.textAlign = 'left';
+    const dx = 12;
+    const dy = -14;
+    ctx.fillText(label, pt.x + dx, pt.y + dy);
+
+    if (state.showCoords && coordsText){
+      ctx.font = '12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+      ctx.fillStyle = 'rgba(17,24,39,0.75)';
+      ctx.fillText(coordsText, pt.x + dx, pt.y + dy + 18);
+    }
+    ctx.restore();
+  }
+
+  function draw(){
+    const { w, h } = canvasRect();
+    setupHiDPI();
+
+    const pad = 24;
+    state.P.x = clamp(state.P.x, pad, w-pad);
+    state.P.y = clamp(state.P.y, pad, h-pad);
+    state.Q.x = clamp(state.Q.x, pad, w-pad);
+    state.Q.y = clamp(state.Q.y, pad, h-pad);
+
+    drawGrid(w, h);
+
+    if (state.extrapolate){ drawLineExtension(state.P, state.Q, w, h); }
+    drawSegment(state.P, state.Q);
+
+    const X = XPoint();
+
+    ctx.save();
+    ctx.fillStyle = 'rgba(17,24,39,0.65)';
+    ctx.font = '12px ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'top';
+    ctx.fillText('t=0', state.P.x, state.P.y + 14);
+    ctx.fillText('t=1', state.Q.x, state.Q.y + 14);
+    ctx.restore();
+
+    const haloP = state.hover === 'P' || state.dragging === 'P' || state.selected === 'P';
+    const haloQ = state.hover === 'Q' || state.dragging === 'Q' || state.selected === 'Q';
+
+    drawPoint(state.P, 'P', { halo: haloP, fill: currentPFill(), stroke: 'rgba(17,24,39,0.25)', coords: `(${fmt2(state.P.x)}, ${fmt2(state.P.y)})` });
+    drawPoint(state.Q, 'Q', { halo: haloQ, fill: currentQFill(), stroke: 'rgba(17,24,39,0.25)', coords: `(${fmt2(state.Q.x)}, ${fmt2(state.Q.y)})` });
+
+    // Show the segment from P to X to emphasize P + t(Q-P)
+    ctx.save();
+    ctx.strokeStyle = 'rgba(17,24,39,0.20)';
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    ctx.moveTo(state.P.x, state.P.y);
+    ctx.lineTo(X.x, X.y);
+    ctx.stroke();
+    ctx.restore();
+
+    drawPoint(X, 'X', {
+      r: 7,
+      fill: currentXFill(),
+      stroke: 'rgba(17,24,39,0.25)',
+      halo: false,
+      coords: `(${fmt2(X.x)}, ${fmt2(X.y)})`
+    });
+  }
+
+  function highlight(sym, val){
+    return `<span class="hl">${sym} = ${fmt3(val)}</span>`;
+  }
+
+  // --- Color interpolation helpers ---
+  function hexToRgb01(hex){
+    const h = hex.replace('#','');
+    const r = parseInt(h.slice(0,2), 16) / 255;
+    const g = parseInt(h.slice(2,4), 16) / 255;
+    const b = parseInt(h.slice(4,6), 16) / 255;
+    return { r, g, b };
+  }
+  function rgb01ToCss({r,g,b}){
+    const R = Math.round(clamp(r,0,1) * 255);
+    const G = Math.round(clamp(g,0,1) * 255);
+    const B = Math.round(clamp(b,0,1) * 255);
+    return `rgb(${R}, ${G}, ${B})`;
+  }
+  function lerpColor(cP, cQ, t, doClamp){
+    let r = (1-t)*cP.r + t*cQ.r;
+    let g = (1-t)*cP.g + t*cQ.g;
+    let b = (1-t)*cP.b + t*cQ.b;
+    if (doClamp){
+      r = clamp(r,0,1); g = clamp(g,0,1); b = clamp(b,0,1);
+    }
+    return { r, g, b };
+  }
+  function currentPFill(){
+    const c = hexToRgb01(colP.value);
+    return rgb01ToCss(c);
+  }
+  function currentQFill(){
+    const c = hexToRgb01(colQ.value);
+    return rgb01ToCss(c);
+  }
+  function currentXFill(){
+    const cP = hexToRgb01(colP.value);
+    const cQ = hexToRgb01(colQ.value);
+    const cX = lerpColor(cP, cQ, state.t, clampColor.checked);
+    return rgb01ToCss(cX);
+  }
+  
+  function updateA11yStatus(){
+    if (!a11yStatus) return;
+    const P = state.P, Q = state.Q, X = XPoint();
+    const t = state.t;
+    const cP = colP ? colP.value : '#000000';
+    const cQ = colQ ? colQ.value : '#ffffff';
+    const clampOn = clampColor ? clampColor.checked : true;
+    const mode = state.extrapolate ? 'line (extrapolation enabled)' : 'segment (t in [0,1])';
+    const sel = state.selected ? `Selected: ${state.selected}. ` : 'No point selected. ';
+    a11yStatus.textContent =
+      `${sel}t=${fmt3(t)}. Mode: ${mode}. ` +
+      `P=(${fmt2(P.x)}, ${fmt2(P.y)}), color ${cP}. ` +
+      `Q=(${fmt2(Q.x)}, ${fmt2(Q.y)}), color ${cQ}. ` +
+      `X=(${fmt2(X.x)}, ${fmt2(X.y)}), color ${colXText ? colXText.textContent : 'computed'}. ` +
+      `Color clamp: ${clampOn ? 'on' : 'off'}.`;
+  }
+
+function updateColorPanel(){
+    const cP = hexToRgb01(colP.value);
+    const cQ = hexToRgb01(colQ.value);
+    const cX = lerpColor(cP, cQ, state.t, clampColor.checked);
+
+    swP.style.background = rgb01ToCss(cP);
+    swQ.style.background = rgb01ToCss(cQ);
+    swX.style.background = rgb01ToCss(cX);
+    colXText.textContent = rgb01ToCss(cX);
+  }
+
+  function updatePanels(){
+    const t = state.t;
+    const wp = 1 - t;
+    const wq = t;
+
+    tOut.textContent = fmt3(t);
+    wP.textContent = fmt3(wp);
+    wQ.textContent = fmt3(wq);
+    wSum.textContent = fmt3(wp + wq);
+
+    // clamp bars for visual clarity (weights can be outside [0,1] under extrapolation)
+    barLeft.style.width = `${clamp(wp, 0, 1) * 100}%`;
+    barRight.style.width = `${clamp(wq, 0, 1) * 100}%`;
+
+    const P = state.P;
+    const Q = state.Q;
+    const X = XPoint();
+    const d = sub(Q, P);
+
+    formulasEl.innerHTML = [
+      `X(t) = (${highlight('1−t', wp)}) P + (${highlight('t', wq)}) Q`,
+      `     = P + (${highlight('t', wq)}) (Q − P)`,
+      `Q − P = (${fmt2(d.x)}, ${fmt2(d.y)})`,
+    ].join('\n');
+
+    if (state.showCoords){
+      coordsPanel.textContent =
+        `P = (${fmt2(P.x)}, ${fmt2(P.y)})\n` +
+        `Q = (${fmt2(Q.x)}, ${fmt2(Q.y)})\n` +
+        `X = (${fmt2(X.x)}, ${fmt2(X.y)})`;
+    } else {
+      coordsPanel.textContent = 'Coordinates hidden.';
+    }
+
+    updateColorPanel();
+    updateA11yStatus();
+  }
+
+  function setSliderRange(){
+    if (state.extrapolate){
+      tSlider.min = -1;
+      tSlider.max = 2;
+      tSlider.step = 0.001;
+      state.t = clamp(state.t, -1, 2);
+    } else {
+      tSlider.min = 0;
+      tSlider.max = 1;
+      tSlider.step = 0.001;
+      state.t = clamp(state.t, 0, 1);
+    }
+    tSlider.value = String(state.t);
+  }
+
+  // Slider input
+  tSlider.addEventListener('input', () => {
+    state.t = parseFloat(tSlider.value);
+    syncSelectionUI?.();
+    updatePanels();
+    draw();
+  });
+
+  // Make it easier for the user to get arrow-key behavior (focus the slider when they touch it)
+  tSlider.addEventListener('pointerdown', () => tSlider.focus());
+  tSlider.addEventListener('mousedown', () => tSlider.focus());
+  tSlider.addEventListener('touchstart', () => tSlider.focus(), { passive: true });
+
+  extrap.addEventListener('change', () => {
+    state.extrapolate = extrap.checked;
+    setSliderRange();
+    updatePanels();
+    draw();
+  });
+
+  coords.addEventListener('change', () => {
+    state.showCoords = coords.checked;
+    updatePanels();
+    draw();
+  });
+
+  resetBtn.addEventListener('click', () => {
+    state.P = { x: 220, y: 320 };
+    state.Q = { x: 680, y: 200 };
+    state.selected = null;
+    updatePanels();
+    draw();
+  });
+
+  midBtn.addEventListener('click', () => {
+    state.t = 0.5;
+    setSliderRange();
+    updatePanels();
+    draw();
+  });
+
+  // Point selection controls (keyboard-friendly)
+  function syncSelectionUI(){
+    if (selP) selP.checked = (state.selected === 'P');
+    if (selQ) selQ.checked = (state.selected === 'Q');
+  }
+
+  selP?.addEventListener('change', () => {
+    if (selP.checked) state.selected = 'P';
+    syncSelectionUI();
+    updatePanels();
+    draw();
+  });
+
+  selQ?.addEventListener('change', () => {
+    if (selQ.checked) state.selected = 'Q';
+    syncSelectionUI();
+    updatePanels();
+    draw();
+  });
+
+  clearSel?.addEventListener('click', () => {
+    state.selected = null;
+    syncSelectionUI();
+    updatePanels();
+    draw();
+  });
+
+
+  colP.addEventListener('input', () => { updatePanels(); draw(); });
+  colQ.addEventListener('input', () => { updatePanels(); draw(); });
+  clampColor.addEventListener('change', () => { updatePanels(); draw(); });
+
+  // Canvas pointer events
+  canvas.addEventListener('pointerdown', (evt) => {
+    canvas.setPointerCapture(evt.pointerId);
+    const p = getPointerPos(evt);
+
+    const hitR = 14;
+    if (hitTest(p, state.P, hitR)){
+      state.dragging = 'P';
+      state.selected = 'P';
+    } else if (hitTest(p, state.Q, hitR)){
+      state.dragging = 'Q';
+      state.selected = 'Q';
+    } else {
+      state.selected = null;
+      state.dragging = null;
+    }
+    syncSelectionUI?.();
+    updatePanels();
+    draw();
+  });
+
+  canvas.addEventListener('pointermove', (evt) => {
+    const p = getPointerPos(evt);
+
+    const hitR = 14;
+    const wasHover = state.hover;
+    if (hitTest(p, state.P, hitR)) state.hover = 'P';
+    else if (hitTest(p, state.Q, hitR)) state.hover = 'Q';
+    else state.hover = null;
+    if (wasHover !== state.hover) draw();
+
+    if (state.dragging === 'P'){
+      state.P.x = p.x; state.P.y = p.y;
+      updatePanels(); draw();
+    } else if (state.dragging === 'Q'){
+      state.Q.x = p.x; state.Q.y = p.y;
+      updatePanels(); draw();
+    }
+  });
+
+  canvas.addEventListener('pointerup', () => { state.dragging = null; draw(); });
+  canvas.addEventListener('pointercancel', () => { state.dragging = null; draw(); });
+
+  // Unified keyboard handler:
+  // - Shift + arrows nudges selected point (if any)
+  // - arrows adjust t ONLY when the slider has focus (as the UI text suggests)
+  window.addEventListener('keydown', (evt) => {
+    const tag = evt.target?.tagName?.toLowerCase();
+    const isTyping =
+      tag === 'input' || tag === 'textarea' || tag === 'select' ||
+      evt.target?.isContentEditable;
+    if (isTyping) return;
+
+    // (1) Shift+arrows: nudge selected point
+    if (evt.shiftKey && state.selected) {
+      const step = 3;
+      let dx = 0, dy = 0;
+
+      if (evt.key === 'ArrowLeft') dx = -step;
+      else if (evt.key === 'ArrowRight') dx = step;
+      else if (evt.key === 'ArrowUp') dy = -step;
+      else if (evt.key === 'ArrowDown') dy = step;
+      else return;
+
+      evt.preventDefault();
+
+      const pt = state.selected === 'P' ? state.P : state.Q;
+      pt.x += dx; pt.y += dy;
+
+      updatePanels();
+      draw();
+      return;
+    }
+
+    // (2) Plain arrows: adjust t (global)
+    if (!evt.shiftKey && !evt.altKey && !evt.metaKey && !evt.ctrlKey) {
+      if (evt.key === 'ArrowLeft' || evt.key === 'ArrowRight') {
+        evt.preventDefault();
+
+        const step = parseFloat(tSlider.step) || 0.001;
+        const dir = evt.key === 'ArrowRight' ? 1 : -1;
+
+        state.t = clamp(state.t + dir * step, parseFloat(tSlider.min), parseFloat(tSlider.max));
+        tSlider.value = String(state.t);
+
+        updatePanels();
+        draw();
+      }
+    }
+  }, { passive:false });
+
+  window.addEventListener('resize', () => { updatePanels(); draw(); });
+
+  // Init
+  state.t = parseFloat(tSlider.value);
+  state.extrapolate = extrap.checked;
+  state.showCoords = coords.checked;
+  setSliderRange();
+  updatePanels();
+  draw();
+})();
+</script>
+<footer style="
+  margin-top:60px;
+  padding:16px 0;
+  font-size:0.85rem;
+  color:#4b5563;
+  border-top:1px solid #e5e7eb;
+  text-align:center;
+">
+  © 2026 Waqar Saleem — Released under the MIT License
+</footer>
+</body>
+</html>
