@@ -1,0 +1,893 @@
+<!--
+SPDX-License-Identifier: MIT
+Copyright (c) 2026 Waqar Saleem
+  -->
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mandelbrot Prep: Complex Numbers & One Iteration</title>
+  <meta name="description" content="WCAG-minded notes and an interactive demo showing complex numbers as points in 2D and a single Mandelbrot iteration z -> z^2 + c." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #111111;
+      --muted: #333333;
+      --border: #444444;
+      --panel: #f4f4f4;
+      --accent: #0b57d0;   /* blue */
+      --accent2: #b00020;  /* red */
+      --accent3: #0f6b2e;  /* green */
+      --focus: #ffbf47;    /* focus ring */
+    }
+
+    * { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+    }
+
+    header, main, footer {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+
+    header {
+      padding-top: 1.25rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    h1 {
+      font-size: 1.55rem;
+      margin: 0 0 0.25rem 0;
+    }
+
+    h2 { font-size: 1.2rem; margin: 0 0 0.5rem 0; }
+    h3 { font-size: 1.05rem; margin: 0.75rem 0 0.25rem 0; }
+
+    p { margin: 0.5rem 0; }
+    .muted { color: var(--muted); }
+
+    a { color: var(--accent); }
+    a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible, summary:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 2px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0.5rem;
+      background: #fff;
+      border: 2px solid var(--border);
+      padding: 0.5rem 0.75rem;
+      border-radius: 10px;
+      z-index: 10;
+    }
+    .skip-link:focus { left: 0.5rem; }
+
+    .card {
+      background: var(--panel);
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      padding: 1rem;
+      margin-top: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+    @media (min-width: 920px) {
+      .grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        align-items: start;
+      }
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.75rem 1rem;
+      margin-top: 0.75rem;
+      align-items: end;
+    }
+    .controls label {
+      display: block;
+      font-weight: 650;
+      margin-bottom: 0.25rem;
+    }
+    .controls input[type="number"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .row {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+      margin-top: 0.75rem;
+      align-items: center;
+    }
+
+    button {
+      appearance: none;
+      border: 2px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      padding: 0.55rem 0.85rem;
+      border-radius: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover { background: #fdfdfd; }
+    button:active { transform: translateY(1px); }
+
+    .primary {
+      border-color: var(--accent);
+      color: var(--accent);
+      font-weight: 650;
+    }
+    .danger {
+      border-color: var(--accent2);
+      color: var(--accent2);
+      font-weight: 650;
+    }
+
+    .legend {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.5rem;
+      margin-top: 0.75rem;
+      padding: 0.75rem;
+      background: #fff;
+      border: 2px dashed var(--border);
+      border-radius: 10px;
+    }
+    .legend-item {
+      display: flex;
+      gap: 0.5rem;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+    .swatch {
+      width: 0.9rem;
+      height: 0.9rem;
+      border: 2px solid #111;
+      border-radius: 3px;
+      display: inline-block;
+      transform: translateY(1px);
+    }
+    .swatch.z { background: var(--accent); }
+    .swatch.c { background: var(--accent2); }
+    .swatch.f { background: var(--accent3); }
+
+    canvas {
+      width: 100%;
+      height: auto;
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      display: block;
+    }
+
+    .kbd {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      border: 1px solid var(--border);
+      border-bottom-width: 2px;
+      padding: 0.08rem 0.35rem;
+      border-radius: 6px;
+      background: #fff;
+    }
+
+    .readout dt { font-weight: 650; }
+    .readout dd { margin: 0 0 0.5rem 0; }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    footer {
+      border-top: 2px solid var(--border);
+      margin-top: 1rem;
+      padding-top: 0.75rem;
+      padding-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { scroll-behavior: auto !important; transition: none !important; }
+      button:active { transform: none; }
+    }
+
+    code, pre {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-size: 0.98em;
+    }
+    pre {
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#interactive">Skip to interactive demo</a>
+
+  <header>
+    <h1>Mandelbrot Prep: Complex Numbers & One Iteration</h1>
+    <p class="muted">
+      This page gives the minimum complex-number background needed for a Mandelbrot renderer,
+      followed by an interactive plane that shows both (1) complex numbers as points and (2) one iteration of
+      <strong>f(z) = z² + c</strong>.
+    </p>
+  </header>
+
+  <main>
+    <!-- NOTES FIRST -->
+    <section class="card" aria-labelledby="notes-title">
+      <h2 id="notes-title">Minimal notes you need for the Mandelbrot set</h2>
+
+      <h3>1) Complex numbers</h3>
+      <p>
+        A complex number is written as <strong>z = a + bi</strong>, where <strong>a</strong> and <strong>b</strong>
+        are real numbers and <strong>i</strong> is the imaginary unit with <strong>i² = −1</strong>.
+      </p>
+      <p>
+        You can view <strong>z = a + bi</strong> as the 2D point <strong>(a, b)</strong>.
+        The horizontal axis is the <strong>real</strong> part, and the vertical axis is the <strong>imaginary</strong> part.
+      </p>
+
+      <h3>2) Magnitude (distance from the origin)</h3>
+      <p>
+        The magnitude of <strong>z = a + bi</strong> is:
+      </p>
+      <pre aria-label="Magnitude formula">|z| = √(a² + b²)</pre>
+
+      <h3>3) Multiplication (you’ll need this for squaring)</h3>
+      <p>
+        Multiply using distributivity and <strong>i² = −1</strong>:
+      </p>
+      <pre aria-label="Complex multiplication formula">(a+bi)(c+di) = (ac − bd) + (ad + bc)i</pre>
+
+      <p>
+        In particular, squaring <strong>z = a + bi</strong> gives:
+      </p>
+      <pre aria-label="Complex squaring formula">z² = (a+bi)² = (a² − b²) + (2ab)i</pre>
+
+      <h3>4) Mandelbrot iteration</h3>
+      <p>
+        For a chosen complex number <strong>c</strong>, define a sequence:
+      </p>
+      <pre aria-label="Mandelbrot iteration">z₀ = 0
+zₙ₊₁ = zₙ² + c</pre>
+
+      <h3>5) The escape test (what you implement in code)</h3>
+      <p>
+        If at any step you get <strong>|zₙ| &gt; 2</strong>, then the sequence will diverge (escape to infinity).
+        When rendering, you iterate up to a max number of steps and color by how quickly the orbit escapes.
+      </p>
+
+      <details>
+        <summary><strong>Optional: code-friendly form (no complex type needed)</strong></summary>
+        <p class="muted">
+          If you store a complex number as (a, b), then one iteration of z ← z² + c can be done with real arithmetic:
+        </p>
+        <pre aria-label="Code-friendly update equations">Given z = (a, b) and c = (cr, ci):
+
+a' = a² − b² + cr
+b' = 2ab + ci</pre>
+      </details>
+    </section>
+
+    <!-- INTERACTIVE BELOW -->
+    <section id="interactive" class="card" aria-labelledby="interactive-title">
+      <h2 id="interactive-title">Interactive: points in the complex plane and one iteration</h2>
+      <p class="muted">
+        Drag the points, or focus the canvas and use arrow keys. This demo shows the mapping
+        <strong>f(z) = z² + c</strong> for your chosen <strong>z</strong> and <strong>c</strong>.
+      </p>
+
+      <div class="grid">
+        <section aria-labelledby="plane-title">
+          <h3 id="plane-title" style="margin-top:0;">Complex plane</h3>
+
+          <canvas id="plane" width="720" height="540" role="img"
+                  aria-label="Complex plane with draggable points for z and c, and the computed point f(z)=z^2+c">
+            Your browser does not support the canvas element.
+            This demo shows complex numbers as points (a, b) and one Mandelbrot iteration f(z)=z^2+c.
+          </canvas>
+
+          <div class="legend" id="interaction-help">
+            <div class="legend-item">
+              <span class="swatch z" aria-hidden="true"></span>
+              <span><strong>z</strong> (blue): the current iterate</span>
+            </div>
+            <div class="legend-item">
+              <span class="swatch c" aria-hidden="true"></span>
+              <span><strong>c</strong> (red): the constant parameter</span>
+            </div>
+            <div class="legend-item">
+              <span class="swatch f" aria-hidden="true"></span>
+              <span><strong>f(z)=z²+c</strong> (green): the next iterate</span>
+            </div>
+
+            <p style="margin:0.5rem 0 0 0;">
+              <strong>Mouse / touch:</strong> drag <em>z</em> or <em>c</em>.<br />
+              <strong>Keyboard:</strong> click/tap canvas, then:
+              <span class="kbd">Tab</span> switches selected point,
+              arrow keys move it,
+              <span class="kbd">Shift</span> = bigger steps,
+              <span class="kbd">Home</span> resets.
+            </p>
+          </div>
+
+          <p class="sr-only" id="live" aria-live="polite"></p>
+        </section>
+
+        <aside aria-labelledby="controls-title">
+          <h3 id="controls-title" style="margin-top:0;">Controls and readout</h3>
+
+          <form id="form" class="controls" novalidate>
+            <div>
+              <label for="zaInput">z real (a)</label>
+              <input id="zaInput" name="za" type="number" inputmode="decimal" step="0.1"
+                     aria-describedby="range-hint" />
+            </div>
+            <div>
+              <label for="zbInput">z imag (b)</label>
+              <input id="zbInput" name="zb" type="number" inputmode="decimal" step="0.1"
+                     aria-describedby="range-hint" />
+            </div>
+
+            <div>
+              <label for="caInput">c real (a)</label>
+              <input id="caInput" name="ca" type="number" inputmode="decimal" step="0.1"
+                     aria-describedby="range-hint" />
+            </div>
+            <div>
+              <label for="cbInput">c imag (b)</label>
+              <input id="cbInput" name="cb" type="number" inputmode="decimal" step="0.1"
+                     aria-describedby="range-hint" />
+            </div>
+
+            <div style="grid-column: 1 / -1;">
+              <p id="range-hint" class="muted" style="margin:0;">
+                Default view: x and y range from −2 to 2. The points are clamped to the visible window.
+              </p>
+            </div>
+          </form>
+
+          <div class="row" role="group" aria-label="Actions">
+            <button type="button" class="primary" id="resetAll">Reset</button>
+            <button type="button" id="centerView">Re-center on z</button>
+            <button type="button" class="danger" id="randomize">Randomize z and c</button>
+          </div>
+
+          <hr style="border:none;border-top:2px solid var(--border); margin: 1rem 0;" />
+
+          <dl class="readout" aria-label="Computed values">
+            <dt>z</dt>
+            <dd><span id="zText">0 + 0i</span></dd>
+
+            <dt>c</dt>
+            <dd><span id="cText">0 + 0i</span></dd>
+
+            <dt>f(z) = z² + c</dt>
+            <dd><span id="fText">0 + 0i</span></dd>
+
+            <dt>Escape check for this step</dt>
+            <dd>
+              |z| = <span id="zMag">0</span>,
+              |f(z)| = <span id="fMag">0</span>
+              <span class="muted">(escape if magnitude &gt; 2 during iteration)</span>
+            </dd>
+          </dl>
+
+          <details>
+            <summary><strong>Reminder: real-arithmetic update</strong></summary>
+            <pre aria-label="Update equations">If z=(a,b) and c=(cr,ci), then:
+
+f(z) = z² + c
+real: a' = a² − b² + cr
+imag: b' = 2ab + ci</pre>
+          </details>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p class="muted" style="margin:0;">
+      Accessibility notes: semantic structure, visible focus, keyboard operation, high contrast, reduced motion, and a live region for point updates.
+      Canvas content is also summarized in nearby text and readouts (not color-only).
+    </p>
+  </footer>
+
+  <script>
+    (() => {
+      "use strict";
+
+      // ===== Elements =====
+      const canvas = document.getElementById("plane");
+      const ctx = canvas.getContext("2d", { alpha: false });
+
+      const zaInput = document.getElementById("zaInput");
+      const zbInput = document.getElementById("zbInput");
+      const caInput = document.getElementById("caInput");
+      const cbInput = document.getElementById("cbInput");
+
+      const zText = document.getElementById("zText");
+      const cText = document.getElementById("cText");
+      const fText = document.getElementById("fText");
+      const zMagText = document.getElementById("zMag");
+      const fMagText = document.getElementById("fMag");
+
+      const resetAll = document.getElementById("resetAll");
+      const centerViewBtn = document.getElementById("centerView");
+      const randomizeBtn = document.getElementById("randomize");
+
+      const live = document.getElementById("live");
+
+      // ===== World window =====
+      let view = { xmin: -2, xmax: 2, ymin: -2, ymax: 2 };
+
+      // Points
+      let z = { a: 0, b: 0 };
+      let c = { a: -0.75, b: 0.1 }; // a classic-ish example
+
+      // Derived point f(z) = z^2 + c
+      function fOfZ() {
+        // z^2 = (a^2 - b^2) + (2ab)i
+        const a2 = z.a * z.a - z.b * z.b;
+        const b2 = 2 * z.a * z.b;
+        return { a: a2 + c.a, b: b2 + c.b };
+      }
+
+      // Interaction
+      let dragging = null; // "z" or "c" or null
+      let dragOffset = { a: 0, b: 0 };
+
+      // Which point is selected for keyboard control
+      let selected = "z";
+
+      // Visual sizes
+      const pointRadius = 9;
+      const hitRadius = 18;
+
+      // Keyboard movement step (world units)
+      const stepSmall = 0.05;
+      const stepBig = 0.2;
+
+      // Make canvas focusable
+      canvas.tabIndex = 0;
+      canvas.setAttribute("aria-describedby", "interaction-help");
+
+      // ===== Helpers =====
+      function worldToScreen(a, b) {
+        const x = (a - view.xmin) / (view.xmax - view.xmin) * canvas.width;
+        const y = canvas.height - (b - view.ymin) / (view.ymax - view.ymin) * canvas.height;
+        return { x, y };
+      }
+
+      function screenToWorld(x, y) {
+        const a = view.xmin + (x / canvas.width) * (view.xmax - view.xmin);
+        const b = view.ymin + ((canvas.height - y) / canvas.height) * (view.ymax - view.ymin);
+        return { a, b };
+      }
+
+      function clampToView(a, b) {
+        return {
+          a: Math.min(view.xmax, Math.max(view.xmin, a)),
+          b: Math.min(view.ymax, Math.max(view.ymin, b))
+        };
+      }
+
+      function fmt(n) {
+        const abs = Math.abs(n);
+        const digits = abs >= 10 ? 2 : abs >= 1 ? 3 : 4;
+        return Number(n).toFixed(digits).replace(/\.?0+$/, "");
+      }
+
+      function zString(p) {
+        const sign = p.b < 0 ? " − " : " + ";
+        return `${fmt(p.a)}${sign}${fmt(Math.abs(p.b))}i`;
+      }
+
+      function mag(p) {
+        return Math.hypot(p.a, p.b);
+      }
+
+      function announce(msg) {
+        live.textContent = msg;
+      }
+
+      function parseNumber(v, fallback) {
+        const n = Number(v);
+        return Number.isFinite(n) ? n : fallback;
+      }
+
+      // ===== Drawing =====
+      function niceStep(raw) {
+        const pow10 = Math.pow(10, Math.floor(Math.log10(raw)));
+        const n = raw / pow10;
+        if (n < 1.5) return 1 * pow10;
+        if (n < 3.5) return 2 * pow10;
+        if (n < 7.5) return 5 * pow10;
+        return 10 * pow10;
+      }
+
+      function drawGrid() {
+        const w = view.xmax - view.xmin;
+        const h = view.ymax - view.ymin;
+        const gridStep = niceStep(Math.max(w, h) / 8);
+
+        ctx.save();
+        ctx.strokeStyle = "#c7c7c7";
+        ctx.lineWidth = 1;
+
+        for (let x = Math.ceil(view.xmin / gridStep) * gridStep; x <= view.xmax; x += gridStep) {
+          const p = worldToScreen(x, 0);
+          ctx.beginPath();
+          ctx.moveTo(p.x, 0);
+          ctx.lineTo(p.x, canvas.height);
+          ctx.stroke();
+        }
+
+        for (let y = Math.ceil(view.ymin / gridStep) * gridStep; y <= view.ymax; y += gridStep) {
+          const p = worldToScreen(0, y);
+          ctx.beginPath();
+          ctx.moveTo(0, p.y);
+          ctx.lineTo(canvas.width, p.y);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+      }
+
+      function drawAxes() {
+        ctx.save();
+        ctx.strokeStyle = "#333333";
+        ctx.lineWidth = 2;
+
+        if (view.ymin <= 0 && view.ymax >= 0) {
+          const p = worldToScreen(0, 0);
+          ctx.beginPath();
+          ctx.moveTo(0, p.y);
+          ctx.lineTo(canvas.width, p.y);
+          ctx.stroke();
+        }
+
+        if (view.xmin <= 0 && view.xmax >= 0) {
+          const p = worldToScreen(0, 0);
+          ctx.beginPath();
+          ctx.moveTo(p.x, 0);
+          ctx.lineTo(p.x, canvas.height);
+          ctx.stroke();
+        }
+
+        ctx.restore();
+        ctx.save();
+      }
+
+      function drawPoint(p, fill, label, isSelected) {
+        const s = worldToScreen(p.a, p.b);
+
+        ctx.save();
+        // Point
+        ctx.fillStyle = fill;
+        ctx.strokeStyle = "#111111";
+        ctx.lineWidth = isSelected ? 4 : 2;
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, pointRadius, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.stroke();
+
+        // Label
+        ctx.fillStyle = "#111111";
+        ctx.font = "14px system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial";
+        ctx.textBaseline = "bottom";
+        ctx.fillText(label, clamp(s.x + 12, 10, canvas.width - 10), clamp(s.y - 10, 18, canvas.height - 6));
+
+        ctx.restore();
+      }
+
+      function drawArrow(from, to) {
+        // Simple arrow with head
+        const dx = to.x - from.x;
+        const dy = to.y - from.y;
+        const len = Math.hypot(dx, dy);
+        if (len < 1e-6) return;
+
+        const ux = dx / len, uy = dy / len;
+        const headLen = 12;
+
+        ctx.save();
+        ctx.strokeStyle = "#111111";
+        ctx.lineWidth = 2;
+        ctx.beginPath();
+        ctx.moveTo(from.x, from.y);
+        ctx.lineTo(to.x, to.y);
+        ctx.stroke();
+
+        // Arrowhead
+        const hx = to.x - ux * headLen;
+        const hy = to.y - uy * headLen;
+
+        const left = { x: hx + (-uy) * (headLen * 0.45), y: hy + (ux) * (headLen * 0.45) };
+        const right = { x: hx + (uy) * (headLen * 0.45), y: hy + (-ux) * (headLen * 0.45) };
+
+        ctx.beginPath();
+        ctx.moveTo(to.x, to.y);
+        ctx.lineTo(left.x, left.y);
+        ctx.lineTo(right.x, right.y);
+        ctx.closePath();
+        ctx.fillStyle = "#111111";
+        ctx.fill();
+        ctx.restore();
+      }
+
+      function clamp(v, lo, hi) { return Math.min(hi, Math.max(lo, v)); }
+
+      function draw() {
+        ctx.fillStyle = "#ffffff";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+        drawGrid();
+        drawAxes();
+
+        const f = fOfZ();
+
+        // Draw mapping arrow z -> f(z)
+        const zs = worldToScreen(z.a, z.b);
+        const fs = worldToScreen(f.a, f.b);
+
+        ctx.save();
+        ctx.setLineDash([6, 4]);
+        ctx.strokeStyle = "#111111";
+        ctx.lineWidth = 2;
+        ctx.restore();
+
+        // Arrow (solid)
+        drawArrow(zs, fs);
+
+        // Draw points
+        drawPoint(
+          z,
+          getCSS("--accent"),
+          `z = ${zString(z)}`,
+          selected === "z"
+        );
+        drawPoint(
+          c,
+          getCSS("--accent2"),
+          `c = ${zString(c)}`,
+          selected === "c"
+        );
+        drawPoint(
+          f,
+          getCSS("--accent3"),
+          `f(z) = ${zString(f)}`,
+          false
+        );
+      }
+
+      function getCSS(varName) {
+        return getComputedStyle(document.documentElement).getPropertyValue(varName).trim();
+      }
+
+      // ===== Hit testing =====
+      function isNear(p, screenX, screenY) {
+        const s = worldToScreen(p.a, p.b);
+        const dx = screenX - s.x;
+        const dy = screenY - s.y;
+        return (dx * dx + dy * dy) <= (hitRadius * hitRadius);
+      }
+
+      function getCanvasPos(evt) {
+        const rect = canvas.getBoundingClientRect();
+        const x = (evt.clientX - rect.left) * (canvas.width / rect.width);
+        const y = (evt.clientY - rect.top) * (canvas.height / rect.height);
+        return { x, y };
+      }
+
+      // ===== State sync =====
+      function syncUI(announceIt = false) {
+        zaInput.value = String(z.a);
+        zbInput.value = String(z.b);
+        caInput.value = String(c.a);
+        cbInput.value = String(c.b);
+
+        zText.textContent = zString(z);
+        cText.textContent = zString(c);
+
+        const f = fOfZ();
+        fText.textContent = zString(f);
+
+        zMagText.textContent = fmt(mag(z));
+        fMagText.textContent = fmt(mag(f));
+
+        if (announceIt) {
+          announce(`Selected ${selected}. z is ${zString(z)}. c is ${zString(c)}. f(z) is ${zString(f)}.`);
+        }
+      }
+
+      function setPoint(which, a, b, announceIt = false) {
+        const clamped = clampToView(a, b);
+        if (which === "z") {
+          z.a = clamped.a; z.b = clamped.b;
+        } else {
+          c.a = clamped.a; c.b = clamped.b;
+        }
+        syncUI(announceIt);
+        draw();
+      }
+
+      // ===== Pointer interaction =====
+      canvas.addEventListener("pointerdown", (evt) => {
+        canvas.setPointerCapture(evt.pointerId);
+        const { x, y } = getCanvasPos(evt);
+
+        if (isNear(z, x, y)) {
+          dragging = "z";
+          selected = "z";
+          const w = screenToWorld(x, y);
+          dragOffset.a = z.a - w.a;
+          dragOffset.b = z.b - w.b;
+          syncUI(true);
+          draw();
+          return;
+        }
+
+        if (isNear(c, x, y)) {
+          dragging = "c";
+          selected = "c";
+          const w = screenToWorld(x, y);
+          dragOffset.a = c.a - w.a;
+          dragOffset.b = c.b - w.b;
+          syncUI(true);
+          draw();
+          return;
+        }
+
+        // Click elsewhere moves the selected point there
+        const w = screenToWorld(x, y);
+        setPoint(selected, w.a, w.b, true);
+      });
+
+      canvas.addEventListener("pointermove", (evt) => {
+        if (!dragging) return;
+        const { x, y } = getCanvasPos(evt);
+        const w = screenToWorld(x, y);
+        setPoint(dragging, w.a + dragOffset.a, w.b + dragOffset.b, false);
+      });
+
+      canvas.addEventListener("pointerup", () => {
+        if (dragging) {
+          announce(`Placed ${dragging}. z is ${zString(z)}. c is ${zString(c)}.`);
+        }
+        dragging = null;
+      });
+
+      canvas.addEventListener("pointercancel", () => { dragging = null; });
+
+      // ===== Keyboard interaction =====
+      canvas.addEventListener("keydown", (evt) => {
+        const step = evt.shiftKey ? stepBig : stepSmall;
+        let handled = true;
+
+        if (evt.key === "Tab") {
+          selected = (selected === "z") ? "c" : "z";
+          syncUI(true);
+          draw();
+          evt.preventDefault();
+          return;
+        }
+
+        switch (evt.key) {
+          case "ArrowLeft":
+            if (selected === "z") setPoint("z", z.a - step, z.b, true);
+            else setPoint("c", c.a - step, c.b, true);
+            break;
+          case "ArrowRight":
+            if (selected === "z") setPoint("z", z.a + step, z.b, true);
+            else setPoint("c", c.a + step, c.b, true);
+            break;
+          case "ArrowUp":
+            if (selected === "z") setPoint("z", z.a, z.b + step, true);
+            else setPoint("c", c.a, c.b + step, true);
+            break;
+          case "ArrowDown":
+            if (selected === "z") setPoint("z", z.a, z.b - step, true);
+            else setPoint("c", c.a, c.b - step, true);
+            break;
+          case "Home":
+            z = { a: 0, b: 0 };
+            c = { a: -0.75, b: 0.1 };
+            selected = "z";
+            syncUI(true);
+            draw();
+            break;
+          default:
+            handled = false;
+        }
+
+        if (handled) evt.preventDefault();
+      });
+
+      // ===== Inputs =====
+      function onInput() {
+        const za = parseNumber(zaInput.value, z.a);
+        const zb = parseNumber(zbInput.value, z.b);
+        const caV = parseNumber(caInput.value, c.a);
+        const cbV = parseNumber(cbInput.value, c.b);
+        setPoint("z", za, zb, false);
+        setPoint("c", caV, cbV, false);
+      }
+
+      zaInput.addEventListener("input", () => setPoint("z", parseNumber(zaInput.value, z.a), z.b, false));
+      zbInput.addEventListener("input", () => setPoint("z", z.a, parseNumber(zbInput.value, z.b), false));
+      caInput.addEventListener("input", () => setPoint("c", parseNumber(caInput.value, c.a), c.b, false));
+      cbInput.addEventListener("input", () => setPoint("c", c.a, parseNumber(cbInput.value, c.b), false));
+
+      // ===== Buttons =====
+      resetAll.addEventListener("click", () => {
+        z = { a: 0, b: 0 };
+        c = { a: -0.75, b: 0.1 };
+        selected = "z";
+        syncUI(true);
+        draw();
+      });
+
+      centerViewBtn.addEventListener("click", () => {
+        const w = view.xmax - view.xmin;
+        const h = view.ymax - view.ymin;
+        view.xmin = z.a - w / 2; view.xmax = z.a + w / 2;
+        view.ymin = z.b - h / 2; view.ymax = z.b + h / 2;
+        draw();
+        announce("View re-centered on z.");
+      });
+
+      randomizeBtn.addEventListener("click", () => {
+        const randIn = (min, max) => min + Math.random() * (max - min);
+        z = { a: randIn(view.xmin, view.xmax), b: randIn(view.ymin, view.ymax) };
+        c = { a: randIn(view.xmin, view.xmax), b: randIn(view.ymin, view.ymax) };
+        selected = "z";
+        syncUI(true);
+        draw();
+      });
+
+      // ===== Init =====
+      syncUI(false);
+      draw();
+    })();
+  </script>
+</body>
+</html>
