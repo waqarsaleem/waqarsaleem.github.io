@@ -146,10 +146,10 @@ Each team submits a one-page structured language profile — not an essay, but a
 
 Presentations will be held in person in my office and will run 20–25 minutes. Both team members are expected to participate meaningfully. The presentation is not a reading of the language profile — it is a chance to make your argument clearly and defend it.
 
-- **Central argument**: Open with the claim(s) your team is making about the language. What is the one thing you want me to understand about it?
-- **Parameter walkthrough**: Walk through your chosen analytical parameters. Connect each to course concepts where possible. Do not simply list features.
-- **Code demonstration**: Run your program. Walk through the key sections. Explain why the code looks the way it does — what the language forced, allowed, or prevented.
-- **Defense**: Be prepared to answer questions about your analysis, your code, and your parameter selection choices.
+1. **Central argument**: Open with the claim(s) your team is making about the language. What is the one thing you want me to understand about it?
+1. **Parameter walkthrough**: Walk through your chosen analytical parameters. Connect each to course concepts where possible. Do not simply list features.
+1. **Code demonstration**: Run your program. Walk through the key sections. Explain why the code looks the way it does — what the language forced, allowed, or prevented.
+1. **Defense**: Be prepared to answer questions about your analysis, your code, and your parameter selection choices.
 
 A presentation that opens with "what is Haskell" and walks through features one by one is a survey, not an argument. A presentation that opens with a claim and uses each parameter to argue for that claim is more in line with this project's requirements.
 
