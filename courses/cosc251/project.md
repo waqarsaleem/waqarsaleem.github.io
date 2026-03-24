@@ -1,3 +1,8 @@
+---
+layout: no-header
+title: COSC 251 Spring 2026: Final Project
+---
+
 # COSC 251: Final Project — Language in the Wild
 
 ---
