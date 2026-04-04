@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PLY to OFF Converter</title>
+    <style>
+        body { font-family: sans-serif; margin: 40px; line-height: 1.6; }
+        .container { max-width: 600px; margin: auto; border: 1px solid #ccc; padding: 20px; border-radius: 8px; }
+        #status { margin-top: 20px; font-weight: bold; }
+        button { padding: 10px 20px; cursor: pointer; background: #007bff; color: white; border: none; border-radius: 4px; }
+        button:disabled { background: #ccc; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>3D Model Converter</h2>
+    <p>Upload an ASCII <b>.ply</b> file to convert it to <b>.off</b> format.</p>
+    
+    <input type="file" id="fileInput" accept=".ply">
+    <br><br>
+    <button id="convertBtn">Convert & Download</button>
+    
+    <div id="status"></div>
+</div>
+
+<script src="converter.js"></script>
+</body>
+</html>
