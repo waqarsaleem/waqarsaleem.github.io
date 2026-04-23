@@ -1,5 +1,5 @@
 ---
-layout: no-header
+layout: base
 title: WS recommendation
 ---
 
