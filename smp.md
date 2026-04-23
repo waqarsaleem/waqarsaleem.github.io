@@ -36,7 +36,7 @@ _What is involved?_: Colleges collect a great deal of data, e.g., on enrollment,
 
 _Prerequisites_: A general computer science background suffices. Many tools will be learned as the project proceeds.
 
-[top](#projects)
+[back to project list](#projects)
 
 ### <a name="barry-dashboard">Campus as Living Laboratory Dashboard: Monitoring Sustainability Data</a> 
 
@@ -46,7 +46,7 @@ _What is involved?_: There are many environmental factors to monitor at St. Mary
 
 _Prerequisites_: A general computer science background suffices. A basic understanding of hardware is preferred. Other tools will be learned as the project proceeds.
 
-[top](#projects)
+[back to project list](#projects)
 
 ### <a name="ml-graphics">Machine Learning and Signed Distance Functions for 3D shape representation</a>
 
@@ -63,7 +63,7 @@ _References_:
 - [Neural Geometric Level of Detail: Real-time Rendering with Implicit 3D Shapes](https://nv-tlabs.github.io/nglod/), Takikawa et al., CVPR 2021.
 - [Advances in Neural Rendering](https://dl.acm.org/doi/10.1145/3450508.3464573), Tewari et al., ACM SIGGRAPH 2021.
 
-[top](#projects)
+[back to project list](#projects)
 
 ### <a name="pipeline">Simulating the graphics pipeline</a>
 
@@ -73,7 +73,7 @@ _What is involved?_: We take for granted the operations performed by the graphic
 
 _Prerequisites_: Familiarity with the graphics pipeline, e.g. as gained in the course COSC 338 Computer Graphics, is required. A good grip on mathematics and programming, and comfort reading technical content is also required.
 
-[top](#projects)
+[back to project list](#projects)
 
 ---
 
