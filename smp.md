@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: no-header
 title: SMP with WS
 ---
 # SMP with WS

@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: no-header
 title: "COSC 251 Spring 2026: Final Project"
 ---
 

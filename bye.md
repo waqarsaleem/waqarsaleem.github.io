@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: no-header
 title: A leap forward
 ---
 [![A scene from Ekko and Jinx's dance from Arcane Season 2](/assets/images/leap.jpg)](https://www.reddit.com/r/arcane/comments/1hcbji2/i_made_that_by_myself_from_two_frames_of_ekko/)
