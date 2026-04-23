@@ -1,3 +1,7 @@
+---
+layout: no-header
+title: SMP with WS
+---
 # SMP with WS
 
 I am excited about SMPs. They give me a chance to learn and get involved in something interesting outside of courses, and they are your opportunity to synthesize your learning into a larger project. An SMP can feel daunting at first, that is completely normal, and you are not expected to have it all figured out at the start. We will work it out together.
