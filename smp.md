@@ -22,7 +22,7 @@ This often involves finding relevant resources, doing the necessary research, le
 
 Below are a few projects that I have in mind. Some of these come from colleagues on campus who have a real need and are keen to collaborate. Please see me (Schaefer Hall 150) or contact me (wsaleem@smcm.edu) if you are interested in working on any of these.
 
-[College Data Analysis](#randy-data) | [Monitoring Kate Farm Data](#barry-dashboard) | [Simulating the Graphics Pipeline](#pipeline) | [Machine Learning and Signed Distance Functions for 3D shape representation](#ml-graphics)
+[College Data Analysis](#randy-data) | [Campus Living Laboratory](#barry-dashboard) | [Graphics Pipeline](#pipeline) | [Machine Learning in Graphics](#ml-graphics)
 
 ---
 
