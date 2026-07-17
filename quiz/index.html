@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Element Quiz</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- START SCREEN -->
+  <div class="screen active" id="screen-start">
+    <div class="logo-mark"><span class="z">1</span><span class="sym">H</span></div>
+    <div class="app-title">Element Quiz</div>
+    <div class="app-sub">Learn chemical elements &amp; symbols</div>
+    <div class="start-actions">
+      <button class="btn-primary" id="btn-start-round">Start Round</button>
+      <button class="btn-secondary" id="btn-goto-board">Mastery Board</button>
+      <button class="btn-secondary" id="btn-goto-achievements">Achievements</button>
+    </div>
+    <div class="start-stats" id="start-stats"></div>
+  </div>
+
+  <!-- QUIZ SCREEN -->
+  <div class="screen" id="screen-quiz">
+    <div class="quiz-topbar">
+      <div id="quiz-progress">Question 1 / 20</div>
+      <div>Score: <span id="quiz-score">0</span></div>
+      <div class="streak"><span class="flame" id="quiz-flame">🔥</span> <span id="quiz-streak">0</span></div>
+    </div>
+
+    <div class="quiz-stage">
+      <div class="atomic-num" id="quiz-atomic-num"></div>
+      <div class="direction-label" id="quiz-direction-label"></div>
+      <div class="quiz-prompt" id="quiz-prompt"></div>
+    </div>
+
+    <div class="hint-card">
+      <img id="hint-img" alt="" style="display:none;">
+      <div class="hint-placeholder" id="hint-placeholder">🧪</div>
+      <div class="hint-text" id="hint-text"></div>
+    </div>
+
+    <div class="answer-row">
+      <input type="text" id="answer-input" autocorrect="off" autocapitalize="off" spellcheck="false" autocomplete="off" placeholder="Type your answer">
+      <button id="btn-submit">Submit</button>
+    </div>
+
+    <div class="feedback-message" id="feedback-message"></div>
+    <div class="altname-note" id="altname-note"></div>
+
+    <button class="btn-primary" id="btn-next" style="display:none;">Next</button>
+  </div>
+
+  <!-- SUMMARY SCREEN -->
+  <div class="screen" id="screen-summary">
+    <h2>Round Complete</h2>
+    <div class="summary-hero">
+      <div class="big-score" id="summary-score">0</div>
+      <div class="sub">points earned</div>
+    </div>
+    <div class="summary-stats">
+      <div class="stat-box"><div class="val" id="summary-accuracy">0%</div><div class="lbl">Accuracy</div></div>
+      <div class="stat-box"><div class="val" id="summary-streak">0</div><div class="lbl">Longest Streak</div></div>
+      <div class="stat-box"><div class="val" id="summary-mastered">0</div><div class="lbl">Newly Mastered</div></div>
+    </div>
+    <div id="summary-badges-wrap" style="display:none;">
+      <h3>New Badges</h3>
+      <div class="badge-row" id="summary-badges"></div>
+    </div>
+    <h3>Review</h3>
+    <div class="miss-list" id="summary-miss-list"></div>
+    <button class="btn-primary" id="btn-new-round">Start New Round</button>
+  </div>
+
+  <!-- BOARD SCREEN -->
+  <div class="screen" id="screen-board">
+    <div class="topnav">
+      <button class="back" data-goto="screen-start">← Back</button>
+      <h2 style="margin:0;">Mastery Board</h2>
+      <div style="width:50px;"></div>
+    </div>
+    <div class="board-scroll">
+      <div class="ptable" id="ptable"></div>
+    </div>
+    <div class="legend" id="legend"></div>
+  </div>
+
+  <!-- ACHIEVEMENTS SCREEN -->
+  <div class="screen" id="screen-achievements">
+    <div class="topnav">
+      <button class="back" data-goto="screen-start">← Back</button>
+      <h2 style="margin:0;">Achievements</h2>
+      <div style="width:50px;"></div>
+    </div>
+    <div class="achv-grid" id="achv-grid"></div>
+  </div>
+
+</div>
+
+<div class="popup-overlay" id="cell-popup">
+  <div class="popup-card">
+    <div class="popup-sym" id="popup-sym"></div>
+    <div class="popup-name" id="popup-name"></div>
+    <div class="popup-cat" id="popup-cat"></div>
+    <div class="popup-progress" id="popup-progress"></div>
+    <button class="btn-secondary" id="popup-close">Close</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
