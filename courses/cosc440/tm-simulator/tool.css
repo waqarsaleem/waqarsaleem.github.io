@@ -1,0 +1,202 @@
+/* tool.css for the Turing machine simulator.
+   Loaded after base.css. Holds only what is specific to this tool:
+   the transition table cells, the state diagram, and the tape. */
+
+/* ---- Transition table ---- */
+
+#table-container {
+  margin: 0.75rem 0 0.25rem;
+  padding: 0.25rem;
+}
+
+#transition-table th {
+  min-width: 2.5rem;
+  font-family: var(--mono);
+  font-size: 1.05rem;
+}
+
+#transition-table thead th:first-child {
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.cell {
+  display: flex;
+  gap: 0.2rem;
+}
+
+.cell select {
+  padding: 0.2rem 0.15rem;
+  font-size: 0.95rem;
+}
+
+.cell select[data-field="next"] {
+  width: 5.4rem;
+}
+
+.cell select[data-field="write"],
+.cell select[data-field="action"] {
+  width: 3.4rem;
+}
+
+/* "Cannot occur": striped, and its single dropdown says so in words. */
+td.cell-cannot {
+  background: repeating-linear-gradient(135deg, #e3e3e3 0 6px, #ffffff 6px 12px);
+}
+
+td.cell-cannot select[data-field="next"] {
+  width: 12.6rem;
+}
+
+/* Incomplete cell. */
+td.cell-partial {
+  outline: 2px dashed var(--error);
+  outline-offset: -3px;
+}
+
+/* The cell the machine will use next. */
+td.current-cell {
+  background: var(--highlight);
+  box-shadow: inset 0 0 0 4px var(--text);
+}
+
+/* ---- State diagram ---- */
+
+.diagram-box {
+  overflow-x: auto; /* on narrow screens the diagram scrolls instead of shrinking */
+}
+
+#diagram {
+  display: block;
+  width: 100%;
+  min-width: 36rem;
+  height: auto;
+  max-height: 34rem;
+  touch-action: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+#arrowhead path {
+  fill: var(--text);
+}
+
+.edge {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 1.6;
+}
+
+.edge.active {
+  stroke-width: 4;
+}
+
+.halt-mark {
+  fill: var(--text);
+}
+
+.node {
+  cursor: grab;
+}
+
+.node-circle {
+  fill: var(--background);
+  stroke: var(--text);
+  stroke-width: 2;
+}
+
+.node.current .node-circle {
+  fill: var(--highlight);
+  stroke-width: 4;
+}
+
+.node-ring {
+  fill: none;
+  stroke: var(--text);
+  stroke-width: 2;
+}
+
+.node-label {
+  font-family: var(--mono);
+  font-size: 15px;
+  font-weight: 700;
+  fill: var(--text);
+  pointer-events: none;
+}
+
+.edge-label {
+  font-family: var(--mono);
+  font-size: 13px;
+  fill: var(--text);
+  /* A white halo keeps labels readable where they cross an arrow. */
+  paint-order: stroke;
+  stroke: var(--background);
+  stroke-width: 4px;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+
+.edge-label .active {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* ---- Tape ---- */
+
+.tape {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin: 0.75rem 0;
+  padding: 0.5rem 0.25rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--panel);
+}
+
+.tape-cell {
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  align-items: center;
+  width: 3.2rem;
+}
+
+.tape-symbol {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 3rem;
+  font-family: var(--mono);
+  font-size: 1.4rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+}
+
+.tape-cell.head .tape-symbol {
+  font-weight: 700;
+  background: var(--highlight);
+  border: 4px solid var(--text);
+}
+
+.tape-index {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.tape-marker {
+  font-size: 0.8rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.tape-end {
+  flex: 0 0 auto;
+  width: 2rem;
+  height: 3rem;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  text-align: center;
+  color: var(--muted);
+}

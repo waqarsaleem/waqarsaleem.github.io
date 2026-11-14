@@ -1,0 +1,332 @@
+/* base.css v1, 2026-11-10
+   Shared styles for all teaching tools. Master copy: teaching-tools-shared.
+
+   Every tool ships an unmodified copy of this file and loads it before its
+   own tool.css. Do not edit a tool's copy. Changes are made only in the
+   master, following "Updating base.css" in technical-conventions.md, and
+   only by adding rules.
+
+   Changelog
+   v1  2026-11-10  First version, taken from the Turing machine simulator.
+*/
+
+/* ---- Tokens ----
+   Text colors have a contrast ratio of at least 4.5:1 on --background,
+   --panel, and --highlight. Border and focus colors have at least 3:1. */
+
+:root {
+  --text: #1a1a1a;
+  --muted: #4a4a4a;
+  --background: #ffffff;
+  --panel: #f4f6f8;
+  --accent: #0b4f8a;
+  --border: #595959;
+  --error: #a11212;
+  --highlight: #fff3c4;
+  --focus: #b35900;
+
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  --mono: ui-monospace, Menlo, Consolas, monospace;
+
+  --radius: 0.25rem;
+}
+
+/* ---- Page ---- */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 1rem;
+  font-family: var(--sans);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--text);
+  background: var(--background);
+}
+
+main {
+  max-width: 62rem;
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0 0 0.5rem;
+  font-size: 1.75rem;
+  color: var(--accent);
+}
+
+h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.25rem;
+  color: var(--accent);
+}
+
+h3 {
+  margin: 0.75rem 0 0.25rem;
+  font-size: 1.05rem;
+}
+
+/* Each numbered step of a tool is a section with a rule above it. */
+section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 2px solid var(--border);
+}
+
+p {
+  margin: 0.5rem 0;
+}
+
+kbd {
+  padding: 0 0.3rem;
+  font-family: var(--mono);
+  font-size: 0.95em;
+  border: 1px solid var(--border);
+  border-radius: 0.2rem;
+  background: var(--panel);
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* Hidden visually but still read by screen readers. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ---- Text roles ---- */
+
+/* .hint: standing help text under a field or section.
+   .note: a message about something that just happened (role="status"). */
+.hint,
+.note {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+/* .error: a validation message (role="alert"). Bold as well as colored. */
+.error {
+  font-weight: 600;
+  color: var(--error);
+}
+
+.error:empty,
+.note:empty {
+  display: none;
+}
+
+/* .warning: a boxed message about a problem with the page itself. */
+.warning {
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  color: var(--error);
+  border: 2px solid var(--error);
+}
+
+/* .status: the main live message of a tool (role="status"). */
+.status {
+  padding: 0.5rem 0.75rem;
+  font-weight: 600;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+}
+
+/* ---- Forms ---- */
+
+/* A form or .row lays its fields and buttons out in a wrapping line. */
+form,
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 0.75rem 1.25rem;
+  margin: 0.75rem 0;
+}
+
+form .error {
+  flex-basis: 100%;
+  margin: 0;
+}
+
+/* .field: a label above its control, with an optional .hint below. */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.field .hint {
+  max-width: 28rem;
+  margin: 0;
+}
+
+label {
+  font-weight: 600;
+}
+
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+  padding: 0.35rem 0.5rem;
+  font-family: var(--mono);
+  font-size: 1rem;
+  color: var(--text);
+  background: var(--background);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+}
+
+input[type="number"] {
+  width: 6rem;
+}
+
+input[type="text"] {
+  width: 16rem;
+  max-width: 100%;
+}
+
+textarea {
+  width: 100%;
+}
+
+input[type="file"] {
+  font-size: 1rem;
+}
+
+input[type="range"] {
+  width: 12rem;
+}
+
+input[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--error);
+  border-style: dashed;
+}
+
+/* ---- Buttons ---- */
+
+button {
+  padding: 0.45rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+/* Disabled buttons change border style as well as color. */
+button:disabled {
+  color: var(--muted);
+  background: var(--panel);
+  border-color: var(--border);
+  border-style: dashed;
+  cursor: not-allowed;
+}
+
+/* Lines a button up with neighboring fields that have a label above. */
+form > button,
+.row > button {
+  margin-top: 1.7rem;
+}
+
+/* .controls: a row of buttons with no labeled fields to line up with. */
+.controls {
+  align-items: center;
+}
+
+.controls > button {
+  margin-top: 0;
+}
+
+/* ---- Focus ---- */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+summary:focus-visible,
+a:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+/* ---- Containers ---- */
+
+/* .scroll: content wider than the page scrolls inside this region instead
+   of making the page scroll sideways. Give it tabindex="0" and a label. */
+.scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* .box: a bordered area for a graphic or other self-contained display. */
+.box {
+  margin: 0.75rem 0;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--background);
+}
+
+/* ---- Tables ---- */
+
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  padding: 0.3rem;
+  border: 1px solid var(--border);
+}
+
+th {
+  background: var(--panel);
+}
+
+/* ---- Readouts ---- */
+
+/* .facts: a list of labeled current values, built as
+   <dl class="facts"><div><dt>Label</dt><dd>Value</dd></div>...</dl> */
+.facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+  margin: 0.75rem 0;
+}
+
+.facts dt {
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.facts dd {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+/* ---- Motion ---- */
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    scroll-behavior: auto !important;
+    transition: none !important;
+    animation: none !important;
+  }
+}

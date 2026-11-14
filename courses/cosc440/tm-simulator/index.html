@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Turing Machine Simulator</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="tool.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Turing Machine Simulator</h1>
+
+    <p id="script-warning" class="warning">JavaScript has not loaded, so the simulator will not work. Keep index.html, base.css, tool.css, and app.js in the same folder.</p>
+
+    <p>The machine starts in state 0 with its head on the first input symbol. The tape is infinite in both directions. It holds the start marker ▷, then the input, and the null symbol ϕ everywhere else.</p>
+
+    <section aria-labelledby="setup-heading">
+      <h2 id="setup-heading">1. Set up the machine</h2>
+
+      <form id="setup-form" novalidate>
+        <div class="field">
+          <label for="num-states">Number of states (1 to 20)</label>
+          <input type="number" id="num-states" min="1" max="20" step="1" value="2" inputmode="numeric" aria-describedby="setup-error">
+        </div>
+        <div class="field">
+          <label for="extra-symbols">Extra symbols</label>
+          <input type="text" id="extra-symbols" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="extra-hint setup-error">
+          <p id="extra-hint" class="hint">The alphabet always contains 0, 1, ▷, and ϕ. Type any other symbols one after another with no spaces, for example ab#.</p>
+        </div>
+        <button type="submit">Update table</button>
+        <p id="setup-error" class="error" role="alert"></p>
+      </form>
+
+      <div class="row">
+        <div class="field">
+          <label for="example-select">Example machine</label>
+          <select id="example-select"></select>
+        </div>
+        <button type="button" id="example-button">Load example</button>
+      </div>
+
+      <div class="row">
+        <button type="button" id="save-button">Save machine to file</button>
+        <div class="field">
+          <label for="file-input">Load machine from file</label>
+          <input type="file" id="file-input" accept=".json,application/json">
+        </div>
+      </div>
+
+      <p id="setup-status" class="note" role="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="table-heading">
+      <h2 id="table-heading">2. Transition table</h2>
+      <p>Each cell has three boxes: the next state, the symbol to write, and the action (L left, R right, S stay, H halt). Cells may be left empty and filled in later.</p>
+      <details>
+        <summary>Keyboard entry</summary>
+        <ul>
+          <li>Press Tab to move from box to box, and type a character to choose a value. For example, <kbd>1</kbd> <kbd>Tab</kbd> <kbd>0</kbd> <kbd>Tab</kbd> <kbd>R</kbd> <kbd>Tab</kbd> enters "go to state 1, write 0, move right" and moves to the next cell.</li>
+          <li>In the first box, type <kbd>x</kbd> to mark the cell "cannot occur", or <kbd>*</kbd> for a halting transition. Choosing H as the action also sets the state to *.</li>
+          <li>In the second box, type <kbd>&gt;</kbd> for ▷ and <kbd>_</kbd> for ϕ.</li>
+          <li>Press <kbd>Delete</kbd> or <kbd>Backspace</kbd> to clear a cell.</li>
+        </ul>
+      </details>
+      <div id="table-container" class="scroll" role="region" aria-labelledby="table-heading" tabindex="0"></div>
+      <p class="hint">A dashed border marks an incomplete cell. A striped cell is marked "cannot occur". A thick border marks the cell the machine will use next.</p>
+    </section>
+
+    <section aria-labelledby="diagram-heading">
+      <h2 id="diagram-heading">3. State diagram</h2>
+      <p>Each arrow is labeled <em>a / b, A</em>: on reading a, write b and take action A. A short arrow ending in a filled square is a halting transition. The current state has a double outline, and the transition just taken is drawn thicker with its label in bold.</p>
+      <div class="box diagram-box">
+        <svg id="diagram" viewBox="0 0 800 500" role="img" aria-labelledby="diagram-title">
+          <title id="diagram-title">State diagram</title>
+          <defs>
+            <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="11" markerHeight="11" markerUnits="userSpaceOnUse" orient="auto">
+              <path d="M0,0 L10,5 L0,10 z"></path>
+            </marker>
+          </defs>
+          <g id="diagram-layer"></g>
+        </svg>
+      </div>
+      <button type="button" id="layout-button">Reset diagram layout</button>
+      <p class="hint">States can be dragged with a mouse or finger to tidy the picture. Dragging changes only the layout, not the machine.</p>
+    </section>
+
+    <section aria-labelledby="run-heading">
+      <h2 id="run-heading">4. Tape and run</h2>
+
+      <div class="field">
+        <label for="tape-input">Tape input</label>
+        <input type="text" id="tape-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="input-hint input-error">
+        <p id="input-hint" class="hint">Any symbols of the alphabet except ▷ and ϕ. Changing the input restarts the run.</p>
+        <p id="input-error" class="error" role="alert"></p>
+      </div>
+
+      <div id="tape" class="scroll tape" role="img" aria-label="Tape" tabindex="0"></div>
+
+      <div class="row controls">
+        <button type="button" id="step-button">Step</button>
+        <button type="button" id="back-button">Step back</button>
+        <button type="button" id="run-button">Run</button>
+        <button type="button" id="reset-button">Reset</button>
+        <div class="field">
+          <label for="speed">Run speed</label>
+          <input type="range" id="speed" min="1" max="20" step="1" value="2" aria-describedby="speed-value">
+          <span id="speed-value" class="hint"></span>
+        </div>
+      </div>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+
+      <dl class="facts">
+        <div><dt>Steps taken</dt><dd id="fact-steps"></dd></div>
+        <div><dt>Current state</dt><dd id="fact-state"></dd></div>
+        <div><dt>Head position</dt><dd id="fact-head"></dd></div>
+        <div><dt>Symbol under head</dt><dd id="fact-symbol"></dd></div>
+        <div><dt>Tape (head cell in brackets)</dt><dd id="fact-tape"></dd></div>
+      </dl>
+    </section>
+  </main>
+</body>
+</html>
