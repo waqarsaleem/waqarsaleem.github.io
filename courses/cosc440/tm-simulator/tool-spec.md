@@ -25,10 +25,13 @@ This start position follows the instructor's convention and may differ from the 
 
 ## Page sections
 
+Above the numbered sections is a collapsible block, "How to use this tool", open by default. It names the two ways to start, loading an example or building a machine, and points to the step for each.
+
 1. **Set up the machine.** Number of states, extra symbols, examples, save and load.
 2. **Transition table.** Where the machine is defined.
-3. **State diagram.** The machine drawn as a graph.
-4. **Tape and run.** Input, tape, run controls, and status.
+3. **Run the machine.** The tape input, then a panel holding the tape, the run controls, and the status message, then the state diagram and the readouts.
+
+The panel in section 3 stays at the top of the window while the student scrolls through the diagram, so the controls and the diagram can be seen together. It does this only on a window at least 48rem wide and 38rem tall. On a smaller window, or at a high zoom level, it scrolls with the page, because a pinned panel would take too much of the screen. On a wide window the diagram is also sized to fit beside the panel.
 
 ## Inputs
 
@@ -139,3 +142,6 @@ In the transition table, Tab moves through the cells in row order with three sto
 - **2026-11-10.** Save and load were added, as a JSON file.
 - **2026-11-10.** `>` and `_` were reserved so that ▷ and ϕ can be selected from the keyboard.
 - **2026-11-10.** Stylesheet split into the shared `base.css` and this tool's `tool.css`.
+- **2026-11-14.** The diagram moved into the run section, and the tape, controls, and status were made a sticky panel. Before this, the controls were a full screen below the diagram, so a student stepping through a machine could not see both.
+- **2026-11-14.** A "How to use this tool" block was added at the top of the page, so that a student opening the tool for the first time knows where to begin.
+- **2026-11-14.** The pinned-panel style was moved into the shared `base.css` as `.sticky-panel` (v2), with the diagram sizing left in `tool.css`.

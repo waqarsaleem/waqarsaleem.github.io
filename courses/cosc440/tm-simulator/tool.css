@@ -60,6 +60,21 @@ td.current-cell {
   box-shadow: inset 0 0 0 4px var(--text);
 }
 
+/* ---- Run panel ---- */
+
+/* The panel itself is .sticky-panel in base.css. These are the parts that
+   belong to this tool: the tape's spacing inside the panel, and sizing the
+   diagram to fit the space left under the pinned panel. */
+@media (min-width: 48rem) and (min-height: 38rem) {
+  .sticky-panel .tape {
+    margin: 0 0 0.5rem;
+  }
+
+  .diagram-box #diagram {
+    max-height: min(34rem, max(20rem, calc(100vh - 22rem)));
+  }
+}
+
 /* ---- State diagram ---- */
 
 .diagram-box {

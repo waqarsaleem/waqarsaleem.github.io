@@ -1,4 +1,4 @@
-/* base.css v1, 2026-11-10
+/* base.css v2, 2026-11-14
    Shared styles for all teaching tools. Master copy: teaching-tools-shared.
 
    Every tool ships an unmodified copy of this file and loads it before its
@@ -8,6 +8,8 @@
 
    Changelog
    v1  2026-11-10  First version, taken from the Turing machine simulator.
+   v2  2026-11-14  Added .sticky-panel, a control panel that stays in view
+                   while the page scrolls. From the Turing machine simulator.
 */
 
 /* ---- Tokens ----
@@ -279,6 +281,33 @@ a:focus-visible,
   border: 2px solid var(--border);
   border-radius: var(--radius);
   background: var(--background);
+}
+
+/* .sticky-panel: a panel of controls that stays at the top of the window
+   while the student scrolls through the content it controls. It sticks only
+   in a window at least 48rem wide and 38rem tall, so at a narrow width, a
+   short height, or a high zoom level it scrolls with the page instead of
+   crowding out the content. Place it inside the section it controls, since
+   it can only stick within its parent. Give it role="group" and a label. */
+.sticky-panel {
+  margin: 0.75rem 0;
+}
+
+@media (min-width: 48rem) and (min-height: 38rem) {
+  .sticky-panel {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    margin: 0;
+    padding: 0.25rem 0 0;
+    background: var(--background);
+    border-bottom: 2px solid var(--border);
+  }
+
+  .sticky-panel > .row,
+  .sticky-panel > .status {
+    margin: 0 0 0.5rem;
+  }
 }
 
 /* ---- Tables ---- */

@@ -16,6 +16,16 @@
 
     <p>The machine starts in state 0 with its head on the first input symbol. The tape is infinite in both directions. It holds the start marker ▷, then the input, and the null symbol ϕ everywhere else.</p>
 
+    <details open>
+      <summary>How to use this tool</summary>
+      <p>There are two ways to start.</p>
+      <ul>
+        <li><strong>Try an example.</strong> In step 1, choose an example machine and press "Load example". Then go to step 3 and press "Step" to watch it work one step at a time, or "Run" to watch it run by itself.</li>
+        <li><strong>Build your own machine.</strong> In step 1, enter the number of states and any extra symbols, and press "Update table". In step 2, fill in the table: for each state and each symbol it might read, choose the next state, the symbol to write, and the action. In step 3, type a tape input and press "Step".</li>
+      </ul>
+      <p>Cells of the table may be left empty and filled in later. The state diagram in step 3 redraws as you fill in the table. "Save machine to file" in step 1 keeps your machine so that you can load it again later.</p>
+    </details>
+
     <section aria-labelledby="setup-heading">
       <h2 id="setup-heading">1. Set up the machine</h2>
 
@@ -68,9 +78,35 @@
       <p class="hint">A dashed border marks an incomplete cell. A striped cell is marked "cannot occur". A thick border marks the cell the machine will use next.</p>
     </section>
 
-    <section aria-labelledby="diagram-heading">
-      <h2 id="diagram-heading">3. State diagram</h2>
-      <p>Each arrow is labeled <em>a / b, A</em>: on reading a, write b and take action A. A short arrow ending in a filled square is a halting transition. The current state has a double outline, and the transition just taken is drawn thicker with its label in bold.</p>
+    <section aria-labelledby="run-heading">
+      <h2 id="run-heading">3. Run the machine</h2>
+
+      <div class="field">
+        <label for="tape-input">Tape input</label>
+        <input type="text" id="tape-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="input-hint input-error">
+        <p id="input-hint" class="hint">Any symbols of the alphabet except ▷ and ϕ. Changing the input restarts the run.</p>
+        <p id="input-error" class="error" role="alert"></p>
+      </div>
+
+      <div class="sticky-panel" role="group" aria-label="Tape, run controls, and status">
+        <div id="tape" class="scroll tape" role="img" aria-label="Tape" tabindex="0"></div>
+
+        <div class="row controls">
+          <button type="button" id="step-button">Step</button>
+          <button type="button" id="back-button">Step back</button>
+          <button type="button" id="run-button">Run</button>
+          <button type="button" id="reset-button">Reset</button>
+          <div class="field">
+            <label for="speed">Run speed</label>
+            <input type="range" id="speed" min="1" max="20" step="1" value="2" aria-describedby="speed-value">
+            <span id="speed-value" class="hint"></span>
+          </div>
+        </div>
+
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </div>
+
+      <h3 id="diagram-heading">State diagram</h3>
       <div class="box diagram-box">
         <svg id="diagram" viewBox="0 0 800 500" role="img" aria-labelledby="diagram-title">
           <title id="diagram-title">State diagram</title>
@@ -82,35 +118,9 @@
           <g id="diagram-layer"></g>
         </svg>
       </div>
+      <p>Each arrow is labeled <em>a / b, A</em>: on reading a, write b and take action A. A short arrow ending in a filled square is a halting transition. The current state has a double outline, and the transition just taken is drawn thicker with its label in bold. On a large screen, the tape, buttons, and status stay at the top of the window while you scroll.</p>
       <button type="button" id="layout-button">Reset diagram layout</button>
       <p class="hint">States can be dragged with a mouse or finger to tidy the picture. Dragging changes only the layout, not the machine.</p>
-    </section>
-
-    <section aria-labelledby="run-heading">
-      <h2 id="run-heading">4. Tape and run</h2>
-
-      <div class="field">
-        <label for="tape-input">Tape input</label>
-        <input type="text" id="tape-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="input-hint input-error">
-        <p id="input-hint" class="hint">Any symbols of the alphabet except ▷ and ϕ. Changing the input restarts the run.</p>
-        <p id="input-error" class="error" role="alert"></p>
-      </div>
-
-      <div id="tape" class="scroll tape" role="img" aria-label="Tape" tabindex="0"></div>
-
-      <div class="row controls">
-        <button type="button" id="step-button">Step</button>
-        <button type="button" id="back-button">Step back</button>
-        <button type="button" id="run-button">Run</button>
-        <button type="button" id="reset-button">Reset</button>
-        <div class="field">
-          <label for="speed">Run speed</label>
-          <input type="range" id="speed" min="1" max="20" step="1" value="2" aria-describedby="speed-value">
-          <span id="speed-value" class="hint"></span>
-        </div>
-      </div>
-
-      <p id="status" class="status" role="status" aria-live="polite"></p>
 
       <dl class="facts">
         <div><dt>Steps taken</dt><dd id="fact-steps"></dd></div>
