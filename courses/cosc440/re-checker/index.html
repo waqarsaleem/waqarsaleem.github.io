@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Regular Expression Checker</title>
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="tool.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>Regular Expression Checker</h1>
+
+    <p id="script-warning" class="warning">JavaScript has not loaded, so this tool will not work. Keep index.html, base.css, tool.css, and app.js in the same folder.</p>
+
+    <p>Test whether a string matches a regular expression, and list example strings that match or do not match. A string matches only if the whole string is described by the expression. A symbol is a letter or digit other than e. Use | for union, * for repetition, parentheses for grouping, and e for the empty string. Spaces are ignored.</p>
+
+    <details open>
+      <summary>How to use this tool</summary>
+      <p>There are two ways to start.</p>
+      <ul>
+        <li><strong>Try an example.</strong> In step 1, choose an example and press "Load example". Then go to step 2 to test a string, or to step 3 to list strings.</li>
+        <li><strong>Use your own expression.</strong> In step 1, type your expression and press "Check expression" to see whether it is valid. Then go to step 2 or step 3.</li>
+      </ul>
+      <p>Changing the expression or the alphabet in step 1 clears the results in steps 2 and 3.</p>
+    </details>
+
+    <section aria-labelledby="expression-heading">
+      <h2 id="expression-heading">1. Regular expression</h2>
+
+      <form id="expression-form" novalidate>
+        <div class="field">
+          <label for="expression-input">Regular expression</label>
+          <input type="text" id="expression-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="expression-hint expression-error">
+          <p id="expression-hint" class="hint">For example (0|1)*01. Type e for the empty string.</p>
+          <p id="expression-error" class="error" role="alert"></p>
+        </div>
+        <div class="field">
+          <label for="alphabet-input">Alphabet (optional)</label>
+          <input type="text" id="alphabet-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="alphabet-hint alphabet-error">
+          <p id="alphabet-hint" class="hint">The alphabet always includes the symbols in the expression. Add others by typing them one after another, for example 01. They affect only the non-matching strings listed in step 3.</p>
+          <p id="alphabet-error" class="error" role="alert"></p>
+        </div>
+        <button type="submit">Check expression</button>
+      </form>
+
+      <div class="row">
+        <div class="field">
+          <label for="example-select">Example</label>
+          <select id="example-select"></select>
+        </div>
+        <button type="button" id="example-button">Load example</button>
+      </div>
+
+      <dl class="facts">
+        <div><dt>Alphabet used for listing</dt><dd id="fact-alphabet"></dd></div>
+      </dl>
+
+      <p id="expression-note" class="note" role="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="test-heading">
+      <h2 id="test-heading">2. Test a string</h2>
+      <p>Type a string and press "Test string" to see whether the whole string matches.</p>
+
+      <form id="test-form" novalidate>
+        <div class="field">
+          <label for="test-input">String to test</label>
+          <input type="text" id="test-input" autocomplete="off" autocapitalize="off" spellcheck="false" aria-describedby="test-hint test-error">
+          <p id="test-hint" class="hint">Type the symbols one after another. Type e for the empty string.</p>
+          <p id="test-error" class="error" role="alert"></p>
+        </div>
+        <button type="submit">Test string</button>
+      </form>
+
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+    </section>
+
+    <section aria-labelledby="list-heading">
+      <h2 id="list-heading">3. List example strings</h2>
+      <p>List strings that match the expression and strings that do not, shortest first. Strings of the same length are in alphabetical order, with digits before letters.</p>
+
+      <form id="list-form" novalidate>
+        <div class="field">
+          <label for="count-input">Strings in each list (1 to 50)</label>
+          <input type="number" id="count-input" min="1" max="50" step="1" inputmode="numeric" aria-describedby="list-error">
+        </div>
+        <div class="field">
+          <label for="min-length-input">Shortest length (0 to 20)</label>
+          <input type="number" id="min-length-input" min="0" max="20" step="1" inputmode="numeric" aria-describedby="min-length-hint list-error">
+          <p id="min-length-hint" class="hint">Strings longer than 20 symbols are never listed.</p>
+        </div>
+        <button type="submit">List strings</button>
+        <p id="list-error" class="error" role="alert"></p>
+      </form>
+
+      <p id="list-note" class="note" role="status" aria-live="polite"></p>
+
+      <div id="list-results" hidden>
+        <div class="results-row">
+          <div>
+            <h3 id="match-heading">Strings that match</h3>
+            <ol id="match-list" aria-labelledby="match-heading"></ol>
+            <p id="match-none">None.</p>
+          </div>
+          <div>
+            <h3 id="nonmatch-heading">Strings that do not match</h3>
+            <ol id="nonmatch-list" aria-labelledby="nonmatch-heading"></ol>
+            <p id="nonmatch-none">None.</p>
+          </div>
+        </div>
+        <p class="hint">The empty string is written e.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

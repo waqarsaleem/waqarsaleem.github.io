@@ -1,0 +1,32 @@
+/* tool.css for the regular expression checker.
+   Loaded after base.css. Holds only what is specific to this tool:
+   the widths of its text fields and the layout of its two result lists. */
+
+/* The expression is the main thing typed, so its field is wider than usual.
+   base.css lets it shrink to fit a narrow window. */
+#expression-input {
+  width: 28rem;
+}
+
+#alphabet-input {
+  width: 12rem;
+}
+
+#test-input {
+  width: 20rem;
+}
+
+/* The two lists of strings sit side by side and wrap on a narrow window. */
+.results-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 3rem;
+}
+
+.results-row ol {
+  margin: 0.25rem 0;
+  padding-left: 2.5rem;
+  font-family: var(--mono);
+  font-size: 1rem;
+  overflow-wrap: anywhere;
+}
